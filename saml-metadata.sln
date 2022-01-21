@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "metadata", "metadata\metadata.csproj", "{EBB95961-9671-4710-9E95-02B32698E38E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataBuilder", "src\MetadataBuilder\MetadataBuilder.csproj", "{06EB56E4-D585-4A3B-B439-D06C2397B687}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBB95961-9671-4710-9E95-02B32698E38E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB95961-9671-4710-9E95-02B32698E38E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB95961-9671-4710-9E95-02B32698E38E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB95961-9671-4710-9E95-02B32698E38E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06EB56E4-D585-4A3B-B439-D06C2397B687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06EB56E4-D585-4A3B-B439-D06C2397B687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06EB56E4-D585-4A3B-B439-D06C2397B687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06EB56E4-D585-4A3B-B439-D06C2397B687}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCCB83A2-01CA-48A1-846A-9F5702A94AF7}
+	EndGlobalSection
+EndGlobal
