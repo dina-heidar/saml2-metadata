@@ -1,0 +1,20 @@
+﻿1- SOAP binding ?
+2- Singlelogout service count for SP
+3- Artifact binding
+4- POAS binding ? 
+5- ECDSA signing  via extension 
+	http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-metadata-algsupport-v1.0-cs01.html at 2.7 example heading
+	https://groups.google.com/g/simplesamlphp/c/HSdZXaYUuRI/m/bdz7mQJLBgAJ
+6- authcontext (override type of authentication eg forms vs windows)
+
+
+
+Types of SAML2 binding (https://en.wikipedia.org/wiki/SAML_2.0)
+1- SAML SOAP Binding (based on SOAP 1.1)
+2- Reverse SOAP (PAOS) Binding 
+	https://medium.com/@winma.15/saml-ecp-enhanced-client-or-proxy-profile-97f8fd051c6
+	https://medium.com/@winma.15/soap-vs-paos-bindings-in-saml-9ce12a052a0f
+3- HTTP Redirect Binding
+4- HTTP POST Binding
+5- HTTP Artifact Binding
+6- SAML URI Binding
