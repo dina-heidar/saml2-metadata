@@ -1,0 +1,26 @@
+﻿<!--<Extensions>
+	<mdui:UIInfo>
+		<mdui:DisplayName xml:lang="en">SWITCH</mdui:DisplayName>
+		<mdui:DisplayName xml:lang="de">SWITCH</mdui:DisplayName>
+
+		<mdui:Description xml:lang="en">
+			Switzerland's national research and eduction network.
+		</mdui:Description>
+		<mdui:Description xml:lang="de">
+			Das schweizerische Hochschul- und Forschungsnetzwerk.
+		</mdui:Description>
+		<mdui:Logo height="16" width="16">
+			https://switch.ch/resources/images/smalllogo.png
+		</mdui:Logo>
+		<mdui:Logo height="97" width="172">
+			https://switch.ch/resources/images/logo.png
+		</mdui:Logo>
+		<mdui:InformationURL xml:lang="en">
+			http://switch.ch
+		</mdui:InformationURL>
+		<mdui:InformationURL xml:lang="de">
+			http://switch.ch/de
+		</mdui:InformationURL>
+	</mdui:UIInfo>	
+</Extensions>-->
+

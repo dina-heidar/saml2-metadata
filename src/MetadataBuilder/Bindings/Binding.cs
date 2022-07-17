@@ -1,38 +1,58 @@
-﻿using System;
+﻿using MetadataBuilder;
+using System;
 
-namespace MetadataBuilder.Bindings
+namespace Saml.MetadataBuilder
 {
+    /// <summary>
+    ///   <br />
+    /// </summary>
     public class Binding
     {
+        /// <summary>The binding</summary>
         private readonly string binding;
+
+        /// <summary>Initializes a new instance of the <see cref="Binding" /> class.</summary>
+        /// <param name="binding">The binding.</param>
         public Binding(string binding)
         {
             this.binding = binding;
         }
 
-        public EndpointType Url(string location, string responseLocation = null)
+        /// <summary>
+        /// URLs the specified location.
+        /// </summary>
+        /// <param name="location">The location.</param>
+        /// <param name="responseLocation">The response location.</param>
+        /// <returns></returns>
+        /// <exception cref="MetadataBuilder.Saml2MetadataSerializationException">Endpoint location is not a valid Url
+        /// or
+        /// Endpoint response location is not a valid Url</exception>
+        public Endpoint Url(string location, string responseLocation = null)
         {
             Uri uriResult;
-            bool result1 = Uri.TryCreate(location, UriKind.Absolute, out uriResult)
+
+            //check if location is a valid http/https url
+            bool isValidLocation = Uri.TryCreate(location, UriKind.Absolute, out uriResult)
                 && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 
-            if (!result1)
+            if (!isValidLocation)
             {
                 throw new Saml2MetadataSerializationException("Endpoint location is not a valid Url");
             }
 
             if (responseLocation != null)
             {
-                bool result2 = Uri.TryCreate(responseLocation, UriKind.Absolute, out uriResult)
+                //check if response location is a valid http/https url
+                bool isValidResponseLocation = Uri.TryCreate(responseLocation, UriKind.Absolute, out uriResult)
                 && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 
-                if (!result2)
+                if (!isValidResponseLocation)
                 {
                     throw new Saml2MetadataSerializationException("Endpoint response location is not a valid Url");
                 }
             }
 
-            var endpoint = new EndpointType
+            var endpoint = new Endpoint
             {
                 Binding = binding,
                 Location = location,
@@ -41,25 +61,31 @@ namespace MetadataBuilder.Bindings
             return endpoint;
         }
 
-
-        public IndexedEndpointType Url(string location, int index, bool isDefault = false)
+        /// <summary>URLs the specified location.</summary>
+        /// <param name="location">The location.</param>
+        /// <param name="index">The index (will default to 0 if not provided).</param>
+        /// <param name="isDefault">if set to <c>true</c> [is default].</param>
+        /// <returns>IndexedEndpoint</returns>
+        /// <exception cref="MetadataBuilder.Saml2MetadataSerializationException">Endpoint location is not a valid Url</exception>
+        public IndexedEndpoint Url(string location, int index, bool isDefault = false)
         {
             Uri uriResult;
-            bool result1 = Uri.TryCreate(location, UriKind.Absolute, out uriResult)
+           
+            //check if location is a valid http/https url
+            bool isValidLocation = Uri.TryCreate(location, UriKind.Absolute, out uriResult)
                 && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 
-            if (!result1)
+            if (!isValidLocation)
             {
                 throw new Saml2MetadataSerializationException("Endpoint location is not a valid Url");
             }
 
-            var indexEndpoint = new IndexedEndpointType
+            var indexEndpoint = new IndexedEndpoint
             {
                 Binding = binding,
                 Location = location,
-                index = Convert.ToUInt16(index),
-                isDefault = isDefault,
-                isDefaultSpecified = true
+                Index = Convert.ToUInt16(index),
+                IsDefault = isDefault
             };
             return indexEndpoint;
         }
