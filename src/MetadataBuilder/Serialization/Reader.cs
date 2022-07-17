@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MetadataBuilder.Bindings
+namespace MetadataBuilder.Serialization
 {
-    internal class MappingProfile
+    internal class Reader
     {
     }
 }
