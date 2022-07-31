@@ -3,8 +3,8 @@
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Saml.MetadataBuilder.Role" />
-    public class SingleSignOn : Role
+    /// <seealso cref="Saml.MetadataBuilder.RoleDescriptor" />
+    public class SSODescriptor : RoleDescriptor
     {
         /// <summary>
         /// Gets or sets the artifact resolution service.
@@ -12,7 +12,7 @@
         /// <value>
         /// The artifact resolution service.
         /// </value>
-        public IndexedEndpoint[] ArtifactResolutionService { get; set; }
+        public IndexedEndpoint[] ArtifactResolutionServices { get; set; }
 
         /// <summary>
         /// Gets or sets the single logout service.
@@ -20,15 +20,19 @@
         /// <value>
         /// The single logout service.
         /// </value>
-        public Endpoint[] SingleLogoutService { get; set; }
+        public Endpoint[] SingleLogoutServices { get; set; }
 
         /// <summary>
-        /// Gets or sets the manage name identifier service.
+        /// <para>Used to configure handlers that are responsible 
+        /// for processing name identifier management messages from an IdP. 
+        /// These are protocol specific, but generally fall into two classes: 
+        /// requests, which inform the SP of a change, and responses, 
+        /// which conclude a change event initiated by the SP</para>.
         /// </summary>
         /// <value>
         /// The manage name identifier service.
         /// </value>
-        public Endpoint[] ManageNameIdService { get; set; }
+        public Endpoint[] ManageNameIdServices { get; set; }
 
         /// <summary>
         /// Gets or sets the name identifier format.
@@ -36,6 +40,6 @@
         /// <value>
         /// The name identifier format.
         /// </value>
-        public string[] NameIdFormat { get; set; }
+        public string[] NameIdFormats { get; set; }
     }
 }

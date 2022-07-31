@@ -3,7 +3,7 @@
   <PropertyGroup>
 	<TargetFramework>netstandard2.1</TargetFramework>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
-	<DocumentationFile>$(MSBuildProjectDirectory)/docs/metadatabuilder.xml</DocumentationFile>
+	<!--<DocumentationFile>$(MSBuildProjectDirectory)/docs/metadatabuilder.xml</DocumentationFile>-->
 	<VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
    
   </PropertyGroup>
@@ -13,12 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+	<!--<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />-->
+	<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 	<PackageReference Include="Microsoft.IdentityModel.Xml" Version="6.21.0" />
-	<PackageReference Include="Vsxmd" Version="1.4.5">
+	<!--<PackageReference Include="Vsxmd" Version="1.4.5">
 	  <PrivateAssets>all</PrivateAssets>
 	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	</PackageReference>
+	</PackageReference>-->
   </ItemGroup>
 
 

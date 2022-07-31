@@ -6,29 +6,23 @@ namespace Saml.MetadataBuilder
     /// <summary>
     /// 
     /// </summary>
-    public class Role
+    public class RoleDescriptor
     {
-        /// <summary>
-        /// Gets or sets the entity identifier.
-        /// </summary>
-        /// <value>
-        /// The entity identifier.
-        /// </value>
-        public string EntityId { get; set; }
+        
         /// <summary>
         /// Gets or sets the protocol support enumeration.
         /// </summary>
         /// <value>
         /// The protocol support enumeration.
         /// </value>
-        public string[] ProtocolSupportEnumeration { get; set; }
+        public string ProtocolSupportEnumeration { get; set; }
         /// <summary>
         /// Gets or sets the contact person.
         /// </summary>
         /// <value>
         /// The contact person.
         /// </value>
-        public ContactPerson[] ContactPerson { get; set; }
+        public ContactPerson[] ContactPersons { get; set; }
         /// <summary>
         /// Gets or sets the organization.
         /// </summary>

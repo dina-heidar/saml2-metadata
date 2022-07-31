@@ -1,0 +1,322 @@
+﻿using MetadataBuilder.Schema.Metadata;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Saml.MetadataBuilder
+{
+    internal class MetadataMapper : IMetadataMapper<EntityDescriptor, EntityDescriptorType>
+    {
+        public EntityDescriptorType MapEntity(EntityDescriptor src)
+        {
+            var entityDescriptorType = new EntityDescriptorType()
+            {
+                cacheDuration = src.CacheDuration,
+                validUntilSpecified = (src.ValidUntil != null),
+                validUntil = src.ValidUntil,
+                entityID = src.EntityID,
+                ID = src.Id,
+                ContactPerson = MapEach(src.ContactPersons),
+                Organization = Map(src.Organization),
+               // Extensions = Map(src.Extensions)
+                // Signature
+                //AdditionalMetadataLocation = src.AdditionalMetadataLocations
+            };
+
+            SpMetadata d = src as SpMetadata;
+            SPSSODescriptorType tt = Map(d);
+
+            entityDescriptorType.Items = new object[] { tt };
+            //switch (src.MetadataType)
+            //{
+            //    case MetadataType.SSOSPSSODescriptorType:
+            //        {
+            //            var sp = src as SpMetadata;
+            //            entityDescriptorType.Items = new object[] { Map(sp) };
+            //            break;
+            //        }
+
+            //}
+
+
+
+
+            return entityDescriptorType;
+        }
+
+        public SPSSODescriptorType Map(SpMetadata src)
+        {
+            if (src.GetType() == typeof(SimpleSpMetadata))
+            {
+                SetValues(src as SimpleSpMetadata);
+            }
+
+            var spSsoDescriptorType = new SPSSODescriptorType()
+            {
+                NameIDFormat = new[] { src.NameIdFormat },
+                //Organization = Map(src.Organization),
+                //Extensions = src.Extensions,
+                AssertionConsumerService = MapEach(src.AssertionConsumerServices),
+                ArtifactResolutionService = MapEach(src.ArtifactResolutionServices),
+                SingleLogoutService = MapEach(src.SingleLogoutServiceEndpoints),
+                AuthnRequestsSigned = src.AuthnRequestsSigned,
+                WantAssertionsSigned = src.WantAssertionsSigned,
+                cacheDuration = src.CacheDuration,
+                //ContactPerson = MapEach(src.ContactPersons),
+                protocolSupportEnumeration = new[] { src.RoleDescriptor.ProtocolSupportEnumeration },
+                //ID = src.Id,
+                //KeyDescriptor, opt => opt.MapFrom(src => new src.RoleDescriptor.KeyDescriptor))
+                AttributeConsumingService = MapEach(src.AttributeConsumingService)
+            };
+            return spSsoDescriptorType;
+        }
+        public void SetValues(SimpleSpMetadata src)
+        {
+            src.SingleLogoutServiceEndpoints = (src.SingleLogoutServiceEndpoint != null ? new Endpoint[] { src.SingleLogoutServiceEndpoint } : new Endpoint[0]);
+            src.AssertionConsumerServices = (src.AssertionConsumerService != null ? new IndexedEndpoint[] { src.AssertionConsumerService } : new IndexedEndpoint[0]);
+            src.ArtifactResolutionServices = (src.ArtifactResolutionService != null ? new IndexedEndpoint[] { src.ArtifactResolutionService } : new IndexedEndpoint[0]);
+            src.AttributeConsumingService = MapAll(src.ServiceNames, src.ServiceDescriptions, src.RequestedAttributes);
+        }
+        public AttributeConsumingService[] MapAll(LocalizedName[] serviceNames,
+            LocalizedName[] serviceDescription, RequestedAttribute[] requestedAttributes)
+        {
+            return new AttributeConsumingService[]
+            {
+                new AttributeConsumingService
+                {
+                    RequestedAttributes = requestedAttributes,
+                    ServiceNames =  serviceNames,
+                    ServiceDescriptions = serviceDescription
+                }
+            };
+        }
+        public AttributeConsumingServiceType[] MapEach(AttributeConsumingService[] src)
+        {
+            if (src.Length > 0 || src != null)
+            {
+                var attributeConsumingServiceType = new AttributeConsumingServiceType[src.Length];
+
+                foreach (var attribute in src)
+                {
+                    var i = 0;
+                    attributeConsumingServiceType[i] =
+                        new AttributeConsumingServiceType
+                        {
+                            ServiceDescription = MapEach(attribute.ServiceDescriptions),
+                            ServiceName = MapEach(attribute.ServiceNames),
+                            isDefault = attribute.IsDefault,
+                            isDefaultSpecified = attribute.IsDefaultFieldSpecified,
+                            index = attribute.Index,
+                            RequestedAttribute = MapEach(attribute.RequestedAttributes)
+                        };
+                    if (i < src.Length) { i++; };
+                }
+                return attributeConsumingServiceType;
+            }
+            return null;
+        }
+        public RequestedAttributeType[] MapEach(RequestedAttribute[] src)
+        {
+            if (src.Length > 0 || src != null)
+            {
+                var requestedAttributeType = new RequestedAttributeType[src.Length];
+                var i = 0;
+                foreach (var attribute in src)
+                {
+                    requestedAttributeType[i] = new RequestedAttributeType
+                    {
+                        isRequired = attribute.IsRequiredField,
+                        isRequiredSpecified = attribute.IsRequiredFieldSpecified,
+                        AttributeValue = attribute.AttributeValue,
+                        FriendlyName = attribute.FriendlyName,
+                        Name = attribute.Name,
+                        NameFormat = attribute.NameFormat
+                    };
+                    if (i < src.Length) { i++; };
+                }
+                return requestedAttributeType;
+            }
+            return null;
+        }
+        public ContactType[] MapEach(ContactPerson[] src)
+        {
+            if (src.Length > 0 || src != null)
+            {
+                var contactType = new ContactType[src.Length];
+                var i = 0;
+                foreach (var contactPerson in src)
+                {
+                    contactType[i] = new ContactType()
+                    {
+                        Company = contactPerson.Company,
+                        //contactType= contactPerson.ContactType,
+                        EmailAddress = contactPerson.EmailAddresses.ToArray(),
+                        GivenName = contactPerson.GivenName,
+                        SurName = contactPerson.Surname,
+                        TelephoneNumber = contactPerson.TelephoneNumbers.ToArray(),
+                        //Extensions = contactPerson.ex
+                    };
+                    if (i < src.Length) { i++; };
+                }
+                return contactType;
+            }
+            return null;
+        }
+        public IndexedEndpointType[] MapEach(IndexedEndpoint[] src)
+        {
+            if (src.Length > 0 || src != null)
+            {
+                var indexedEndpointType = new IndexedEndpointType[src.Length];
+                var i = 0;
+                foreach (var indexedEndpoint in src)
+                {
+                    indexedEndpointType[i] = new IndexedEndpointType
+                    {
+                        Location = indexedEndpoint.Location,
+                        ResponseLocation = indexedEndpoint.ResponseLocation,
+                        Binding = indexedEndpoint.Binding,
+                        isDefault = indexedEndpoint.IsDefault,
+                        isDefaultSpecified = indexedEndpoint.IsDefaultSpecified,
+                        index = indexedEndpoint.Index
+                    };
+                    if (i < src.Length) { i++; };
+                }
+                return indexedEndpointType;
+            }
+            return null;
+        }
+        public EndpointType[] Map(Endpoint src)
+        {
+            if (src != null)
+            {
+                var endpointType = new EndpointType[]{ new EndpointType
+                    {
+                        Location = src.Location,
+                        ResponseLocation = src.ResponseLocation,
+                        Binding = src.Binding
+                    }
+            };
+                return endpointType;
+            }
+            return null;
+        }
+        public EndpointType[] MapEach(Endpoint[] src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var endpointType = new EndpointType[src.Length];
+                var i = 0;
+                foreach (var endpoint in src)
+                {
+                    endpointType[i] = new EndpointType
+                    {
+                        Location = endpoint.Location,
+                        ResponseLocation = endpoint.ResponseLocation,
+                        Binding = endpoint.Binding
+                    };
+                    if (i < src.Length) { i++; };
+                }
+                return endpointType;
+            }
+            return null;
+        }
+        public OrganizationType Map(Organization src)
+        {
+            if (src != null)
+            {
+                var organizationType = new OrganizationType()
+                {
+                    OrganizationDisplayName = MapEach(src.OrganizationDisplayName),
+                    OrganizationName = MapEach(src.OrganizationName),
+                    OrganizationURL = MapEach(src.OrganizationURL)
+                };
+                return organizationType;
+            }
+            return null;
+        }
+        public localizedNameType[] MapEach(IEnumerable<LocalizedName> src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var localizedNameType = new localizedNameType[src.Count()];
+                var i = 0;
+                foreach (var localizedName in src)
+                {
+                    localizedNameType[i] = new localizedNameType
+                    {
+                        lang = localizedName.Language,
+                        Value = localizedName.Value
+                    };
+                    if (i < src.Count()) { i++; };
+                }
+                return localizedNameType;
+            }
+            return null;
+        }
+        public localizedURIType[] MapEach(IEnumerable<LocalizedUri> src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var localizedURIType = new localizedURIType[src.Count()];
+                var i = 0;
+                foreach (var localizedUri in src)
+                {
+                    localizedURIType[i] = new localizedURIType
+                    {
+                        lang = localizedUri.Language,
+                        Value = localizedUri.Uri.ToString()
+                    };
+                    if (i < src.Count()) { i++; };
+                }
+                return localizedURIType;
+            }
+            return null;
+        }
+        //public ExtensionsType Map(Extension src)
+        //{
+        //    var uIInfoType = new UIInfoType();
+        //    if (src != null)
+        //    {
+
+        //        uIInfoType.Items = new object[] { new LocalizedName { Language = src.UiInfo.DisplayName.Language, Value = src.UiInfo.DisplayName.Value } };
+        //        uIInfoType.ItemsElementName = new ItemsChoiceType8[] { ItemsChoiceType8.DisplayName };
+        //    }
+
+        //    //var extensionType = new ExtensionsType();
+
+        //    string xmlTemplate;
+        //    XmlSerializer ser = new XmlSerializer(typeof(XmlElement));
+        //    //XmlElement myElement = new XmlDocument().CreateElement("MyElement");
+        //    ////myElement.InnerText = src.UiInfo.DisplayName.Value;
+
+        //    using (MemoryStream memStm = new MemoryStream())
+        //    {
+        //        ser.Serialize(memStm, uIInfoType);
+        //        memStm.Position = 0;
+        //        xmlTemplate = new StreamReader(memStm).ReadToEnd();
+        //    }
+
+
+
+
+
+        //    //string xmlTemplate = string.Empty;
+        //    //XmlSerializer xmlSerializer = new XmlSerializer(typeof(EntityDescriptorType));
+
+        //    //using (MemoryStream memStm = new MemoryStream())
+        //    //{
+        //    //    xmlSerializer.Serialize(memStm, entityDescriptorType);
+        //    //    memStm.Position = 0;
+        //    //    xmlTemplate = new StreamReader(memStm).ReadToEnd();
+        //    //}
+
+        //    ////create xml document from string
+        //    //XmlDocument xmlDoc = new XmlDocument();
+        //    //xmlDoc.LoadXml(xmlTemplate);
+
+        //    //xmlDoc.PreserveWhitespace = true;
+        //    //return xmlDoc;
+
+        //}
+    }
+}
+
