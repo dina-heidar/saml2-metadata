@@ -5784,12 +5784,15 @@ namespace MetadataBuilder.Schema.Metadata
     [System.Xml.Serialization.XmlRootAttribute("Extensions", Namespace = "urn:oasis:names:tc:SAML:2.0:metadata", IsNullable = false)]
     public partial class ExtensionsType
     {
+        //private System.Xml.XmlElement[] anyField;
+        private object[] anyField;
 
-        private System.Xml.XmlElement[] anyField;
 
-       
-        [System.Xml.Serialization.XmlAnyElementAttribute()]
-        public System.Xml.XmlElement[] Any
+        //[System.Xml.Serialization.XmlAnyElementAttribute()]
+        //public System.Xml.XmlElement[] Any
+        [System.Xml.Serialization.XmlElementAttribute("UIInfo", typeof(UIInfoType), Namespace = "urn:oasis:names:tc:SAML:metadata:ui")]
+        [System.Xml.Serialization.XmlElementAttribute("DiscoHints", typeof(DiscoHintsType))]
+        public object[] Any
         {
             get
             {

@@ -11,6 +11,7 @@
         /// <value>
         /// The UI information.
         /// </value>
-        public UiInfo UiInfo { get; set; }
+        //public UiInfo UiInfo { get; set; }
+        public object[] Any { get; set; }
     }
 }

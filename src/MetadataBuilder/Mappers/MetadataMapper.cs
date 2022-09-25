@@ -1,4 +1,5 @@
-﻿using MetadataBuilder.Schema.Metadata;
+﻿using MetadataBuilder.Dto;
+using MetadataBuilder.Schema.Metadata;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,7 +18,7 @@ namespace Saml.MetadataBuilder
                 ID = src.Id,
                 ContactPerson = MapEach(src.ContactPersons),
                 Organization = Map(src.Organization),
-               // Extensions = Map(src.Extensions)
+                Extensions = Map(src.Extensions)
                 // Signature
                 //AdditionalMetadataLocation = src.AdditionalMetadataLocations
             };
@@ -271,29 +272,99 @@ namespace Saml.MetadataBuilder
             }
             return null;
         }
-        //public ExtensionsType Map(Extension src)
+        public ExtensionsType Map(Extension src)
+        {
+            var extensionsType = new ExtensionsType();
+            var uiInfoTypeItems = new List<UIInfoType>();
+            var discoHintsTypeItems = new List<DiscoHintsType>();
+            var objectList = new List<object>();
+
+            if (src != null)
+            {
+                foreach (var item in src.Any)
+                {
+                    if (item is UiInfo)
+                    {
+                        var uiInfo = (UiInfo)item;
+                        var uIInfoType = new UIInfoType();
+                        uIInfoType.Items = new object[] {
+                            new localizedNameType {
+                                lang = uiInfo.DisplayName.Language, Value = uiInfo.DisplayName.Value
+                            },
+                            new localizedNameType
+                            {
+                                lang = uiInfo.Description.Language, Value=uiInfo.Description.Value
+                            },
+                            new KeywordsType
+                            {
+                                lang = uiInfo.Keywords.Language, Text = uiInfo.Keywords.Values,
+                            },
+                            new localizedURIType
+                            {
+                                lang = uiInfo.InformationURL?.Language??null, Value = uiInfo.InformationURL?.Uri.ToString()??null
+                            },
+                            new localizedURIType
+                            {
+                                lang = uiInfo.PrivacyStatementURL?.Language??null, Value=uiInfo.PrivacyStatementURL?.Uri.ToString()??null
+                            },
+                            new LogoType
+                            {
+                                lang = uiInfo.Logo?.Language??null, height = uiInfo.Logo?.Height??null, width = uiInfo.Logo?.Width??null, Value=uiInfo.Logo?.Value?.ToString()??null
+                            }
+                        };
+                        uIInfoType.ItemsElementName = new ItemsChoiceType8[] {
+                            ItemsChoiceType8.DisplayName,
+                            ItemsChoiceType8.Description,
+                            ItemsChoiceType8.Keywords,
+                            ItemsChoiceType8.InformationURL,
+                            ItemsChoiceType8.PrivacyStatementURL,
+                            ItemsChoiceType8.Logo
+                        };
+                        objectList.Add(uIInfoType);
+                    }
+                    if (item is DiscoHints)
+                    {
+                        var discoHints = (DiscoHints)item;
+                        var discoHintsType = new DiscoHintsType();
+                        discoHintsType.Items = new object[] { discoHints.DomainHint, discoHints.IPHint, discoHints.GeolocationHint };
+                        discoHintsType.ItemsElementName = new ItemsChoiceType9[] { 
+                            ItemsChoiceType9.DomainHint,
+                            ItemsChoiceType9.IPHint, 
+                            ItemsChoiceType9.GeolocationHint
+                        };
+                        objectList.Add(discoHintsType);
+                    }
+                }
+                extensionsType.Any = objectList.ToArray<object>();
+            }
+
+            //var uIInfoType = new UIInfoType();
+            //if (src != null)
+            //{
+
+            //    uIInfoType.Items = new object[] { new LocalizedName { Language = src.UiInfo.DisplayName.Language, Value = src.UiInfo.DisplayName.Value } };
+            //    uIInfoType.ItemsElementName = new ItemsChoiceType8[] { ItemsChoiceType8.DisplayName };
+            //}
+
+            //var extensionsType = new ExtensionsType();
+            //extensionsType.Any = new object[] { uIInfoType };
+
+            return extensionsType;
+        }
+
+        //var extensionType = new ExtensionsType();
+
+        //string xmlTemplate;
+        //XmlSerializer ser = new XmlSerializer(typeof(XmlElement));
+        ////XmlElement myElement = new XmlDocument().CreateElement("MyElement");
+        //////myElement.InnerText = src.UiInfo.DisplayName.Value;
+
+        //using (MemoryStream memStm = new MemoryStream())
         //{
-        //    var uIInfoType = new UIInfoType();
-        //    if (src != null)
-        //    {
-
-        //        uIInfoType.Items = new object[] { new LocalizedName { Language = src.UiInfo.DisplayName.Language, Value = src.UiInfo.DisplayName.Value } };
-        //        uIInfoType.ItemsElementName = new ItemsChoiceType8[] { ItemsChoiceType8.DisplayName };
-        //    }
-
-        //    //var extensionType = new ExtensionsType();
-
-        //    string xmlTemplate;
-        //    XmlSerializer ser = new XmlSerializer(typeof(XmlElement));
-        //    //XmlElement myElement = new XmlDocument().CreateElement("MyElement");
-        //    ////myElement.InnerText = src.UiInfo.DisplayName.Value;
-
-        //    using (MemoryStream memStm = new MemoryStream())
-        //    {
-        //        ser.Serialize(memStm, uIInfoType);
-        //        memStm.Position = 0;
-        //        xmlTemplate = new StreamReader(memStm).ReadToEnd();
-        //    }
+        //    ser.Serialize(memStm, uIInfoType);
+        //    memStm.Position = 0;
+        //    xmlTemplate = new StreamReader(memStm).ReadToEnd();
+        //}
 
 
 

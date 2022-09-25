@@ -20,6 +20,6 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The URI.
         /// </value>
-        public Uri Uri { get; set; }
+        public Uri Uri { get; set; } 
     }
 }
