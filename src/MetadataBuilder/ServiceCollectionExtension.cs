@@ -1,6 +1,4 @@
-﻿using MetadataBuilder;
-using MetadataBuilder.Dto;
-using MetadataBuilder.Schema.Metadata;
+﻿using MetadataBuilder.Schema.Metadata;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Saml.MetadataBuilder
@@ -19,8 +17,8 @@ namespace Saml.MetadataBuilder
             services.AddScoped<IMedatataWriter, MedatataWriter>();
 
             //mappers
-            services.AddTransient<IMetadataMapper<EntityDescriptor, EntityDescriptorType>, MetadataMapper>();            
-            
+            services.AddTransient<IMetadataMapper<EntityDescriptor, EntityDescriptorType>, MetadataMapper>();
+
         }
     }
 }
