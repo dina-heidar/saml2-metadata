@@ -32,7 +32,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string sPNameQualifierField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string NameQualifier
         {
@@ -46,7 +46,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string SPNameQualifier
         {
@@ -79,7 +79,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string idField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Items
         {
@@ -93,7 +93,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] Text
         {
@@ -107,7 +107,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Target
         {
@@ -121,7 +121,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -136,7 +136,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -150,7 +150,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string idField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("SignatureProperty")]
         public SignaturePropertyType[] SignatureProperty
         {
@@ -164,7 +164,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -179,7 +179,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -193,7 +193,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string idField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Reference")]
         public ReferenceType1[] Reference
         {
@@ -207,7 +207,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -222,7 +222,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -244,7 +244,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string typeField;
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable = false)]
         public TransformType[] Transforms
         {
@@ -258,7 +258,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public DigestMethodType DigestMethod
         {
             get
@@ -271,7 +271,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] DigestValue
         {
@@ -285,7 +285,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -299,7 +299,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string URI
         {
@@ -313,7 +313,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Type
         {
@@ -328,7 +328,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -344,7 +344,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string algorithmField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string))]
         public object[] Items
@@ -359,7 +359,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] Text
         {
@@ -373,7 +373,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Algorithm
         {
@@ -388,7 +388,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -402,7 +402,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string algorithmField;
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlNode[] Any
@@ -417,7 +417,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Algorithm
         {
@@ -432,7 +432,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -454,7 +454,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private byte[] pgenCounterField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] P
         {
@@ -468,7 +468,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] Q
         {
@@ -482,7 +482,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] Generator
         {
@@ -496,7 +496,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] Public
         {
@@ -510,7 +510,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] seed
         {
@@ -524,7 +524,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] pgenCounter
         {
@@ -538,7 +538,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -557,7 +557,7 @@ namespace MetadataBuilder.Schema.Metadata
         private KeyInfoType recipientKeyInfoField;
 
         private string algorithmField;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("KA-Nonce", DataType = "base64Binary")]
         public byte[] KANonce
         {
@@ -623,7 +623,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -641,7 +641,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string idField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string))]
         [System.Xml.Serialization.XmlElementAttribute("KeyValue", typeof(KeyValueType))]
@@ -663,7 +663,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType2[] ItemsElementName
@@ -678,7 +678,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] Text
         {
@@ -692,7 +692,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -707,7 +707,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -721,7 +721,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string[] textField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("DSAKeyValue", typeof(DSAKeyValueType))]
         [System.Xml.Serialization.XmlElementAttribute("RSAKeyValue", typeof(RSAKeyValueType))]
@@ -737,7 +737,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] Text
         {
@@ -752,7 +752,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -776,7 +776,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private byte[] pgenCounterField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] P
         {
@@ -790,7 +790,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] Q
         {
@@ -804,7 +804,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] G
         {
@@ -818,7 +818,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] Y
         {
@@ -832,7 +832,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] J
         {
@@ -846,7 +846,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] Seed
         {
@@ -860,7 +860,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] PgenCounter
         {
@@ -875,7 +875,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -889,7 +889,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private byte[] exponentField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] Modulus
         {
@@ -903,7 +903,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] Exponent
         {
@@ -918,7 +918,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -932,7 +932,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ItemsChoiceType1[] itemsElementNameField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType = "base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", typeof(byte[]), DataType = "base64Binary")]
@@ -949,7 +949,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType1[] ItemsElementName
@@ -965,25 +965,25 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema = false)]
     public enum ItemsChoiceType1
     {
 
-       
+
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
 
-       
+
         PGPKeyID,
 
-       
+
         PGPKeyPacket,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -999,7 +999,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string typeField;
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable = false)]
         public TransformType[] Transforms
         {
@@ -1013,7 +1013,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string URI
         {
@@ -1027,7 +1027,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Type
         {
@@ -1042,7 +1042,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1056,7 +1056,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlElement anyField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("SPKISexp", DataType = "base64Binary")]
         public byte[][] SPKISexp
         {
@@ -1070,7 +1070,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement Any
         {
@@ -1085,7 +1085,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1099,7 +1099,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ItemsChoiceType[] itemsElementNameField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType = "base64Binary")]
         [System.Xml.Serialization.XmlElementAttribute("X509Certificate", typeof(byte[]), DataType = "base64Binary")]
@@ -1119,7 +1119,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType[] ItemsElementName
@@ -1135,7 +1135,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1148,7 +1148,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string x509SerialNumberField;
 
-       
+
         public string X509IssuerName
         {
             get
@@ -1161,7 +1161,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public string X509SerialNumber
         {
             get
@@ -1175,67 +1175,67 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema = false)]
     public enum ItemsChoiceType
     {
 
-       
+
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
 
-       
+
         X509CRL,
 
-       
+
         X509Certificate,
 
-       
+
         X509IssuerSerial,
 
-       
+
         X509SKI,
 
-       
+
         X509SubjectName,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema = false)]
     public enum ItemsChoiceType2
     {
 
-       
+
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
 
-       
+
         KeyName,
 
-       
+
         KeyValue,
 
-       
+
         MgmtData,
 
-       
+
         PGPData,
 
-       
+
         RetrievalMethod,
 
-       
+
         SPKIData,
 
-       
+
         X509Data,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1249,7 +1249,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ItemsChoiceType9[] itemsElementNameField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("DomainHint", typeof(string))]
         [System.Xml.Serialization.XmlElementAttribute("GeolocationHint", typeof(string), DataType = "anyURI")]
@@ -1267,7 +1267,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType9[] ItemsElementName
@@ -1283,28 +1283,28 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:metadata:ui", IncludeInSchema = false)]
     public enum ItemsChoiceType9
     {
 
-       
+
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
 
-       
+
         DomainHint,
 
-       
+
         GeolocationHint,
 
-       
+
         IPHint,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1318,7 +1318,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ItemsChoiceType8[] itemsElementNameField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("Description", typeof(localizedNameType))]
         [System.Xml.Serialization.XmlElementAttribute("DisplayName", typeof(localizedNameType))]
@@ -1339,7 +1339,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType8[] ItemsElementName
@@ -1355,7 +1355,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1369,7 +1369,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string valueField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
         public string lang
         {
@@ -1383,7 +1383,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
@@ -1398,7 +1398,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1412,7 +1412,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string valueField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
         public string lang
         {
@@ -1426,7 +1426,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute(DataType = "anyURI")]
         public string Value
         {
@@ -1441,7 +1441,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1455,7 +1455,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string[] textField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
         public string lang
         {
@@ -1469,7 +1469,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] Text
         {
@@ -1484,7 +1484,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1502,7 +1502,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string valueField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
         public string height
         {
@@ -1516,7 +1516,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
         public string width
         {
@@ -1530,7 +1530,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
         public string lang
         {
@@ -1544,7 +1544,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute(DataType = "anyURI")]
         public string Value
         {
@@ -1559,37 +1559,37 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:metadata:ui", IncludeInSchema = false)]
     public enum ItemsChoiceType8
     {
 
-       
+
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
 
-       
+
         Description,
 
-       
+
         DisplayName,
 
-       
+
         InformationURL,
 
-       
+
         Keywords,
 
-       
+
         Logo,
 
-       
+
         PrivacyStatementURL,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1607,7 +1607,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string maxKeySizeField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Any
         {
@@ -1621,7 +1621,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Algorithm
         {
@@ -1635,7 +1635,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
         public string MinKeySize
         {
@@ -1649,7 +1649,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
         public string MaxKeySize
         {
@@ -1664,7 +1664,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1678,7 +1678,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string algorithmField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Any
         {
@@ -1692,7 +1692,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Algorithm
         {
@@ -1707,7 +1707,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1719,7 +1719,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlElement[] anyField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Any
         {
@@ -1734,7 +1734,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1748,7 +1748,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string valueField;
 
-       
+
         public StatusCodeType StatusCode
         {
             get
@@ -1761,7 +1761,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Value
         {
@@ -1776,7 +1776,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1792,7 +1792,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private StatusDetailType statusDetailField;
 
-       
+
         public StatusCodeType StatusCode
         {
             get
@@ -1805,7 +1805,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public string StatusMessage
         {
             get
@@ -1818,7 +1818,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public StatusDetailType StatusDetail
         {
             get
@@ -1832,7 +1832,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NameIDMappingResponseType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ArtifactResponseType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ResponseType))]
@@ -1865,7 +1865,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string consentField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public NameIDType Issuer
         {
@@ -1879,7 +1879,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public SignatureType Signature
         {
@@ -1893,7 +1893,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public ExtensionsType1 Extensions
         {
             get
@@ -1906,7 +1906,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public StatusType Status
         {
             get
@@ -1919,7 +1919,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string ID
         {
@@ -1933,7 +1933,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "NCName")]
         public string InResponseTo
         {
@@ -1947,7 +1947,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Version
         {
@@ -1961,7 +1961,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime IssueInstant
         {
@@ -1975,7 +1975,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Destination
         {
@@ -1989,7 +1989,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Consent
         {
@@ -2004,7 +2004,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2024,7 +2024,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string valueField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string NameQualifier
         {
@@ -2038,7 +2038,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string SPNameQualifier
         {
@@ -2052,7 +2052,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Format
         {
@@ -2066,7 +2066,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string SPProvidedID
         {
@@ -2080,7 +2080,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
@@ -2095,7 +2095,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2115,7 +2115,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string idField;
 
-       
+
         public SignedInfoType SignedInfo
         {
             get
@@ -2128,7 +2128,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public SignatureValueType SignatureValue
         {
             get
@@ -2141,7 +2141,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public KeyInfoType KeyInfo
         {
             get
@@ -2154,7 +2154,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Object")]
         public ObjectType[] Object
         {
@@ -2168,7 +2168,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -2183,7 +2183,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2201,7 +2201,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string idField;
 
-       
+
         public CanonicalizationMethodType CanonicalizationMethod
         {
             get
@@ -2214,7 +2214,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public SignatureMethodType SignatureMethod
         {
             get
@@ -2227,7 +2227,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Reference")]
         public ReferenceType1[] Reference
         {
@@ -2241,7 +2241,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -2256,7 +2256,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2270,7 +2270,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string algorithmField;
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlNode[] Any
@@ -2285,7 +2285,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Algorithm
         {
@@ -2300,7 +2300,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2316,7 +2316,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string algorithmField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "integer")]
         public string HMACOutputLength
         {
@@ -2330,7 +2330,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlNode[] Any
@@ -2345,7 +2345,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Algorithm
         {
@@ -2360,7 +2360,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2374,7 +2374,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private byte[] valueField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -2388,7 +2388,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute(DataType = "base64Binary")]
         public byte[] Value
         {
@@ -2403,7 +2403,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2421,7 +2421,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string encodingField;
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlNode[] Any
@@ -2436,7 +2436,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -2450,7 +2450,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string MimeType
         {
@@ -2464,7 +2464,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Encoding
         {
@@ -2479,7 +2479,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2491,7 +2491,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlElement[] anyField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Any
         {
@@ -2506,7 +2506,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2518,7 +2518,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private object itemField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("EncryptedID", typeof(EncryptedElementType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         [System.Xml.Serialization.XmlElementAttribute("NameID", typeof(NameIDType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public object Item
@@ -2534,7 +2534,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2548,7 +2548,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private EncryptedKeyType[] encryptedKeyField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2001/04/xmlenc#")]
         public EncryptedDataType EncryptedData
         {
@@ -2562,7 +2562,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("EncryptedKey", Namespace = "http://www.w3.org/2001/04/xmlenc#")]
         public EncryptedKeyType[] EncryptedKey
         {
@@ -2577,7 +2577,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2588,7 +2588,7 @@ namespace MetadataBuilder.Schema.Metadata
     {
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EncryptedKeyType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EncryptedDataType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
@@ -2615,7 +2615,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string encodingField;
 
-       
+
         public EncryptionMethodType EncryptionMethod
         {
             get
@@ -2628,7 +2628,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public KeyInfoType KeyInfo
         {
@@ -2642,7 +2642,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public CipherDataType CipherData
         {
             get
@@ -2655,7 +2655,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public EncryptionPropertiesType EncryptionProperties
         {
             get
@@ -2668,7 +2668,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -2682,7 +2682,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Type
         {
@@ -2696,7 +2696,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string MimeType
         {
@@ -2710,7 +2710,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Encoding
         {
@@ -2725,7 +2725,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2743,7 +2743,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string algorithmField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "integer")]
         public string KeySize
         {
@@ -2757,7 +2757,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
         public byte[] OAEPparams
         {
@@ -2771,7 +2771,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlNode[] Any
@@ -2786,7 +2786,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Algorithm
         {
@@ -2801,7 +2801,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2813,7 +2813,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private object itemField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("CipherReference", typeof(CipherReferenceType))]
         [System.Xml.Serialization.XmlElementAttribute("CipherValue", typeof(byte[]), DataType = "base64Binary")]
         public object Item
@@ -2829,7 +2829,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2843,7 +2843,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string uRIField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Transforms")]
         public TransformsType1 Item
         {
@@ -2857,7 +2857,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string URI
         {
@@ -2872,7 +2872,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2883,7 +2883,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private TransformType[] transformField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Transform", Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public TransformType[] Transform
         {
@@ -2898,7 +2898,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2912,7 +2912,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string idField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("EncryptionProperty")]
         public EncryptionPropertyType[] EncryptionProperty
         {
@@ -2926,7 +2926,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -2941,7 +2941,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2961,7 +2961,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlAttribute[] anyAttrField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Items
         {
@@ -2975,7 +2975,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] Text
         {
@@ -2989,7 +2989,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Target
         {
@@ -3003,7 +3003,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string Id
         {
@@ -3017,7 +3017,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
         public System.Xml.XmlAttribute[] AnyAttr
         {
@@ -3032,7 +3032,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3048,7 +3048,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string recipientField;
 
-       
+
         public ReferenceList ReferenceList
         {
             get
@@ -3061,7 +3061,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public string CarriedKeyName
         {
             get
@@ -3074,7 +3074,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Recipient
         {
@@ -3089,7 +3089,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3103,7 +3103,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ItemsChoiceType3[] itemsElementNameField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("DataReference", typeof(ReferenceType))]
         [System.Xml.Serialization.XmlElementAttribute("KeyReference", typeof(ReferenceType))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
@@ -3119,7 +3119,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType3[] ItemsElementName
@@ -3135,7 +3135,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3148,7 +3148,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string uRIField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Any
         {
@@ -3162,7 +3162,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string URI
         {
@@ -3177,21 +3177,21 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2001/04/xmlenc#", IncludeInSchema = false)]
     public enum ItemsChoiceType3
     {
 
-       
+
         DataReference,
 
-       
+
         KeyReference,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3203,7 +3203,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlElement anyField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement Any
         {
@@ -3218,7 +3218,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3230,7 +3230,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private object[] itemsField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Assertion", typeof(AssertionType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         [System.Xml.Serialization.XmlElementAttribute("EncryptedAssertion", typeof(EncryptedElementType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public object[] Items
@@ -3246,7 +3246,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3274,7 +3274,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.DateTime issueInstantField;
 
-       
+
         public NameIDType Issuer
         {
             get
@@ -3287,7 +3287,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public SignatureType Signature
         {
@@ -3301,7 +3301,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public SubjectType Subject
         {
             get
@@ -3314,7 +3314,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public ConditionsType Conditions
         {
             get
@@ -3327,7 +3327,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public AdviceType Advice
         {
             get
@@ -3340,7 +3340,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AttributeStatement", typeof(AttributeStatementType))]
         [System.Xml.Serialization.XmlElementAttribute("AuthnStatement", typeof(AuthnStatementType))]
         [System.Xml.Serialization.XmlElementAttribute("AuthzDecisionStatement", typeof(AuthzDecisionStatementType))]
@@ -3357,7 +3357,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Version
         {
@@ -3371,7 +3371,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string ID
         {
@@ -3385,7 +3385,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime IssueInstant
         {
@@ -3400,7 +3400,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3412,7 +3412,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private object[] itemsField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("BaseID", typeof(BaseIDAbstractType))]
         [System.Xml.Serialization.XmlElementAttribute("EncryptedID", typeof(EncryptedElementType))]
         [System.Xml.Serialization.XmlElementAttribute("NameID", typeof(NameIDType))]
@@ -3430,7 +3430,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3446,7 +3446,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string methodField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("BaseID", typeof(BaseIDAbstractType))]
         [System.Xml.Serialization.XmlElementAttribute("EncryptedID", typeof(EncryptedElementType))]
         [System.Xml.Serialization.XmlElementAttribute("NameID", typeof(NameIDType))]
@@ -3462,7 +3462,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public SubjectConfirmationDataType SubjectConfirmationData
         {
             get
@@ -3475,7 +3475,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Method
         {
@@ -3490,7 +3490,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeyInfoConfirmationDataType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
@@ -3503,7 +3503,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string[] textField;
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] Text
         {
@@ -3518,7 +3518,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3528,7 +3528,7 @@ namespace MetadataBuilder.Schema.Metadata
     {
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3548,7 +3548,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool notOnOrAfterFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AudienceRestriction", typeof(AudienceRestrictionType))]
         [System.Xml.Serialization.XmlElementAttribute("Condition", typeof(ConditionAbstractType))]
         [System.Xml.Serialization.XmlElementAttribute("OneTimeUse", typeof(OneTimeUseType))]
@@ -3565,7 +3565,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime NotBefore
         {
@@ -3579,7 +3579,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool NotBeforeSpecified
         {
@@ -3593,7 +3593,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime NotOnOrAfter
         {
@@ -3607,7 +3607,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool NotOnOrAfterSpecified
         {
@@ -3622,7 +3622,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3634,7 +3634,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string[] audienceField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Audience", DataType = "anyURI")]
         public string[] Audience
         {
@@ -3649,7 +3649,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProxyRestrictionType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(OneTimeUseType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceRestrictionType))]
@@ -3663,7 +3663,7 @@ namespace MetadataBuilder.Schema.Metadata
     {
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3674,7 +3674,7 @@ namespace MetadataBuilder.Schema.Metadata
     {
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3688,7 +3688,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string countField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Audience", DataType = "anyURI")]
         public string[] Audience
         {
@@ -3702,7 +3702,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
         public string Count
         {
@@ -3717,7 +3717,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3731,7 +3731,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ItemsChoiceType4[] itemsElementNameField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         [System.Xml.Serialization.XmlElementAttribute("Assertion", typeof(AssertionType))]
         [System.Xml.Serialization.XmlElementAttribute("AssertionIDRef", typeof(string), DataType = "NCName")]
@@ -3750,7 +3750,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType4[] ItemsElementName
@@ -3766,31 +3766,31 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion", IncludeInSchema = false)]
     public enum ItemsChoiceType4
     {
 
-       
+
         [System.Xml.Serialization.XmlEnumAttribute("##any:")]
         Item,
 
-       
+
         Assertion,
 
-       
+
         AssertionIDRef,
 
-       
+
         AssertionURIRef,
 
-       
+
         EncryptedAssertion,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3802,7 +3802,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private object[] itemsField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Attribute", typeof(AttributeType))]
         [System.Xml.Serialization.XmlElementAttribute("EncryptedAttribute", typeof(EncryptedElementType))]
         public object[] Items
@@ -3818,7 +3818,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequestedAttributeType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
@@ -3839,7 +3839,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlAttribute[] anyAttrField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AttributeValue", IsNullable = true)]
         public object[] AttributeValue
         {
@@ -3853,7 +3853,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
         {
@@ -3867,7 +3867,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string NameFormat
         {
@@ -3881,7 +3881,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string FriendlyName
         {
@@ -3895,7 +3895,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
         public System.Xml.XmlAttribute[] AnyAttr
         {
@@ -3910,7 +3910,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3924,7 +3924,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool isRequiredFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool isRequired
         {
@@ -3938,7 +3938,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool isRequiredSpecified
         {
@@ -3953,7 +3953,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AttributeStatementType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthzDecisionStatementType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthnStatementType))]
@@ -3967,7 +3967,7 @@ namespace MetadataBuilder.Schema.Metadata
     {
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3989,7 +3989,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool sessionNotOnOrAfterFieldSpecified;
 
-       
+
         public SubjectLocalityType SubjectLocality
         {
             get
@@ -4002,7 +4002,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public AuthnContextType AuthnContext
         {
             get
@@ -4015,7 +4015,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime AuthnInstant
         {
@@ -4029,7 +4029,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string SessionIndex
         {
@@ -4043,7 +4043,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime SessionNotOnOrAfter
         {
@@ -4057,7 +4057,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool SessionNotOnOrAfterSpecified
         {
@@ -4072,7 +4072,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4086,7 +4086,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string dNSNameField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Address
         {
@@ -4100,7 +4100,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string DNSName
         {
@@ -4115,7 +4115,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4131,7 +4131,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string[] authenticatingAuthorityField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AuthnContextClassRef", typeof(string), DataType = "anyURI")]
         [System.Xml.Serialization.XmlElementAttribute("AuthnContextDecl", typeof(object))]
         [System.Xml.Serialization.XmlElementAttribute("AuthnContextDeclRef", typeof(string), DataType = "anyURI")]
@@ -4148,7 +4148,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType5[] ItemsElementName
@@ -4163,7 +4163,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AuthenticatingAuthority", DataType = "anyURI")]
         public string[] AuthenticatingAuthority
         {
@@ -4178,24 +4178,24 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion", IncludeInSchema = false)]
     public enum ItemsChoiceType5
     {
 
-       
+
         AuthnContextClassRef,
 
-       
+
         AuthnContextDecl,
 
-       
+
         AuthnContextDeclRef,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4213,7 +4213,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private DecisionType decisionField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Action")]
         public ActionType[] Action
         {
@@ -4227,7 +4227,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public EvidenceType Evidence
         {
             get
@@ -4240,7 +4240,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Resource
         {
@@ -4254,7 +4254,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public DecisionType Decision
         {
@@ -4269,7 +4269,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4283,7 +4283,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string valueField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Namespace
         {
@@ -4297,7 +4297,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value
         {
@@ -4312,7 +4312,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4326,7 +4326,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ItemsChoiceType6[] itemsElementNameField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Assertion", typeof(AssertionType))]
         [System.Xml.Serialization.XmlElementAttribute("AssertionIDRef", typeof(string), DataType = "NCName")]
         [System.Xml.Serialization.XmlElementAttribute("AssertionURIRef", typeof(string), DataType = "anyURI")]
@@ -4344,7 +4344,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType6[] ItemsElementName
@@ -4360,44 +4360,44 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion", IncludeInSchema = false)]
     public enum ItemsChoiceType6
     {
 
-       
+
         Assertion,
 
-       
+
         AssertionIDRef,
 
-       
+
         AssertionURIRef,
 
-       
+
         EncryptedAssertion,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
     public enum DecisionType
     {
 
-       
+
         Permit,
 
-       
+
         Deny,
 
-       
+
         Indeterminate,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4408,7 +4408,7 @@ namespace MetadataBuilder.Schema.Metadata
     {
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4424,7 +4424,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string locField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string ProviderID
         {
@@ -4438,7 +4438,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
         {
@@ -4452,7 +4452,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Loc
         {
@@ -4467,7 +4467,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4481,7 +4481,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string getCompleteField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("IDPEntry")]
         public IDPEntryType[] IDPEntry
         {
@@ -4495,7 +4495,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(DataType = "anyURI")]
         public string GetComplete
         {
@@ -4510,7 +4510,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4526,7 +4526,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string proxyCountField;
 
-       
+
         public IDPListType IDPList
         {
             get
@@ -4539,7 +4539,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("RequesterID", DataType = "anyURI")]
         public string[] RequesterID
         {
@@ -4553,7 +4553,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
         public string ProxyCount
         {
@@ -4568,7 +4568,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4586,7 +4586,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool allowCreateFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Format
         {
@@ -4600,7 +4600,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string SPNameQualifier
         {
@@ -4614,7 +4614,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool AllowCreate
         {
@@ -4628,7 +4628,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool AllowCreateSpecified
         {
@@ -4643,7 +4643,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4661,7 +4661,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool comparisonFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AuthnContextClassRef", typeof(string), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion", DataType = "anyURI")]
         [System.Xml.Serialization.XmlElementAttribute("AuthnContextDeclRef", typeof(string), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion", DataType = "anyURI")]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
@@ -4677,7 +4677,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType7[] ItemsElementName
@@ -4692,7 +4692,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public AuthnContextComparisonType Comparison
         {
@@ -4706,7 +4706,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ComparisonSpecified
         {
@@ -4721,43 +4721,43 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:protocol", IncludeInSchema = false)]
     public enum ItemsChoiceType7
     {
 
-       
+
         [System.Xml.Serialization.XmlEnumAttribute("urn:oasis:names:tc:SAML:2.0:assertion:AuthnContextClassRef")]
         AuthnContextClassRef,
 
-       
+
         [System.Xml.Serialization.XmlEnumAttribute("urn:oasis:names:tc:SAML:2.0:assertion:AuthnContextDeclRef")]
         AuthnContextDeclRef,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:protocol")]
     public enum AuthnContextComparisonType
     {
 
-       
+
         exact,
 
-       
+
         minimum,
 
-       
+
         maximum,
 
-       
+
         better,
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(NameIDMappingRequestType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(LogoutRequestType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManageNameIDRequestType))]
@@ -4792,7 +4792,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string consentField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public NameIDType Issuer
         {
@@ -4806,7 +4806,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public SignatureType Signature
         {
@@ -4820,7 +4820,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public ExtensionsType1 Extensions
         {
             get
@@ -4833,7 +4833,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string ID
         {
@@ -4847,7 +4847,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Version
         {
@@ -4861,7 +4861,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime IssueInstant
         {
@@ -4875,7 +4875,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Destination
         {
@@ -4889,7 +4889,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Consent
         {
@@ -4904,7 +4904,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4918,7 +4918,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private NameIDPolicyType nameIDPolicyField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("BaseID", typeof(BaseIDAbstractType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         [System.Xml.Serialization.XmlElementAttribute("EncryptedID", typeof(EncryptedElementType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         [System.Xml.Serialization.XmlElementAttribute("NameID", typeof(NameIDType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
@@ -4934,7 +4934,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public NameIDPolicyType NameIDPolicy
         {
             get
@@ -4948,7 +4948,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4968,7 +4968,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool notOnOrAfterFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("BaseID", typeof(BaseIDAbstractType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         [System.Xml.Serialization.XmlElementAttribute("EncryptedID", typeof(EncryptedElementType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         [System.Xml.Serialization.XmlElementAttribute("NameID", typeof(NameIDType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
@@ -4984,7 +4984,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("SessionIndex")]
         public string[] SessionIndex
         {
@@ -4998,7 +4998,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Reason
         {
@@ -5012,7 +5012,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime NotOnOrAfter
         {
@@ -5026,7 +5026,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool NotOnOrAfterSpecified
         {
@@ -5041,7 +5041,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5055,7 +5055,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private object item1Field;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("EncryptedID", typeof(EncryptedElementType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         [System.Xml.Serialization.XmlElementAttribute("NameID", typeof(NameIDType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public object Item
@@ -5070,7 +5070,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("NewEncryptedID", typeof(EncryptedElementType))]
         [System.Xml.Serialization.XmlElementAttribute("NewID", typeof(string))]
         [System.Xml.Serialization.XmlElementAttribute("Terminate", typeof(TerminateType))]
@@ -5087,7 +5087,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5099,7 +5099,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string artifactField;
 
-       
+
         public string Artifact
         {
             get
@@ -5113,7 +5113,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5155,7 +5155,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string providerNameField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public SubjectType Subject
         {
@@ -5169,7 +5169,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public NameIDPolicyType NameIDPolicy
         {
             get
@@ -5182,7 +5182,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public ConditionsType Conditions
         {
@@ -5196,7 +5196,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public RequestedAuthnContextType RequestedAuthnContext
         {
             get
@@ -5209,7 +5209,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public ScopingType Scoping
         {
             get
@@ -5222,7 +5222,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool ForceAuthn
         {
@@ -5236,7 +5236,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ForceAuthnSpecified
         {
@@ -5250,7 +5250,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool IsPassive
         {
@@ -5264,7 +5264,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool IsPassiveSpecified
         {
@@ -5278,7 +5278,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string ProtocolBinding
         {
@@ -5292,7 +5292,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort AssertionConsumerServiceIndex
         {
@@ -5306,7 +5306,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool AssertionConsumerServiceIndexSpecified
         {
@@ -5320,7 +5320,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string AssertionConsumerServiceURL
         {
@@ -5334,7 +5334,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort AttributeConsumingServiceIndex
         {
@@ -5348,7 +5348,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool AttributeConsumingServiceIndexSpecified
         {
@@ -5362,7 +5362,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string ProviderName
         {
@@ -5377,7 +5377,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthzDecisionQueryType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AttributeQueryType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthnQueryType))]
@@ -5392,7 +5392,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private SubjectType subjectField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public SubjectType Subject
         {
@@ -5407,7 +5407,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5423,7 +5423,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string resourceField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Action", Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public ActionType[] Action
         {
@@ -5437,7 +5437,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public EvidenceType Evidence
         {
@@ -5451,7 +5451,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Resource
         {
@@ -5466,7 +5466,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5478,7 +5478,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private AttributeType[] attributeField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Attribute", Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public AttributeType[] Attribute
         {
@@ -5493,7 +5493,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5507,7 +5507,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string sessionIndexField;
 
-       
+
         public RequestedAuthnContextType RequestedAuthnContext
         {
             get
@@ -5520,7 +5520,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string SessionIndex
         {
@@ -5535,7 +5535,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5547,7 +5547,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string[] assertionIDRefField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AssertionIDRef", Namespace = "urn:oasis:names:tc:SAML:2.0:assertion", DataType = "NCName")]
         public string[] AssertionIDRef
         {
@@ -5562,7 +5562,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5576,7 +5576,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string valueField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string @namespace
         {
@@ -5590,7 +5590,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlTextAttribute(DataType = "anyURI")]
         public string Value
         {
@@ -5605,7 +5605,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5635,7 +5635,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlAttribute[] anyAttrField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public SignatureType Signature
         {
@@ -5649,7 +5649,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public ExtensionsType Extensions
         {
             get
@@ -5662,7 +5662,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AffiliateMember", DataType = "anyURI")]
         public string[] AffiliateMember
         {
@@ -5676,7 +5676,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("KeyDescriptor")]
         public KeyDescriptorType[] KeyDescriptor
         {
@@ -5690,7 +5690,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string affiliationOwnerID
         {
@@ -5704,7 +5704,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime validUntil
         {
@@ -5718,7 +5718,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool validUntilSpecified
         {
@@ -5732,7 +5732,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "duration")]
         public string cacheDuration
         {
@@ -5746,7 +5746,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string ID
         {
@@ -5760,7 +5760,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
         public System.Xml.XmlAttribute[] AnyAttr
         {
@@ -5775,7 +5775,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5805,7 +5805,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5823,7 +5823,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool useFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public KeyInfoType KeyInfo
         {
@@ -5837,7 +5837,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("EncryptionMethod")]
         public EncryptionMethodType[] EncryptionMethod
         {
@@ -5851,7 +5851,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public KeyTypes use
         {
@@ -5865,7 +5865,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool useSpecified
         {
@@ -5880,21 +5880,21 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:metadata")]
     public enum KeyTypes
     {
 
-       
+
         encryption,
 
-       
+
         signing,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5916,7 +5916,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool isDefaultFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ServiceName")]
         public localizedNameType[] ServiceName
         {
@@ -5930,7 +5930,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ServiceDescription")]
         public localizedNameType[] ServiceDescription
         {
@@ -5944,7 +5944,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("RequestedAttribute")]
         public RequestedAttributeType[] RequestedAttribute
         {
@@ -5958,7 +5958,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort index
         {
@@ -5972,7 +5972,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool isDefault
         {
@@ -5986,7 +5986,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool isDefaultSpecified
         {
@@ -6001,7 +6001,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6027,7 +6027,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlAttribute[] anyAttrField;
 
-       
+
         public ExtensionsType Extensions
         {
             get
@@ -6040,7 +6040,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public string Company
         {
             get
@@ -6053,7 +6053,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public string GivenName
         {
             get
@@ -6066,7 +6066,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public string SurName
         {
             get
@@ -6079,7 +6079,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("EmailAddress", DataType = "anyURI")]
         public string[] EmailAddress
         {
@@ -6093,7 +6093,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("TelephoneNumber")]
         public string[] TelephoneNumber
         {
@@ -6107,7 +6107,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ContactTypeType contactType
         {
@@ -6121,7 +6121,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
         public System.Xml.XmlAttribute[] AnyAttr
         {
@@ -6136,30 +6136,30 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:metadata")]
     public enum ContactTypeType
     {
 
-       
+
         technical,
 
-       
+
         support,
 
-       
+
         administrative,
 
-       
+
         billing,
 
-       
+
         other,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6179,7 +6179,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlAttribute[] anyAttrField;
 
-       
+
         public ExtensionsType Extensions
         {
             get
@@ -6192,7 +6192,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("OrganizationName")]
         public localizedNameType[] OrganizationName
         {
@@ -6206,7 +6206,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("OrganizationDisplayName")]
         public localizedNameType[] OrganizationDisplayName
         {
@@ -6220,7 +6220,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("OrganizationURL")]
         public localizedURIType[] OrganizationURL
         {
@@ -6234,7 +6234,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
         public System.Xml.XmlAttribute[] AnyAttr
         {
@@ -6249,7 +6249,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AttributeAuthorityDescriptorType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PDPDescriptorType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthnAuthorityDescriptorType))]
@@ -6289,7 +6289,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlAttribute[] anyAttrField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public SignatureType Signature
         {
@@ -6303,7 +6303,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public ExtensionsType Extensions
         {
             get
@@ -6316,7 +6316,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("KeyDescriptor")]
         public KeyDescriptorType[] KeyDescriptor
         {
@@ -6330,7 +6330,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public OrganizationType Organization
         {
             get
@@ -6343,7 +6343,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ContactPerson")]
         public ContactType[] ContactPerson
         {
@@ -6357,7 +6357,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string ID
         {
@@ -6371,7 +6371,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime validUntil
         {
@@ -6385,7 +6385,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool validUntilSpecified
         {
@@ -6399,7 +6399,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "duration")]
         public string cacheDuration
         {
@@ -6413,7 +6413,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string[] protocolSupportEnumeration
         {
@@ -6427,7 +6427,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string errorURL
         {
@@ -6441,7 +6441,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
         public System.Xml.XmlAttribute[] AnyAttr
         {
@@ -6456,7 +6456,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6476,7 +6476,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private AttributeType[] attributeField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AttributeService")]
         public EndpointType[] AttributeService
         {
@@ -6490,7 +6490,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AssertionIDRequestService")]
         public EndpointType[] AssertionIDRequestService
         {
@@ -6504,7 +6504,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("NameIDFormat", DataType = "anyURI")]
         public string[] NameIDFormat
         {
@@ -6518,7 +6518,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AttributeProfile", DataType = "anyURI")]
         public string[] AttributeProfile
         {
@@ -6532,7 +6532,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Attribute", Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public AttributeType[] Attribute
         {
@@ -6547,7 +6547,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(IndexedEndpointType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
@@ -6568,7 +6568,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlAttribute[] anyAttrField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Any
         {
@@ -6582,7 +6582,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Binding
         {
@@ -6596,7 +6596,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string Location
         {
@@ -6610,7 +6610,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string ResponseLocation
         {
@@ -6624,7 +6624,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
         public System.Xml.XmlAttribute[] AnyAttr
         {
@@ -6639,7 +6639,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6655,7 +6655,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool isDefaultFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ushort index
         {
@@ -6669,7 +6669,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool isDefault
         {
@@ -6683,7 +6683,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool isDefaultSpecified
         {
@@ -6698,7 +6698,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6714,7 +6714,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string[] nameIDFormatField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AuthzService")]
         public EndpointType[] AuthzService
         {
@@ -6728,7 +6728,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AssertionIDRequestService")]
         public EndpointType[] AssertionIDRequestService
         {
@@ -6742,7 +6742,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("NameIDFormat", DataType = "anyURI")]
         public string[] NameIDFormat
         {
@@ -6757,7 +6757,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6773,7 +6773,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string[] nameIDFormatField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AuthnQueryService")]
         public EndpointType[] AuthnQueryService
         {
@@ -6787,7 +6787,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AssertionIDRequestService")]
         public EndpointType[] AssertionIDRequestService
         {
@@ -6801,7 +6801,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("NameIDFormat", DataType = "anyURI")]
         public string[] NameIDFormat
         {
@@ -6816,7 +6816,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SPSSODescriptorType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(IDPSSODescriptorType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
@@ -6835,7 +6835,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string[] nameIDFormatField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ArtifactResolutionService")]
         public IndexedEndpointType[] ArtifactResolutionService
         {
@@ -6849,7 +6849,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("SingleLogoutService")]
         public EndpointType[] SingleLogoutService
         {
@@ -6863,7 +6863,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ManageNameIDService")]
         public EndpointType[] ManageNameIDService
         {
@@ -6877,7 +6877,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("NameIDFormat", DataType = "anyURI")]
         public string[] NameIDFormat
         {
@@ -6892,7 +6892,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6914,7 +6914,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool wantAssertionsSignedFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AssertionConsumerService")]
         public IndexedEndpointType[] AssertionConsumerService
         {
@@ -6928,7 +6928,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AttributeConsumingService")]
         public AttributeConsumingServiceType[] AttributeConsumingService
         {
@@ -6942,7 +6942,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool AuthnRequestsSigned
         {
@@ -6956,7 +6956,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool AuthnRequestsSignedSpecified
         {
@@ -6970,7 +6970,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool WantAssertionsSigned
         {
@@ -6984,7 +6984,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool WantAssertionsSignedSpecified
         {
@@ -6999,7 +6999,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7023,7 +7023,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool wantAuthnRequestsSignedFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("SingleSignOnService")]
         public EndpointType[] SingleSignOnService
         {
@@ -7037,7 +7037,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("NameIDMappingService")]
         public EndpointType[] NameIDMappingService
         {
@@ -7051,7 +7051,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AssertionIDRequestService")]
         public EndpointType[] AssertionIDRequestService
         {
@@ -7065,7 +7065,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AttributeProfile", DataType = "anyURI")]
         public string[] AttributeProfile
         {
@@ -7079,7 +7079,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Attribute", Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public AttributeType[] Attribute
         {
@@ -7093,7 +7093,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool WantAuthnRequestsSigned
         {
@@ -7107,7 +7107,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool WantAuthnRequestsSignedSpecified
         {
@@ -7122,7 +7122,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7156,7 +7156,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlAttribute[] anyAttrField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public SignatureType Signature
         {
@@ -7169,8 +7169,8 @@ namespace MetadataBuilder.Schema.Metadata
                 this.signatureField = value;
             }
         }
-
-       
+        
+        [System.Xml.Serialization.XmlElementAttribute("Extensions")]
         public ExtensionsType Extensions
         {
             get
@@ -7183,7 +7183,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AffiliationDescriptor", typeof(AffiliationDescriptorType))]
         [System.Xml.Serialization.XmlElementAttribute("AttributeAuthorityDescriptor", typeof(AttributeAuthorityDescriptorType))]
         [System.Xml.Serialization.XmlElementAttribute("AuthnAuthorityDescriptor", typeof(AuthnAuthorityDescriptorType))]
@@ -7203,7 +7203,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public OrganizationType Organization
         {
             get
@@ -7216,7 +7216,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ContactPerson")]
         public ContactType[] ContactPerson
         {
@@ -7230,7 +7230,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AdditionalMetadataLocation")]
         public AdditionalMetadataLocationType[] AdditionalMetadataLocation
         {
@@ -7244,7 +7244,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string entityID
         {
@@ -7258,7 +7258,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime validUntil
         {
@@ -7272,7 +7272,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool validUntilSpecified
         {
@@ -7286,7 +7286,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "duration")]
         public string cacheDuration
         {
@@ -7300,7 +7300,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string ID
         {
@@ -7314,7 +7314,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAnyAttributeAttribute()]
         public System.Xml.XmlAttribute[] AnyAttr
         {
@@ -7329,7 +7329,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7355,7 +7355,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string nameField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
         public SignatureType Signature
         {
@@ -7369,7 +7369,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public ExtensionsType Extensions
         {
             get
@@ -7382,7 +7382,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("EntitiesDescriptor", typeof(EntitiesDescriptorType))]
         [System.Xml.Serialization.XmlElementAttribute("EntityDescriptor", typeof(EntityDescriptorType))]
         public object[] Items
@@ -7397,7 +7397,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public System.DateTime validUntil
         {
@@ -7411,7 +7411,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool validUntilSpecified
         {
@@ -7425,7 +7425,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "duration")]
         public string cacheDuration
         {
@@ -7439,7 +7439,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string ID
         {
@@ -7453,7 +7453,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Name
         {
@@ -7468,7 +7468,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7534,7 +7534,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute(Order = 0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] PreviousSession
@@ -7549,7 +7549,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute(Order = 1)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] ResumeSession
@@ -7564,7 +7564,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
         public PublicKeyType DigSig
         {
@@ -7578,7 +7578,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
         public PasswordType Password
         {
@@ -7592,7 +7592,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
         public RestrictedPasswordType RestrictedPassword
         {
@@ -7606,7 +7606,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute(Order = 5)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] ZeroKnowledge
@@ -7621,7 +7621,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
         public SharedSecretChallengeResponseType SharedSecretChallengeResponse
         {
@@ -7635,7 +7635,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute(Order = 7)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] SharedSecretDynamicPlaintext
@@ -7650,7 +7650,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute(Order = 8)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] IPAddress
@@ -7665,7 +7665,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Order = 9)]
         public PublicKeyType AsymmetricDecryption
         {
@@ -7679,7 +7679,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Order = 10)]
         public PublicKeyType AsymmetricKeyAgreement
         {
@@ -7693,7 +7693,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute(Order = 11)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] SubscriberLineNumber
@@ -7708,7 +7708,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute(Order = 12)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] UserSuffix
@@ -7723,7 +7723,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute(Order = 13)]
         public ComplexAuthenticatorType ComplexAuthenticator
         {
@@ -7737,7 +7737,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute("PreviousSession", Order = 14)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] PreviousSession1
@@ -7752,7 +7752,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute("ResumeSession", Order = 15)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] ResumeSession1
@@ -7767,7 +7767,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("DigSig", Order = 16)]
         public PublicKeyType DigSig1
         {
@@ -7781,7 +7781,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Password", Order = 17)]
         public PasswordType Password1
         {
@@ -7795,7 +7795,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("RestrictedPassword", Order = 18)]
         public RestrictedPasswordType RestrictedPassword1
         {
@@ -7809,7 +7809,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute("ZeroKnowledge", Order = 19)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] ZeroKnowledge1
@@ -7824,7 +7824,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("SharedSecretChallengeResponse", Order = 20)]
         public SharedSecretChallengeResponseType SharedSecretChallengeResponse1
         {
@@ -7838,7 +7838,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute("SharedSecretDynamicPlaintext", Order = 21)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] SharedSecretDynamicPlaintext1
@@ -7853,7 +7853,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute("IPAddress", Order = 22)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] IPAddress1
@@ -7868,7 +7868,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AsymmetricDecryption", Order = 23)]
         public PublicKeyType AsymmetricDecryption1
         {
@@ -7882,7 +7882,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("AsymmetricKeyAgreement", Order = 24)]
         public PublicKeyType AsymmetricKeyAgreement1
         {
@@ -7896,7 +7896,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute("SubscriberLineNumber", Order = 25)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] SubscriberLineNumber1
@@ -7911,7 +7911,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayAttribute("UserSuffix", Order = 26)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] UserSuffix1
@@ -7926,7 +7926,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension", Order = 27)]
         public ExtensionType[] Extension
         {
@@ -7941,7 +7941,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7953,7 +7953,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private System.Xml.XmlElement[] anyField;
 
-       
+
         [System.Xml.Serialization.XmlAnyElementAttribute()]
         public System.Xml.XmlElement[] Any
         {
@@ -7968,7 +7968,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7982,7 +7982,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string keyValidationField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -7996,7 +7996,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string keyValidation
         {
@@ -8011,7 +8011,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RestrictedPasswordType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
@@ -8032,7 +8032,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string externalVerificationField;
 
-       
+
         public LengthType Length
         {
             get
@@ -8045,7 +8045,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public AlphabetType Alphabet
         {
             get
@@ -8058,7 +8058,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public Generation Generation
         {
             get
@@ -8071,7 +8071,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -8085,7 +8085,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string ExternalVerification
         {
@@ -8100,7 +8100,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RestrictedLengthType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
@@ -8115,7 +8115,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string maxField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
         public string min
         {
@@ -8129,7 +8129,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
         public string max
         {
@@ -8144,7 +8144,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8154,7 +8154,7 @@ namespace MetadataBuilder.Schema.Metadata
     {
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8170,7 +8170,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string caseField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string requiredChars
         {
@@ -8184,7 +8184,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string excludedChars
         {
@@ -8198,7 +8198,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string @case
         {
@@ -8213,7 +8213,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8225,7 +8225,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private GenerationMechanism mechanismField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public GenerationMechanism mechanism
         {
@@ -8240,21 +8240,21 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:oasis:names:tc:SAML:2.0:ac")]
     public enum GenerationMechanism
     {
 
-       
+
         principalchosen,
 
-       
+
         automatic,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8265,7 +8265,7 @@ namespace MetadataBuilder.Schema.Metadata
     {
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8279,7 +8279,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string methodField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -8293,7 +8293,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string method
         {
@@ -8308,7 +8308,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8324,7 +8324,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ADSL", typeof(ExtensionOnlyType))]
         [System.Xml.Serialization.XmlElementAttribute("HTTP", typeof(ExtensionOnlyType))]
         [System.Xml.Serialization.XmlElementAttribute("IPSec", typeof(ExtensionOnlyType))]
@@ -8348,7 +8348,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemChoiceType ItemElementName
         {
@@ -8362,7 +8362,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -8377,7 +8377,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8389,7 +8389,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -8404,45 +8404,45 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:ac", IncludeInSchema = false)]
     public enum ItemChoiceType
     {
 
-       
+
         ADSL,
 
-       
+
         HTTP,
 
-       
+
         IPSec,
 
-       
+
         ISDN,
 
-       
+
         MobileNetworkEndToEndEncryption,
 
-       
+
         MobileNetworkNoEncryption,
 
-       
+
         MobileNetworkRadioEncryption,
 
-       
+
         PSTN,
 
-       
+
         SSL,
 
-       
+
         WTLS,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8480,7 +8480,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] PreviousSession
         {
@@ -8494,7 +8494,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] ResumeSession
         {
@@ -8508,7 +8508,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public PublicKeyType DigSig
         {
             get
@@ -8521,7 +8521,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public PasswordType Password
         {
             get
@@ -8534,7 +8534,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public RestrictedPasswordType RestrictedPassword
         {
             get
@@ -8547,7 +8547,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] ZeroKnowledge
         {
@@ -8561,7 +8561,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public SharedSecretChallengeResponseType SharedSecretChallengeResponse
         {
             get
@@ -8574,7 +8574,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] SharedSecretDynamicPlaintext
         {
@@ -8588,7 +8588,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] IPAddress
         {
@@ -8602,7 +8602,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public PublicKeyType AsymmetricDecryption
         {
             get
@@ -8615,7 +8615,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public PublicKeyType AsymmetricKeyAgreement
         {
             get
@@ -8628,7 +8628,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] SubscriberLineNumber
         {
@@ -8642,7 +8642,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] UserSuffix
         {
@@ -8656,7 +8656,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -8671,7 +8671,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8687,7 +8687,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private booleanType deviceInHandField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public DeviceTypeType DeviceType
         {
@@ -8701,7 +8701,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
         public string SeedLength
         {
@@ -8715,7 +8715,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public booleanType DeviceInHand
         {
@@ -8730,35 +8730,35 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:ac")]
     public enum DeviceTypeType
     {
 
-       
+
         hardware,
 
-       
+
         software,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:ac")]
     public enum booleanType
     {
 
-       
+
         @true,
 
-       
+
         @false,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8772,7 +8772,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         public TimeSyncTokenType TimeSyncToken
         {
             get
@@ -8785,7 +8785,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -8800,7 +8800,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8824,7 +8824,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string preauthField;
 
-       
+
         public PasswordType Password
         {
             get
@@ -8837,7 +8837,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public RestrictedPasswordType RestrictedPassword
         {
             get
@@ -8850,7 +8850,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public TokenType Token
         {
             get
@@ -8863,7 +8863,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] Smartcard
         {
@@ -8877,7 +8877,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public ActivationPinType ActivationPin
         {
             get
@@ -8890,7 +8890,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -8904,7 +8904,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
         public string preauth
         {
@@ -8919,7 +8919,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8939,7 +8939,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         public LengthType Length
         {
             get
@@ -8952,7 +8952,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public AlphabetType Alphabet
         {
             get
@@ -8965,7 +8965,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public Generation Generation
         {
             get
@@ -8978,7 +8978,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public ActivationLimitType ActivationLimit
         {
             get
@@ -8991,7 +8991,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9006,7 +9006,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9018,7 +9018,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private object itemField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("ActivationLimitDuration", typeof(ActivationLimitDurationType))]
         [System.Xml.Serialization.XmlElementAttribute("ActivationLimitSession", typeof(ActivationLimitSessionType))]
         [System.Xml.Serialization.XmlElementAttribute("ActivationLimitUsages", typeof(ActivationLimitUsagesType))]
@@ -9035,7 +9035,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9047,7 +9047,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string durationField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "duration")]
         public string duration
         {
@@ -9062,7 +9062,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9073,7 +9073,7 @@ namespace MetadataBuilder.Schema.Metadata
     {
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9085,7 +9085,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string numberField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
         public string number
         {
@@ -9100,7 +9100,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9118,7 +9118,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         public PrincipalAuthenticationMechanismType PrincipalAuthenticationMechanism
         {
             get
@@ -9131,7 +9131,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public AuthenticatorBaseType Authenticator
         {
             get
@@ -9144,7 +9144,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public AuthenticatorTransportProtocolType AuthenticatorTransportProtocol
         {
             get
@@ -9157,7 +9157,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9172,7 +9172,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9186,7 +9186,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] SwitchAudit
         {
@@ -9200,7 +9200,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9215,7 +9215,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9231,7 +9231,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         public SecurityAuditType SecurityAudit
         {
             get
@@ -9244,7 +9244,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] DeactivationCallCenter
         {
@@ -9258,7 +9258,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9273,7 +9273,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9289,7 +9289,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         public KeyActivationType KeyActivation
         {
             get
@@ -9302,7 +9302,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public KeyStorageType KeyStorage
         {
             get
@@ -9315,7 +9315,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9330,7 +9330,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9344,7 +9344,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         public ActivationPinType ActivationPin
         {
             get
@@ -9357,7 +9357,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9372,7 +9372,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9384,7 +9384,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private mediumType mediumField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public mediumType medium
         {
@@ -9399,30 +9399,30 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:ac")]
     public enum mediumType
     {
 
-       
+
         memory,
 
-       
+
         smartcard,
 
-       
+
         token,
 
-       
+
         MobileDevice,
 
-       
+
         MobileAuthCard,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9434,7 +9434,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool sharingField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool sharing
         {
@@ -9449,7 +9449,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9467,7 +9467,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         public KeyActivationType KeyActivation
         {
             get
@@ -9480,7 +9480,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public KeyStorageType KeyStorage
         {
             get
@@ -9493,7 +9493,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public KeySharingType KeySharing
         {
             get
@@ -9506,7 +9506,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9521,7 +9521,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9535,7 +9535,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private ExtensionType[] extensionField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("PrivateKeyProtection", typeof(PrivateKeyProtectionType))]
         [System.Xml.Serialization.XmlElementAttribute("SecretKeyProtection", typeof(SecretKeyProtectionType))]
         public object Item
@@ -9550,7 +9550,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9565,7 +9565,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9577,7 +9577,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string governingAgreementRefField;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         public string governingAgreementRef
         {
@@ -9592,7 +9592,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9614,7 +9614,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool nymFieldSpecified;
 
-       
+
         public PhysicalVerification PhysicalVerification
         {
             get
@@ -9627,7 +9627,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("Extension", IsNullable = false)]
         public ExtensionType[] WrittenConsent
         {
@@ -9641,7 +9641,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("GoverningAgreementRef", IsNullable = false)]
         public GoverningAgreementRefType[] GoverningAgreements
         {
@@ -9655,7 +9655,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9669,7 +9669,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public nymType nym
         {
@@ -9683,7 +9683,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool nymSpecified
         {
@@ -9698,7 +9698,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9712,7 +9712,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private bool credentialLevelFieldSpecified;
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public PhysicalVerificationCredentialLevel credentialLevel
         {
@@ -9726,7 +9726,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool credentialLevelSpecified
         {
@@ -9741,38 +9741,38 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:oasis:names:tc:SAML:2.0:ac")]
     public enum PhysicalVerificationCredentialLevel
     {
 
-       
+
         primary,
 
-       
+
         secondary,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:ac")]
     public enum nymType
     {
 
-       
+
         anonymity,
 
-       
+
         verinymity,
 
-       
+
         pseudonymity,
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9796,7 +9796,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string idField;
 
-       
+
         public IdentificationType Identification
         {
             get
@@ -9809,7 +9809,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public TechnicalProtectionBaseType TechnicalProtection
         {
             get
@@ -9822,7 +9822,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public OperationalProtectionType OperationalProtection
         {
             get
@@ -9835,7 +9835,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         public AuthnMethodBaseType AuthnMethod
         {
             get
@@ -9848,7 +9848,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlArrayItemAttribute("GoverningAgreementRef", IsNullable = false)]
         public GoverningAgreementRefType[] GoverningAgreements
         {
@@ -9862,7 +9862,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Extension")]
         public ExtensionType[] Extension
         {
@@ -9876,7 +9876,7 @@ namespace MetadataBuilder.Schema.Metadata
             }
         }
 
-       
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
         public string ID
         {
@@ -9891,7 +9891,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9903,7 +9903,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private GoverningAgreementRefType[] governingAgreementRefField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("GoverningAgreementRef")]
         public GoverningAgreementRefType[] GoverningAgreementRef
         {
@@ -9918,7 +9918,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9930,7 +9930,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private object[] itemsField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Assertion", typeof(AssertionType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         [System.Xml.Serialization.XmlElementAttribute("Attribute", typeof(AttributeType), Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public object[] Items
@@ -9946,7 +9946,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
     }
 
-   
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9958,7 +9958,7 @@ namespace MetadataBuilder.Schema.Metadata
 
         private TransformType[] transformField;
 
-       
+
         [System.Xml.Serialization.XmlElementAttribute("Transform")]
         public TransformType[] Transform
         {

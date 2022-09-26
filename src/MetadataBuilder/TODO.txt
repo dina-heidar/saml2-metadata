@@ -18,3 +18,7 @@ Types of SAML2 binding (https://en.wikipedia.org/wiki/SAML_2.0)
 4- HTTP POST Binding
 5- HTTP Artifact Binding
 6- SAML URI Binding
+
+
+7- sign metadata
+8- include public cert in metadata

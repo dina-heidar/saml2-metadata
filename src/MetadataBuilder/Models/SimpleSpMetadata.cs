@@ -1,4 +1,6 @@
-﻿namespace Saml.MetadataBuilder
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Saml.MetadataBuilder
 {
     public class SimpleSpMetadata : SpMetadata
     {
@@ -8,7 +10,9 @@
         public LocalizedName[] ServiceNames { get; set; } = new LocalizedName[0];
         public LocalizedName[] ServiceDescriptions { get; set; } = new LocalizedName[0];
         public RequestedAttribute[] RequestedAttributes { get; set; } = new RequestedAttribute[0];//optional
-       
+        public X509Certificate2 EncryptingCertificate { get; set; }
+        public X509Certificate2 SigningCertificate { get; set; }
+
 
         //internal new IndexedEndpoint[] AssertionConsumerServices
         //{

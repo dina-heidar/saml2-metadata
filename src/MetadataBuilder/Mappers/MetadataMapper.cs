@@ -1,6 +1,7 @@
 ﻿using MetadataBuilder.Schema.Metadata;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
 {
@@ -10,22 +11,22 @@ namespace Saml.MetadataBuilder
         {
             var entityDescriptorType = new EntityDescriptorType()
             {
-                cacheDuration = src.CacheDuration,
-                validUntilSpecified = (src.ValidUntil != null),
-                validUntil = src.ValidUntil,
-                entityID = src.EntityID,
-                ID = src.Id,
-                ContactPerson = MapEach(src.ContactPersons),
-                Organization = Map(src.Organization),
-                Extensions = Map(src.Extensions)
-                // Signature
-                //AdditionalMetadataLocation = src.AdditionalMetadataLocations
+                cacheDuration = src.CacheDuration, //optional
+                validUntilSpecified = (src.ValidUntil != null),//optional
+                validUntil = src.ValidUntil,//optional
+                entityID = src.EntityID, //---> required
+                ID = src.Id, //optional
+                ContactPerson = (src.ContactPersons != null ? MapEach(src.ContactPersons) : null), //optional
+                Organization = (src.Organization != null ? Map(src.Organization) : null),  //optional
+                Extensions = (src.Extensions != null ? Map(src.Extensions) : null),  //optional,
+                //Signature  = //optional signtaure of metatadats file itself
+                //AdditionalMetadataLocation = src.AdditionalMetadataLocations //optional
             };
 
-            SpMetadata d = src as SpMetadata;
-            SPSSODescriptorType tt = Map(d);
+            SpMetadata spMetadata = src as SpMetadata;
+            SPSSODescriptorType sPSSODescriptorType = Map(spMetadata); //---> required
 
-            entityDescriptorType.Items = new object[] { tt };
+            entityDescriptorType.Items = new object[] { sPSSODescriptorType };
 
             return entityDescriptorType;
         }
@@ -38,20 +39,17 @@ namespace Saml.MetadataBuilder
 
             var spSsoDescriptorType = new SPSSODescriptorType()
             {
-                NameIDFormat = new[] { src.NameIdFormat },
-                //Organization = Map(src.Organization),
-                //Extensions = src.Extensions,
-                AssertionConsumerService = MapEach(src.AssertionConsumerServices),
-                ArtifactResolutionService = MapEach(src.ArtifactResolutionServices),
-                SingleLogoutService = MapEach(src.SingleLogoutServiceEndpoints),
-                AuthnRequestsSigned = src.AuthnRequestsSigned,
-                WantAssertionsSigned = src.WantAssertionsSigned,
-                cacheDuration = src.CacheDuration,
-                //ContactPerson = MapEach(src.ContactPersons),
-                protocolSupportEnumeration = new[] { src.RoleDescriptor.ProtocolSupportEnumeration },
-                //ID = src.Id,
-                //KeyDescriptor, opt => opt.MapFrom(src => new src.RoleDescriptor.KeyDescriptor))
-                AttributeConsumingService = MapEach(src.AttributeConsumingService)
+                NameIDFormat = (src.NameIdFormat != null ? new[] { src.NameIdFormat } : null),//optional
+                AssertionConsumerService = MapEach(src.AssertionConsumerServices),//---> required
+                ArtifactResolutionService = (src.ArtifactResolutionServices != null ? MapEach(src.ArtifactResolutionServices) : null), //optional
+                SingleLogoutService = (src.SingleLogoutServiceEndpoints != null ? MapEach(src.SingleLogoutServiceEndpoints) : null), //optional
+                AuthnRequestsSigned = src.AuthnRequestsSigned, //optional
+                WantAssertionsSigned = src.WantAssertionsSigned,//optional
+                cacheDuration = (src.CacheDuration != null ? src.CacheDuration : null), //optional
+                protocolSupportEnumeration = new[] { src.RoleDescriptor.ProtocolSupportEnumeration }, //---> required
+                //errorURL  //optional
+                KeyDescriptor = (src.EncryptingCertificates.Count() + src.SigningCertificates.Count() != 0 ? MapAll(src.EncryptingCertificates, src.SigningCertificates) : null),//optional
+                AttributeConsumingService = (src.AttributeConsumingService != null ? MapEach(src.AttributeConsumingService) : null) //optional
             };
             return spSsoDescriptorType;
         }
@@ -60,7 +58,59 @@ namespace Saml.MetadataBuilder
             src.SingleLogoutServiceEndpoints = (src.SingleLogoutServiceEndpoint != null ? new Endpoint[] { src.SingleLogoutServiceEndpoint } : new Endpoint[0]);
             src.AssertionConsumerServices = (src.AssertionConsumerService != null ? new IndexedEndpoint[] { src.AssertionConsumerService } : new IndexedEndpoint[0]);
             src.ArtifactResolutionServices = (src.ArtifactResolutionService != null ? new IndexedEndpoint[] { src.ArtifactResolutionService } : new IndexedEndpoint[0]);
+            src.EncryptingCertificates = (src.EncryptingCertificate != null ? new X509Certificate2[] { src.EncryptingCertificate } : new X509Certificate2[0]);
+            src.SigningCertificates = (src.SigningCertificate != null ? new X509Certificate2[] { src.SigningCertificate } : new X509Certificate2[0]);
             src.AttributeConsumingService = MapAll(src.ServiceNames, src.ServiceDescriptions, src.RequestedAttributes);
+        }
+        public KeyDescriptorType[] MapAll(X509Certificate2[] encryptionCertificates,
+            X509Certificate2[] signingCertificates)
+        {
+            var keyDescriptorTypeList = new List<KeyDescriptorType>();
+
+            foreach (var encr in encryptionCertificates)
+            {
+                var keyDescriptorEncrypted = new KeyDescriptorType()
+                {
+                    useSpecified = true,
+                    use = KeyTypes.encryption,
+                    KeyInfo = new KeyInfoType()
+                    {
+                        ItemsElementName = new[] { ItemsChoiceType2.X509Data },
+                        Items = new X509DataType[]
+                                        {
+                                            new X509DataType()
+                                            {
+                                                Items = new object[]{  encr.GetRawCertData() },
+                                                ItemsElementName = new [] { ItemsChoiceType.X509Certificate }
+                                            }
+                                        }
+                    }
+                };
+                keyDescriptorTypeList.Add(keyDescriptorEncrypted);
+            }
+
+            foreach (var sign in signingCertificates)
+            {
+                var keyDescriptorSigning = new KeyDescriptorType()
+                {
+                    useSpecified = true,
+                    use = KeyTypes.signing,
+                    KeyInfo = new KeyInfoType()
+                    {
+                        ItemsElementName = new[] { ItemsChoiceType2.X509Data },
+                        Items = new X509DataType[]
+                                        {
+                                            new X509DataType()
+                                            {
+                                                Items = new object[]{ sign.GetRawCertData() },
+                                                ItemsElementName = new [] { ItemsChoiceType.X509Certificate }
+                                            }
+                                        }
+                    }
+                };
+                keyDescriptorTypeList.Add(keyDescriptorSigning);
+            }
+            return keyDescriptorTypeList.ToArray<KeyDescriptorType>();
         }
         public AttributeConsumingService[] MapAll(LocalizedName[] serviceNames,
             LocalizedName[] serviceDescription, RequestedAttribute[] requestedAttributes)
@@ -260,8 +310,6 @@ namespace Saml.MetadataBuilder
         public ExtensionsType Map(Extension src)
         {
             var extensionsType = new ExtensionsType();
-            var uiInfoTypeItems = new List<UIInfoType>();
-            var discoHintsTypeItems = new List<DiscoHintsType>();
             var objectList = new List<object>();
 
             if (src != null)
