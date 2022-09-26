@@ -53,7 +53,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The key descriptor.
         /// </value>
-        public KeyDescriptor KeyDescriptor { get; set; }
+        //public KeyDescriptor KeyDescriptor { get; set; }
 
 
         /// <summary>

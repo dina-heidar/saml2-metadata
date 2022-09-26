@@ -14,6 +14,6 @@ namespace Saml.MetadataBuilder
         /// </summary>
         /// <param name="entityDescriptor">The entity descriptor.</param>
         /// <returns></returns>
-        Task<XmlDocument> Output(EntityDescriptor entityDescriptor);
+        XmlDocument Output(EntityDescriptor entityDescriptor);
     }
 }
