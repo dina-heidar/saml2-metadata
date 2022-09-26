@@ -1,5 +1,4 @@
-﻿using MetadataBuilder.Dto;
-using MetadataBuilder.Schema.Metadata;
+﻿using MetadataBuilder.Schema.Metadata;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,23 +26,9 @@ namespace Saml.MetadataBuilder
             SPSSODescriptorType tt = Map(d);
 
             entityDescriptorType.Items = new object[] { tt };
-            //switch (src.MetadataType)
-            //{
-            //    case MetadataType.SSOSPSSODescriptorType:
-            //        {
-            //            var sp = src as SpMetadata;
-            //            entityDescriptorType.Items = new object[] { Map(sp) };
-            //            break;
-            //        }
-
-            //}
-
-
-
 
             return entityDescriptorType;
         }
-
         public SPSSODescriptorType Map(SpMetadata src)
         {
             if (src.GetType() == typeof(SimpleSpMetadata))
@@ -327,9 +312,9 @@ namespace Saml.MetadataBuilder
                         var discoHints = (DiscoHints)item;
                         var discoHintsType = new DiscoHintsType();
                         discoHintsType.Items = new object[] { discoHints.DomainHint, discoHints.IPHint, discoHints.GeolocationHint };
-                        discoHintsType.ItemsElementName = new ItemsChoiceType9[] { 
+                        discoHintsType.ItemsElementName = new ItemsChoiceType9[] {
                             ItemsChoiceType9.DomainHint,
-                            ItemsChoiceType9.IPHint, 
+                            ItemsChoiceType9.IPHint,
                             ItemsChoiceType9.GeolocationHint
                         };
                         objectList.Add(discoHintsType);
@@ -351,43 +336,6 @@ namespace Saml.MetadataBuilder
 
             return extensionsType;
         }
-
-        //var extensionType = new ExtensionsType();
-
-        //string xmlTemplate;
-        //XmlSerializer ser = new XmlSerializer(typeof(XmlElement));
-        ////XmlElement myElement = new XmlDocument().CreateElement("MyElement");
-        //////myElement.InnerText = src.UiInfo.DisplayName.Value;
-
-        //using (MemoryStream memStm = new MemoryStream())
-        //{
-        //    ser.Serialize(memStm, uIInfoType);
-        //    memStm.Position = 0;
-        //    xmlTemplate = new StreamReader(memStm).ReadToEnd();
-        //}
-
-
-
-
-
-        //    //string xmlTemplate = string.Empty;
-        //    //XmlSerializer xmlSerializer = new XmlSerializer(typeof(EntityDescriptorType));
-
-        //    //using (MemoryStream memStm = new MemoryStream())
-        //    //{
-        //    //    xmlSerializer.Serialize(memStm, entityDescriptorType);
-        //    //    memStm.Position = 0;
-        //    //    xmlTemplate = new StreamReader(memStm).ReadToEnd();
-        //    //}
-
-        //    ////create xml document from string
-        //    //XmlDocument xmlDoc = new XmlDocument();
-        //    //xmlDoc.LoadXml(xmlTemplate);
-
-        //    //xmlDoc.PreserveWhitespace = true;
-        //    //return xmlDoc;
-
-        //}
     }
 }
 
