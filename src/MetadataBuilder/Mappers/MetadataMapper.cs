@@ -18,7 +18,7 @@ namespace Saml.MetadataBuilder
                 ID = src.Id, //optional
                 ContactPerson = (src.ContactPersons != null ? MapEach(src.ContactPersons) : null), //optional
                 Organization = (src.Organization != null ? Map(src.Organization) : null),  //optional
-                Extensions = (src.Extensions != null ? Map(src.Extensions) : null),  //optional,
+                //Extensions = (src.Extensions != null ? Map(src.Extensions) : null),  //optional,
                 //Signature  = //optional signtaure of metatadats file itself
                 //AdditionalMetadataLocation = src.AdditionalMetadataLocations //optional
             };
@@ -48,6 +48,7 @@ namespace Saml.MetadataBuilder
                 cacheDuration = (src.CacheDuration != null ? src.CacheDuration : null), //optional
                 protocolSupportEnumeration = new[] { src.RoleDescriptor.ProtocolSupportEnumeration }, //---> required
                 //errorURL  //optional
+                Extensions = (src.Extensions != null ? Map(src.Extensions) : null),  //optional,
                 KeyDescriptor = (src.EncryptingCertificates.Count() + src.SigningCertificates.Count() != 0 ? MapAll(src.EncryptingCertificates, src.SigningCertificates) : null),//optional
                 AttributeConsumingService = (src.AttributeConsumingService != null ? MapEach(src.AttributeConsumingService) : null) //optional
             };
