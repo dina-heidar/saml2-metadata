@@ -1,6 +1,5 @@
 ﻿using MetadataBuilder.Schema.Metadata;
 using System.IO;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -9,8 +8,8 @@ namespace Saml.MetadataBuilder
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Saml.MetadataBuilder.IMedatataWriter" />
-    public class MedatataWriter : IMedatataWriter
+    /// <seealso cref="Saml.MetadataBuilder.IMetadataWriter" />
+    public class MedataWriter : IMetadataWriter
     {
         /// <summary>
         /// The metadata mapper
@@ -18,45 +17,13 @@ namespace Saml.MetadataBuilder
         private readonly IMetadataMapper<EntityDescriptor, EntityDescriptorType> _metadataMapper;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MedatataWriter" /> class.
+        /// Initializes a new instance of the <see cref="MedataWriter" /> class.
         /// </summary>
         /// <param name="metadataMapper">The metadata mapper.</param>
-        public MedatataWriter(IMetadataMapper<EntityDescriptor, EntityDescriptorType> metadataMapper)
+        public MedataWriter(IMetadataMapper<EntityDescriptor, EntityDescriptorType> metadataMapper)
         {
             _metadataMapper = metadataMapper;
         }
-
-        //public async Task<XmlDocument> For<T>(T entity) where T : class
-        //{
-
-        //}
-
-        //public async Task<XmlDocument> For(SimpleSpMetadata sp) 
-        //{
-        //    SpMetadata spMetadata = sp;
-        //    return await For(spMetadata);
-        //}
-
-        //public async Task<XmlDocument> For(SpMetadata sp)
-        //{
-        //    var spssoDescriptorType = _spMetadataMapper.Map(sp);
-        //    var entityDescriptorType = new EntityDescriptorType()
-        //    {
-        //        entityID = sp.EntityID,
-        //        Items = new object[]
-        //        {
-        //            spssoDescriptorType
-        //        }
-        //    };
-
-        //    var xmlDoc = SerializeToXml<EntityDescriptorType>(entityDescriptorType);
-        //    return xmlDoc;
-        //}
-
-        //public Task<XmlDocument> For(T entity)
-        //{
-        //    throw new System.NotImplementedException();
-        //}
 
         /// <summary>
         /// Serializes to XML.
@@ -91,7 +58,13 @@ namespace Saml.MetadataBuilder
         {
             var entityDescriptorType = _metadataMapper.MapEntity(entityDescriptor);
 
-            return SerializeToXml<EntityDescriptorType>(entityDescriptorType);
+            var xml = SerializeToXml<EntityDescriptorType>(entityDescriptorType);
+
+            if (entityDescriptor.Signature != null)
+            {
+                xml.AddSignature(entityDescriptor.Signature);
+            }
+            return xml;
         }
     }
 }

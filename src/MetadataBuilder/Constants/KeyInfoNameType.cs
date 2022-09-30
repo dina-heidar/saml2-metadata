@@ -1,4 +1,4 @@
-﻿namespace Saml.MetadataBuilder
+﻿namespace Saml.MetadataBuilder.Constants
 {
     /// <summary>
     /// 

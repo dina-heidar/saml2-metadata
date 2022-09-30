@@ -1,14 +1,12 @@
-﻿using System.Threading.Tasks;
-using System.Xml;
+﻿using System.Xml;
 
 namespace Saml.MetadataBuilder
 {
     /// <summary>
     /// 
     /// </summary>
-    public interface IMedatataWriter
-    {        
-        //Task<XmlDocument> For<SpMetadata>(SpMetadata sp);
+    public interface IMetadataWriter
+    {
         /// <summary>
         /// Outputs the specified entity.
         /// </summary>

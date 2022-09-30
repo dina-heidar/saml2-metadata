@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MetadataBuilder
+namespace Saml.MetadataBuilder
 {
     internal class Saml2MetadataSerializationException : Exception
     {

@@ -1,5 +1,4 @@
-﻿using MetadataBuilder.Constants;
-using System.Collections.Generic;
+﻿using Saml.MetadataBuilder.Constants;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
@@ -14,13 +13,14 @@ namespace Saml.MetadataBuilder
         public bool WantAssertionsSigned { get; set; }
         public X509Certificate2[] EncryptingCertificates { get; set; }
         public X509Certificate2[] SigningCertificates { get; set; }
+        internal string ProtocolSupportEnumeration { get; set; } = ProtocolSupportEnumerationTypes.Default;
         public AttributeConsumingService[] AttributeConsumingService { get; set; } = new AttributeConsumingService[0];
         public SpMetadata()
         {
-            RoleDescriptor = new RoleDescriptor
-            {
-                ProtocolSupportEnumeration = ProtocolSupportEnumerationTypes.Default,
-            };
+            //RoleDescriptor = new RoleDescriptor
+            //{
+            //    ProtocolSupportEnumeration = ProtocolSupportEnumerationTypes.Default,
+            //};
             MetadataType = MetadataType.SSOSPSSODescriptorType;
         }
 

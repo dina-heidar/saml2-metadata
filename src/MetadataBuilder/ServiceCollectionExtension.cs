@@ -14,10 +14,12 @@ namespace Saml.MetadataBuilder
         /// <param name="services">The services.</param>
         public static void AddSamlMetadatBuilder(this IServiceCollection services)
         {
-            services.AddScoped<IMedatataWriter, MedatataWriter>();
+            services.AddScoped<IMetadataWriter, MedataWriter>();
+            services.AddScoped<IMetadataReader, MetadataReader>();
 
             //mappers
             services.AddTransient<IMetadataMapper<EntityDescriptor, EntityDescriptorType>, MetadataMapper>();
+            services.AddTransient<IMetadataMapper<EntityDescriptorType, EntityDescriptor>, MetadataMapper>();
 
         }
     }

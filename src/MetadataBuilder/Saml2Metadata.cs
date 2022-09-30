@@ -7189,7 +7189,7 @@ namespace MetadataBuilder.Schema.Metadata
         [System.Xml.Serialization.XmlElementAttribute("AuthnAuthorityDescriptor", typeof(AuthnAuthorityDescriptorType))]
         [System.Xml.Serialization.XmlElementAttribute("IDPSSODescriptor", typeof(IDPSSODescriptorType))]
         [System.Xml.Serialization.XmlElementAttribute("PDPDescriptor", typeof(PDPDescriptorType))]
-        [System.Xml.Serialization.XmlElementAttribute("RoleDescriptor", typeof(RoleDescriptorType))]
+        //[System.Xml.Serialization.XmlElementAttribute("RoleDescriptor", typeof(RoleDescriptorType))]
         [System.Xml.Serialization.XmlElementAttribute("SPSSODescriptor", typeof(SPSSODescriptorType))]
         public object[] Items
         {

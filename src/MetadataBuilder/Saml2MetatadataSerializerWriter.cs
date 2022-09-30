@@ -6,13 +6,13 @@
 //using System.Xml;
 //using System.Xml.Schema;
 
-//namespace MetadataBuilder
+//namespace Saml.MetadataBuilder
 //{
 //    internal partial class Saml2MetatadataSerializer
 //    {
 
 //        #region Write Metadata
-        
+
 //            protected virtual void WriteApplicationServiceDescriptor(XmlWriter writer, ApplicationServiceDescriptor appService)
 //            {
 //                if (writer == null)
