@@ -36,7 +36,8 @@ namespace Saml.MetadataBuilder
             return Read(address, retriever, cancel);
         }
 
-        internal T DeSerializeToClass<T>(string document, string namespaceName) where T : class
+        internal T DeSerializeToClass<T>
+            (string document, string namespaceName) where T : class
         {
             var safeSettings = new XmlReaderSettings
             {
@@ -50,6 +51,9 @@ namespace Saml.MetadataBuilder
             {
                 XmlUtil.CheckReaderOnEntry(reader, "EntityDescriptor", namespaceName);
                 var envelopeReader = new EnvelopedSignatureReader(reader);
+                //var entityDescriptor = (EntityDescriptor)xmlSerializer.Deserialize(reader);
+                //entityDescriptor.Signature = envelopeReader.Signature;
+                //return entityDescriptor;
                 return (T)xmlSerializer.Deserialize(reader);
             }
         }
