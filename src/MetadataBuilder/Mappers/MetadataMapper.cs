@@ -9,6 +9,8 @@ namespace Saml.MetadataBuilder
     internal class MetadataMapper : IMetadataMapper<EntityDescriptor, EntityDescriptorType>,
         IMetadataMapper<EntityDescriptorType, EntityDescriptor>
     {
+        #region ToXml
+
         public EntityDescriptorType MapEntity(EntityDescriptor src)
         {
             var entityDescriptorType = new EntityDescriptorType()
@@ -387,9 +389,9 @@ namespace Saml.MetadataBuilder
             return extensionsType;
         }
 
-        //*******************************
-        //unmap
-        //*****************************
+        #endregion
+
+        #region fromXml
 
         public EntityDescriptor MapEntity(EntityDescriptorType src)
         {
@@ -402,7 +404,7 @@ namespace Saml.MetadataBuilder
                 Items = src.Items,
                 ContactPersons = (src.ContactPerson != null ? MapEach(src.ContactPerson) : null), //optional
                 Organization = (src.Organization != null ? Map(src.Organization) : null),  //optional              
-                //Signature  = //optional signtaure of metatadata file itself
+                //Signature = (src.Signature != null ? Map(src.Signature) : null)
                 //AdditionalMetadataLocation = src.AdditionalMetadataLocations //optional
             };
 
@@ -427,7 +429,7 @@ namespace Saml.MetadataBuilder
                 AttributeProfiles = (src.AttributeProfile != null ? src.AttributeProfile : new string[0]),
                 Attributes = (src.Attribute != null ? MapEach(src.Attribute) : new Attribute[0]),
                 WantAuthnRequestsSigned = src.WantAuthnRequestsSigned,
-                NameIdFormats = (src.NameIDFormat != null ? src.NameIDFormat: new string[0])
+                NameIdFormats = (src.NameIDFormat != null ? src.NameIDFormat : new string[0])
             };
             return idpSsoDescriptor;
         }
@@ -570,6 +572,8 @@ namespace Saml.MetadataBuilder
             }
             return null;
         }
+
+        #endregion
 
     }
 }
