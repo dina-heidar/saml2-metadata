@@ -1,7 +1,7 @@
 ﻿
 //using System.Xml;
 
-//namespace MetadataBuilder
+//namespace Saml.MetadataBuilder
 //{
 //    internal partial class Saml2MetatadataSerializer
 //    {

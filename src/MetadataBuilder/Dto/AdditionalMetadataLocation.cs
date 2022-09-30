@@ -1,4 +1,4 @@
-﻿namespace MetadataBuilder.Dto
+﻿namespace Saml.MetadataBuilder
 {
     /// <summary>
     /// 

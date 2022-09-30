@@ -1,12 +1,11 @@
-﻿using Saml.MetadataBuilder;
-using Saml.MetadataBuilder.Constants;
+﻿using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
 {
     /// <summary>
     /// AssertionConsumerService indexed endpoint with different binding value types.
     /// </summary>
-    public static class AssertionConsumerServiceTypes
+    public static class AssertionConsumerServiceExtensions
     {
         /// <summary>Gets the binding of type POST.</summary>
         /// <value>The binding of type POST.</value>

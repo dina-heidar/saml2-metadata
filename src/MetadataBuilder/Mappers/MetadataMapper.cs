@@ -1,11 +1,13 @@
 ﻿using MetadataBuilder.Schema.Metadata;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
 {
-    internal class MetadataMapper : IMetadataMapper<EntityDescriptor, EntityDescriptorType>
+    internal class MetadataMapper : IMetadataMapper<EntityDescriptor, EntityDescriptorType>,
+        IMetadataMapper<EntityDescriptorType, EntityDescriptor>
     {
         public EntityDescriptorType MapEntity(EntityDescriptor src)
         {
@@ -17,9 +19,8 @@ namespace Saml.MetadataBuilder
                 entityID = src.EntityID, //---> required
                 ID = src.Id, //optional
                 ContactPerson = (src.ContactPersons != null ? MapEach(src.ContactPersons) : null), //optional
-                Organization = (src.Organization != null ? Map(src.Organization) : null),  //optional
-                //Extensions = (src.Extensions != null ? Map(src.Extensions) : null),  //optional,
-                //Signature  = //optional signtaure of metatadats file itself
+                Organization = (src.Organization != null ? Map(src.Organization) : null),  //optional              
+                //Signature  = //optional signtaure of metatadata file itself
                 //AdditionalMetadataLocation = src.AdditionalMetadataLocations //optional
             };
 
@@ -46,7 +47,7 @@ namespace Saml.MetadataBuilder
                 AuthnRequestsSigned = src.AuthnRequestsSigned, //optional
                 WantAssertionsSigned = src.WantAssertionsSigned,//optional
                 cacheDuration = (src.CacheDuration != null ? src.CacheDuration : null), //optional
-                protocolSupportEnumeration = new[] { src.RoleDescriptor.ProtocolSupportEnumeration }, //---> required
+                protocolSupportEnumeration = new[] { src.ProtocolSupportEnumeration }, //---> required
                 //errorURL  //optional
                 Extensions = (src.Extensions != null ? Map(src.Extensions) : null),  //optional,
                 KeyDescriptor = (src.EncryptingCertificates.Count() + src.SigningCertificates.Count() != 0 ? MapAll(src.EncryptingCertificates, src.SigningCertificates) : null),//optional
@@ -385,6 +386,191 @@ namespace Saml.MetadataBuilder
 
             return extensionsType;
         }
+
+        //*******************************
+        //unmap
+        //*****************************
+
+        public EntityDescriptor MapEntity(EntityDescriptorType src)
+        {
+            var entityDescriptor = new EntityDescriptor()
+            {
+                CacheDuration = src.cacheDuration,
+                ValidUntil = src.validUntil,
+                EntityID = src.entityID,
+                Id = src.ID,
+                Items = src.Items,
+                ContactPersons = (src.ContactPerson != null ? MapEach(src.ContactPerson) : null), //optional
+                Organization = (src.Organization != null ? Map(src.Organization) : null),  //optional              
+                //Signature  = //optional signtaure of metatadata file itself
+                //AdditionalMetadataLocation = src.AdditionalMetadataLocations //optional
+            };
+
+            foreach (var item in src.Items)
+            {
+                if (item.GetType() == typeof(IDPSSODescriptorType))
+                {
+                    var idpSSODescriptor = Map(item as IDPSSODescriptorType);
+                    entityDescriptor.Items = new object[] { idpSSODescriptor };
+                }
+            }
+
+            return entityDescriptor;
+        }
+        public IDPSSODescriptor Map(IDPSSODescriptorType src)
+        {
+            var idpSsoDescriptor = new IDPSSODescriptor()
+            {
+                SingleSignOnServices = (src.SingleSignOnService != null ? MapEach(src.SingleSignOnService) : new Endpoint[0]),
+                NameIdMappingServices = (src.NameIDMappingService != null ? MapEach(src.NameIDMappingService) : new Endpoint[0]),
+                AssertionIdRequestServices = (src.AssertionIDRequestService != null ? MapEach(src.AssertionIDRequestService) : new Endpoint[0]),
+                AttributeProfiles = (src.AttributeProfile != null ? src.AttributeProfile : new string[0]),
+                Attributes = (src.Attribute != null ? MapEach(src.Attribute) : new Attribute[0]),
+                WantAuthnRequestsSigned = src.WantAuthnRequestsSigned,
+                NameIdFormats = (src.NameIDFormat != null ? src.NameIDFormat: new string[0])
+            };
+            return idpSsoDescriptor;
+        }
+        public ContactPerson[] MapEach(ContactType[] src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var contactPersons = new ContactPerson[src.Length];
+                var i = 0;
+                foreach (var cp in src)
+                {
+                    contactPersons[i] = new ContactPerson
+                    {
+                        Company = cp.Company,
+                        EmailAddresses = cp.EmailAddress,
+                        GivenName = cp.GivenName,
+                        TelephoneNumbers = cp.TelephoneNumber,
+                        Surname = cp.SurName,
+                        ContactType = MapEnum(cp.contactType)
+                    };
+                    if (i < src.Length) { i++; };
+                }
+                return contactPersons;
+            }
+            return null;
+        }
+        public Constants.ContactType MapEnum(ContactTypeType contactTypeType)
+        {
+            switch (contactTypeType)
+            {
+                case ContactTypeType.technical:
+                    return Constants.ContactType.Technical;
+
+                case ContactTypeType.administrative:
+                    return Constants.ContactType.Administrative;
+
+                case ContactTypeType.support:
+                    return Constants.ContactType.Support;
+
+                case ContactTypeType.billing:
+                    return Constants.ContactType.Billing;
+
+                case ContactTypeType.other:
+                    return Constants.ContactType.Other;
+
+                default:
+                    throw new Saml2MetadataSerializationException($"Invalid ContactType {contactTypeType}");
+            }
+        }
+        public Attribute[] MapEach(AttributeType[] src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var attribute = new Attribute[src.Length];
+                var i = 0;
+                foreach (var att in src)
+                {
+                    attribute[i] = new Attribute
+                    {
+                        AttributeValue = att.AttributeValue,
+                        FriendlyName = att.FriendlyName,
+                        Name = att.Name,
+                        NameFormat = att.NameFormat
+                    };
+                    if (i < src.Length) { i++; };
+                }
+                return attribute;
+            }
+            return null;
+        }
+        public Endpoint[] MapEach(EndpointType[] src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var endpoint = new Endpoint[src.Length];
+                var i = 0;
+                foreach (var ep in src)
+                {
+                    endpoint[i] = new Endpoint
+                    {
+                        Location = ep.Location,
+                        ResponseLocation = ep.ResponseLocation,
+                        Binding = ep.Binding
+                    };
+                    if (i < src.Length) { i++; };
+                }
+                return endpoint;
+            }
+            return new Endpoint[0];
+        }
+        public Organization Map(OrganizationType src)
+        {
+            if (src != null)
+            {
+                var organization = new Organization()
+                {
+                    OrganizationDisplayName = MapEach(src.OrganizationDisplayName),
+                    OrganizationName = MapEach(src.OrganizationName),
+                    OrganizationURL = MapEach(src.OrganizationURL)
+                };
+                return organization;
+            }
+            return null;
+        }
+        public LocalizedName[] MapEach(IEnumerable<localizedNameType> src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var localizedName = new LocalizedName[src.Count()];
+                var i = 0;
+                foreach (var ln in src)
+                {
+                    localizedName[i] = new LocalizedName
+                    {
+                        Language = ln.lang,
+                        Value = ln.Value
+                    };
+                    if (i < src.Count()) { i++; };
+                }
+                return localizedName;
+            }
+            return null;
+        }
+        public LocalizedUri[] MapEach(localizedURIType[] src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var localizedUri = new LocalizedUri[src.Count()];
+                var i = 0;
+                foreach (var lu in src)
+                {
+                    localizedUri[i] = new LocalizedUri
+                    {
+                        Language = lu.lang,
+                        Uri = new Uri(lu.Value)
+                    };
+                    if (i < src.Count()) { i++; };
+                }
+                return localizedUri;
+            }
+            return null;
+        }
+
     }
 }
 

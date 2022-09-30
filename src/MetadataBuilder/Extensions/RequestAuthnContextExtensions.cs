@@ -1,5 +1,4 @@
-﻿using Saml.MetadataBuilder;
-using Saml.MetadataBuilder.Constants;
+﻿using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
 {

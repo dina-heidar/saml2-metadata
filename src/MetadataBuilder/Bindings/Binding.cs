@@ -1,5 +1,4 @@
-﻿using MetadataBuilder;
-using System;
+﻿using System;
 
 namespace Saml.MetadataBuilder
 {
@@ -61,11 +60,15 @@ namespace Saml.MetadataBuilder
             return endpoint;
         }
 
-        /// <summary>URLs the specified location.</summary>
+        /// <summary>
+        /// URLs the specified location.
+        /// </summary>
         /// <param name="location">The location.</param>
         /// <param name="index">The index (will default to 0 if not provided).</param>
         /// <param name="isDefault">if set to <c>true</c> [is default].</param>
-        /// <returns>IndexedEndpoint</returns>
+        /// <returns>
+        /// IndexedEndpoint
+        /// </returns>
         /// <exception cref="MetadataBuilder.Saml2MetadataSerializationException">Endpoint location is not a valid Url</exception>
         public IndexedEndpoint Url(string location, int index, bool isDefault = false)
         {

@@ -1,7 +1,6 @@
-﻿using MetadataBuilder.Constants;
-using MetadataBuilder.Dto;
-using Microsoft.IdentityModel.Xml;
+﻿using Saml.MetadataBuilder.Constants;
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
 {
@@ -69,9 +68,9 @@ namespace Saml.MetadataBuilder
         /// </para>
         /// </summary>
         /// <value>
-        /// The signature.
+        /// The certificate used for signature.
         /// </value>
-        public Signature Signature { get; set; }
+        public X509Certificate2 Signature { get; set; }
 
         /// <summary>
         /// <para><b>Optional</b><br/> 
@@ -91,7 +90,8 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The role descriptor.
         /// </value>
-        internal RoleDescriptor RoleDescriptor { get; set; }
+        public object[] Items { get; set; }
+        //internal RoleDescriptor RoleDescriptor { get; set; }
         /// <summary>
         /// <para><b>Optional</b><br/> 
         /// Used to identifying the organization 
