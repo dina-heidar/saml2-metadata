@@ -1,7 +1,6 @@
 ﻿using MetadataBuilder.Schema.Metadata;
 using Microsoft.IdentityModel.Protocols;
 using Microsoft.IdentityModel.Xml;
-using Saml.MetadataBuilder.Constants;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,19 +16,19 @@ namespace Saml.MetadataBuilder
     public class MetadataReader : IConfigurationRetriever<EntityDescriptor>, IMetadataReader
     {
         private readonly IMetadataMapper<EntityDescriptorType, EntityDescriptor> _mapper;
+        private XmlReaderSettings safeSettings;
 
         public MetadataReader(IMetadataMapper<EntityDescriptorType, EntityDescriptor> mapper)
         {
             _mapper = mapper;
+
+            safeSettings = new XmlReaderSettings
+            {
+                XmlResolver = null,
+                DtdProcessing = DtdProcessing.Prohibit,
+                ValidationType = ValidationType.None
+            };
         }
-        /// <summary>
-        /// Retrieves a populated configuration given an address and an <see cref="T:Microsoft.IdentityModel.Protocols.IDocumentRetriever" />.
-        /// </summary>
-        /// <param name="address">Address of the discovery document.</param>
-        /// <param name="retriever">The <see cref="T:Microsoft.IdentityModel.Protocols.IDocumentRetriever" /> to use to read the discovery document.</param>
-        /// <param name="cancel">A cancellation token that can be used by other objects or threads to receive notice of cancellation. <see cref="T:System.Threading.CancellationToken" />.</param>
-        /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
         public Task<EntityDescriptor> GetConfigurationAsync(string address,
             IDocumentRetriever retriever, CancellationToken cancel)
         {
@@ -39,24 +38,28 @@ namespace Saml.MetadataBuilder
         internal T DeSerializeToClass<T>
             (string document, string namespaceName) where T : class
         {
-            var safeSettings = new XmlReaderSettings
-            {
-                XmlResolver = null,
-                DtdProcessing = DtdProcessing.Prohibit,
-                ValidationType = ValidationType.None
-            };
-
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
             using (var reader = XmlReader.Create(new StringReader(document), safeSettings))
             {
                 XmlUtil.CheckReaderOnEntry(reader, "EntityDescriptor", namespaceName);
+
                 var envelopeReader = new EnvelopedSignatureReader(reader);
-                //var entityDescriptor = (EntityDescriptor)xmlSerializer.Deserialize(reader);
-                //entityDescriptor.Signature = envelopeReader.Signature;
-                //return entityDescriptor;
-                return (T)xmlSerializer.Deserialize(reader);
+                var signature = envelopeReader.Signature;
+                return ((T)xmlSerializer.Deserialize(reader));//, envelopeReader.Signature);
             }
         }
+        //private string SerializeToStringXml<T>(T item) where T : class
+        //{
+        //    string xmlString = string.Empty;
+        //    XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+        //    using (MemoryStream memStm = new MemoryStream())
+        //    {
+        //        xmlSerializer.Serialize(memStm, item);
+        //        memStm.Position = 0;
+        //        xmlString = new StreamReader(memStm).ReadToEnd();
+        //    }
+        //    return xmlString;
+        //}        
 
         public async Task<EntityDescriptor> Read(string address, CancellationToken cancel)
         {
@@ -72,9 +75,23 @@ namespace Saml.MetadataBuilder
                 throw new Saml2MetadataSerializationException($"{nameof(retriever)} cannot ne null");
 
             var document = await retriever.GetDocumentAsync(address, cancel).ConfigureAwait(false);
-            var entityDescriptorType = DeSerializeToClass<EntityDescriptorType>(document, NamespaceTypes.MetadataNamespace);
+
+            var entityDescriptorType = DeSerializeToClass<EntityDescriptorType>
+            (document, "urn:oasis:names:tc:SAML:2.0:metadata");
             var entityDescriptor = _mapper.MapEntity(entityDescriptorType);
+
+            //foreach (var data in signature.KeyInfo.X509Data)
+            //{
+            //    foreach (var certificateString in data.Certificates)
+            //    {
+            //        var x509Certificate2 = new X509Certificate2(Convert.FromBase64String(certificateString));
+            //        //configuration.SigningKeys.Add(new X509SecurityKey(cert));
+            //        //configuration.X509Certificate2.Add(new X509Certificate2(cert));
+            //        entityDescriptor.Signature = x509Certificate2;
+            //    }
+            //}
             return entityDescriptor;
         }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.IdentityModel.Xml;
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
 {
@@ -37,7 +38,10 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The signature.
         /// </value>
-        public Signature Signature { get; set; }
+        //public Signature Signature { get; set; }
+
+        public X509Certificate2[] EncryptingCertificates { get; set; }
+        public X509Certificate2[] SigningCertificates { get; set; }
 
         /// <summary>
         /// Gets or sets the extensions.

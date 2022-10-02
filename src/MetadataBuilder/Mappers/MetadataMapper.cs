@@ -1,14 +1,19 @@
 ﻿using MetadataBuilder.Schema.Metadata;
+using Microsoft.IdentityModel.Xml;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Saml.MetadataBuilder
 {
     internal class MetadataMapper : IMetadataMapper<EntityDescriptor, EntityDescriptorType>,
         IMetadataMapper<EntityDescriptorType, EntityDescriptor>
     {
+
         #region ToXml
 
         public EntityDescriptorType MapEntity(EntityDescriptor src)
@@ -416,7 +421,6 @@ namespace Saml.MetadataBuilder
                     entityDescriptor.Items = new object[] { idpSSODescriptor };
                 }
             }
-
             return entityDescriptor;
         }
         public IDPSSODescriptor Map(IDPSSODescriptorType src)
@@ -429,7 +433,22 @@ namespace Saml.MetadataBuilder
                 AttributeProfiles = (src.AttributeProfile != null ? src.AttributeProfile : new string[0]),
                 Attributes = (src.Attribute != null ? MapEach(src.Attribute) : new Attribute[0]),
                 WantAuthnRequestsSigned = src.WantAuthnRequestsSigned,
-                NameIdFormats = (src.NameIDFormat != null ? src.NameIDFormat : new string[0])
+
+                //sso
+                NameIdFormats = (src.NameIDFormat != null ? src.NameIDFormat : new string[0]),
+                ArtifactResolutionServices = (src.ArtifactResolutionService != null ? MapEach(src.ArtifactResolutionService) : new IndexedEndpoint[0]),
+                SingleLogoutServices = (src.SingleLogoutService != null ? MapEach(src.SingleLogoutService) : new Endpoint[0]),
+                ManageNameIdServices = (src.ManageNameIDService != null ? MapEach(src.ManageNameIDService) : new Endpoint[0]),
+
+                //role
+                ProtocolSupportEnumeration = (src.protocolSupportEnumeration != null ? src.protocolSupportEnumeration[0] : String.Empty),
+                ContactPersons = (src.ContactPerson != null ? MapEach(src.ContactPerson) : new ContactPerson[0]),
+                //Organization = (src.Organization != null ? Map(src.Organization) : null),
+                //EncryptingCertificates = (src.KeyDescriptor != null ? MapEach(src.KeyDescriptor, KeyTypes.encryption) : new X509Certificate2[0]),
+                //SigningCertificates = (src.KeyDescriptor != null ? MapEach(src.KeyDescriptor, KeyTypes.signing) : new X509Certificate2[0]),
+                //Id = src.ID,
+                //ValidUntil = src.validUntil,
+                //CacheDuration = src.cacheDuration
             };
             return idpSsoDescriptor;
         }
@@ -454,7 +473,61 @@ namespace Saml.MetadataBuilder
                 }
                 return contactPersons;
             }
-            return null;
+            return new ContactPerson[0];
+        }
+
+        public X509Certificate2[] MapEach(KeyDescriptorType[] src, KeyTypes keyTypes)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var x509Certificate2 = new X509Certificate2[src.Length];
+                var i = 0;
+                foreach (var keyDescriptor in src.Where(x => x.use == keyTypes))
+                {
+                    var keyInfo = ReadKeyInfo(keyDescriptor.KeyInfo);
+                    foreach (var data in keyInfo.X509Data)
+                    {
+                        foreach (var certificate in data.Certificates)
+                        {
+                            x509Certificate2[i] = new X509Certificate2(Convert.FromBase64String(certificate));
+                            if (i < src.Length) { i++; };
+                        }
+                    }
+                }
+                return x509Certificate2;
+            }
+            return new X509Certificate2[0];
+        }
+
+        internal KeyInfo ReadKeyInfo(KeyInfoType keyInfoType)
+        {
+            var safeSettings = new XmlReaderSettings
+            {
+                XmlResolver = null,
+                DtdProcessing = DtdProcessing.Prohibit,
+                ValidationType = ValidationType.None
+            };
+            var keyInfoTypeString = SerializeToStringXml<KeyInfoType>(keyInfoType);
+            using (var reader = XmlReader.Create(new StringReader(keyInfoTypeString), safeSettings))
+            {
+                //var dsigSerializer = DSigSerializer.Default;
+                //var keyInfo = dsigSerializer.ReadKeyInfo(reader);
+                //reader.ReadEndElement();
+                return new KeyInfo();//keyInfo;
+            }
+        }
+
+        private string SerializeToStringXml<T>(T item) where T : class
+        {
+            string xmlString = string.Empty;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+            using (MemoryStream memStm = new MemoryStream())
+            {
+                xmlSerializer.Serialize(memStm, item);
+                memStm.Position = 0;
+                xmlString = new StreamReader(memStm).ReadToEnd();
+            }
+            return xmlString;
         }
         public Constants.ContactType MapEnum(ContactTypeType contactTypeType)
         {
@@ -498,7 +571,30 @@ namespace Saml.MetadataBuilder
                 }
                 return attribute;
             }
-            return null;
+            return new Attribute[0];
+        }
+        public IndexedEndpoint[] MapEach(IndexedEndpointType[] src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var indexedEndpoint = new IndexedEndpoint[src.Length];
+                var i = 0;
+                foreach (var iep in src)
+                {
+                    indexedEndpoint[i] = new IndexedEndpoint
+                    {
+                        Location = iep.Location,
+                        ResponseLocation = iep.ResponseLocation,
+                        Binding = iep.Binding,
+                        Index = iep.index,
+                        IsDefault = iep.isDefault,
+                        IsDefaultSpecified = iep.isDefaultSpecified
+                    };
+                    if (i < src.Length) { i++; };
+                }
+                return indexedEndpoint;
+            }
+            return new IndexedEndpoint[0];
         }
         public Endpoint[] MapEach(EndpointType[] src)
         {
