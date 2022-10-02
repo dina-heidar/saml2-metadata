@@ -22,3 +22,12 @@ Types of SAML2 binding (https://en.wikipedia.org/wiki/SAML_2.0)
 
 7- sign metadata
 8- include public cert in metadata
+
+
+
+1. when reading creating xml
+use Microsoft.Security.Xml to create certficate data. This will create the KeyDescriptor element.
+
+2.when signing the actual xml
+use System.Security.Xml to sign the entire the xml. This will create the Signature element.
+

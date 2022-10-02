@@ -14,7 +14,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The type of the key information name.
         /// </value>
-        public KeyInfoNameType KeyInfoNameType { get; set; }
+        public KeyInfoNameTypes KeyInfoNameType { get; set; }
         /// <summary>
         /// Gets or sets the key information.
         /// </summary>
