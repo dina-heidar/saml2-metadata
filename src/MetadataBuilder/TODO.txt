@@ -31,3 +31,6 @@ use Microsoft.Security.Xml to create certficate data. This will create the KeyDe
 2.when signing the actual xml
 use System.Security.Xml to sign the entire the xml. This will create the Signature element.
 
+arrange mappers better
+add the abiltity to add a Idp metadata address file instead of a url
+

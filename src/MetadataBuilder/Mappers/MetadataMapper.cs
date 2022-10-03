@@ -31,6 +31,7 @@ namespace Saml.MetadataBuilder
                 //AdditionalMetadataLocation = src.AdditionalMetadataLocations //optional
             };
 
+
             SpMetadata spMetadata = src as SpMetadata;
             SPSSODescriptorType sPSSODescriptorType = Map(spMetadata); //---> required
 
@@ -229,21 +230,21 @@ namespace Saml.MetadataBuilder
             }
             return null;
         }
-        public EndpointType[] Map(Endpoint src)
-        {
-            if (src != null)
-            {
-                var endpointType = new EndpointType[]{ new EndpointType
-                    {
-                        Location = src.Location,
-                        ResponseLocation = src.ResponseLocation,
-                        Binding = src.Binding
-                    }
-            };
-                return endpointType;
-            }
-            return null;
-        }
+        //public EndpointType[] Map(Endpoint src)
+        //{
+        //    if (src != null)
+        //    {
+        //        var endpointType = new EndpointType[]{ new EndpointType
+        //            {
+        //                Location = src.Location,
+        //                ResponseLocation = src.ResponseLocation,
+        //                Binding = src.Binding
+        //            }
+        //    };
+        //        return endpointType;
+        //    }
+        //    return null;
+        //}
         public EndpointType[] MapEach(Endpoint[] src)
         {
             if (src.Count() > 0 || src != null)
@@ -413,20 +414,64 @@ namespace Saml.MetadataBuilder
                 //AdditionalMetadataLocation = src.AdditionalMetadataLocations //optional
             };
 
-            foreach (var item in src.Items)
+            if (src.Items.Length != 0)
             {
-                if (item.GetType() == typeof(IDPSSODescriptorType))
-                {
-                    var idpSSODescriptor = Map(item as IDPSSODescriptorType);
-                    entityDescriptor.Items = new object[] { idpSSODescriptor };
+                var items = new object[src.Items.Length];
+                var i = 0;
+                foreach (var item in src.Items)
+                {                  
+                    if (item.GetType() == typeof(IDPSSODescriptorType))
+                    {
+                        var idpSSODescriptor = Map(item as IDPSSODescriptorType);
+                        entityDescriptor.Items[i] = idpSSODescriptor;
+                        if (i < src.Items.Length) { i++; };
+                    }
+                    if (item.GetType() == typeof(SPSSODescriptorType))
+                    {
+                        var spSSODescriptor = Map(item as SPSSODescriptorType);
+                        entityDescriptor.Items[i] = spSSODescriptor;
+                        if (i < src.Items.Length) { i++; };
+                    }
                 }
             }
             return entityDescriptor;
         }
+        public SPSSODescriptor Map(SPSSODescriptorType src)
+        {
+            var spSsoDescriptor = new SPSSODescriptor()
+            {
+                //sp
+                AssertionConsumerServices = (src.AssertionConsumerService != null ? MapEach(src.AssertionConsumerService) : new IndexedEndpoint[0]),
+                AttributeConsumingService = (src.AttributeConsumingService != null ? MapEach(src.AttributeConsumingService) : new AttributeConsumingService[0]),
+                AuthnRequestsSigned = src.AuthnRequestsSigned,
+                AuthnRequestsSignedFieldSpecified = src.AuthnRequestsSignedSpecified,
+                WantAssertionsSigned = src.WantAssertionsSigned,
+                WantAssertionsSignedFieldSpecified = src.WantAssertionsSignedSpecified,
+
+                //sso
+                NameIdFormats = (src.NameIDFormat != null ? src.NameIDFormat : new string[0]),
+                ArtifactResolutionServices = (src.ArtifactResolutionService != null ? MapEach(src.ArtifactResolutionService) : new IndexedEndpoint[0]),
+                SingleLogoutServices = (src.SingleLogoutService != null ? MapEach(src.SingleLogoutService) : new Endpoint[0]),
+                ManageNameIdServices = (src.ManageNameIDService != null ? MapEach(src.ManageNameIDService) : new Endpoint[0]),
+
+                //role
+                ProtocolSupportEnumeration = (src.protocolSupportEnumeration != null ? src.protocolSupportEnumeration[0] : String.Empty),
+                ContactPersons = (src.ContactPerson != null ? MapEach(src.ContactPerson) : new ContactPerson[0]),
+                Organization = (src.Organization != null ? Map(src.Organization) : null),
+                EncryptingCertificates = (src.KeyDescriptor != null ? MapEach(src.KeyDescriptor, KeyTypes.encryption) : new X509Certificate2[0]),
+                SigningCertificates = (src.KeyDescriptor != null ? MapEach(src.KeyDescriptor, KeyTypes.signing) : new X509Certificate2[0]),
+                Id = src.ID,
+                ValidUntil = src.validUntil,
+                CacheDuration = src.cacheDuration
+            };
+            return spSsoDescriptor;
+        }
+
         public IDPSSODescriptor Map(IDPSSODescriptorType src)
         {
             var idpSsoDescriptor = new IDPSSODescriptor()
             {
+                //idp
                 SingleSignOnServices = (src.SingleSignOnService != null ? MapEach(src.SingleSignOnService) : new Endpoint[0]),
                 NameIdMappingServices = (src.NameIDMappingService != null ? MapEach(src.NameIDMappingService) : new Endpoint[0]),
                 AssertionIdRequestServices = (src.AssertionIDRequestService != null ? MapEach(src.AssertionIDRequestService) : new Endpoint[0]),
@@ -443,14 +488,38 @@ namespace Saml.MetadataBuilder
                 //role
                 ProtocolSupportEnumeration = (src.protocolSupportEnumeration != null ? src.protocolSupportEnumeration[0] : String.Empty),
                 ContactPersons = (src.ContactPerson != null ? MapEach(src.ContactPerson) : new ContactPerson[0]),
-                //Organization = (src.Organization != null ? Map(src.Organization) : null),
-                //EncryptingCertificates = (src.KeyDescriptor != null ? MapEach(src.KeyDescriptor, KeyTypes.encryption) : new X509Certificate2[0]),
-                //SigningCertificates = (src.KeyDescriptor != null ? MapEach(src.KeyDescriptor, KeyTypes.signing) : new X509Certificate2[0]),
-                //Id = src.ID,
-                //ValidUntil = src.validUntil,
-                //CacheDuration = src.cacheDuration
+                Organization = (src.Organization != null ? Map(src.Organization) : null),
+                EncryptingCertificates = (src.KeyDescriptor != null ? MapEach(src.KeyDescriptor, KeyTypes.encryption) : new X509Certificate2[0]),
+                SigningCertificates = (src.KeyDescriptor != null ? MapEach(src.KeyDescriptor, KeyTypes.signing) : new X509Certificate2[0]),
+                Id = src.ID,
+                ValidUntil = src.validUntil,
+                CacheDuration = src.cacheDuration
             };
             return idpSsoDescriptor;
+        }
+
+        public AttributeConsumingService[] MapEach(AttributeConsumingServiceType[] src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var attributeConsumingService = new AttributeConsumingService[src.Length];
+                var i = 0;
+                foreach (var atc in src)
+                {
+                    attributeConsumingService[i] = new AttributeConsumingService
+                    {
+                        IsDefault = atc.isDefault,
+                        IsDefaultFieldSpecified = atc.isDefaultSpecified,
+                        ServiceDescriptions = MapEach(atc.ServiceDescription),
+                        ServiceNames = MapEach(atc.ServiceName),
+                        Index = atc.index,
+                        RequestedAttributes = MapEach(atc.RequestedAttribute)
+                    };
+                    if (i < src.Length) { i++; };
+                }
+                return attributeConsumingService;
+            }
+            return new AttributeConsumingService[0];
         }
         public ContactPerson[] MapEach(ContactType[] src)
         {
@@ -475,14 +544,14 @@ namespace Saml.MetadataBuilder
             }
             return new ContactPerson[0];
         }
-
         public X509Certificate2[] MapEach(KeyDescriptorType[] src, KeyTypes keyTypes)
         {
-            if (src.Count() > 0 || src != null)
+            var newSrc = src.Where(x => x.use == keyTypes).ToArray();
+            if (newSrc.Count() > 0 || newSrc != null)
             {
-                var x509Certificate2 = new X509Certificate2[src.Length];
+                var x509Certificate2 = new X509Certificate2[newSrc.Length];
                 var i = 0;
-                foreach (var keyDescriptor in src.Where(x => x.use == keyTypes))
+                foreach (var keyDescriptor in newSrc)
                 {
                     var keyInfo = ReadKeyInfo(keyDescriptor.KeyInfo);
                     foreach (var data in keyInfo.X509Data)
@@ -498,7 +567,6 @@ namespace Saml.MetadataBuilder
             }
             return new X509Certificate2[0];
         }
-
         internal KeyInfo ReadKeyInfo(KeyInfoType keyInfoType)
         {
             var safeSettings = new XmlReaderSettings
@@ -510,13 +578,11 @@ namespace Saml.MetadataBuilder
             var keyInfoTypeString = SerializeToStringXml<KeyInfoType>(keyInfoType);
             using (var reader = XmlReader.Create(new StringReader(keyInfoTypeString), safeSettings))
             {
-                //var dsigSerializer = DSigSerializer.Default;
-                //var keyInfo = dsigSerializer.ReadKeyInfo(reader);
-                //reader.ReadEndElement();
-                return new KeyInfo();//keyInfo;
+                var dsigSerializer = DSigSerializer.Default;
+                var keyInfo = dsigSerializer.ReadKeyInfo(reader);
+                return keyInfo;
             }
         }
-
         private string SerializeToStringXml<T>(T item) where T : class
         {
             string xmlString = string.Empty;
@@ -529,24 +595,24 @@ namespace Saml.MetadataBuilder
             }
             return xmlString;
         }
-        public Constants.ContactType MapEnum(ContactTypeType contactTypeType)
+        public Constants.ContactEnumType MapEnum(ContactTypeType contactTypeType)
         {
             switch (contactTypeType)
             {
                 case ContactTypeType.technical:
-                    return Constants.ContactType.Technical;
+                    return Constants.ContactEnumType.Technical;
 
                 case ContactTypeType.administrative:
-                    return Constants.ContactType.Administrative;
+                    return Constants.ContactEnumType.Administrative;
 
                 case ContactTypeType.support:
-                    return Constants.ContactType.Support;
+                    return Constants.ContactEnumType.Support;
 
                 case ContactTypeType.billing:
-                    return Constants.ContactType.Billing;
+                    return Constants.ContactEnumType.Billing;
 
                 case ContactTypeType.other:
-                    return Constants.ContactType.Other;
+                    return Constants.ContactEnumType.Other;
 
                 default:
                     throw new Saml2MetadataSerializationException($"Invalid ContactType {contactTypeType}");
@@ -647,7 +713,7 @@ namespace Saml.MetadataBuilder
                 }
                 return localizedName;
             }
-            return null;
+            return new LocalizedName[0];
         }
         public LocalizedUri[] MapEach(localizedURIType[] src)
         {
@@ -666,7 +732,29 @@ namespace Saml.MetadataBuilder
                 }
                 return localizedUri;
             }
-            return null;
+            return new LocalizedUri[0];
+        }
+        public RequestedAttribute[] MapEach(RequestedAttributeType[] src)
+        {
+            if (src.Count() > 0 || src != null)
+            {
+                var requestedAttribute = new RequestedAttribute[src.Count()]; var i = 0;
+                foreach (var ra in src)
+                {
+                    requestedAttribute[i] = new RequestedAttribute
+                    {
+                        IsRequiredFieldSpecified = ra.isRequiredSpecified,
+                        IsRequiredField = ra.isRequired,
+                        AttributeValue = ra.AttributeValue,
+                        FriendlyName = ra.FriendlyName,
+                        Name = ra.Name,
+                        NameFormat = ra.NameFormat
+                    };
+                    if (i < src.Count()) { i++; };
+                }
+                return requestedAttribute;
+            }
+            return new RequestedAttribute[0];
         }
 
         #endregion

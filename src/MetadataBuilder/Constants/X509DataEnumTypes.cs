@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public enum X509DataTypes
+    public enum X509DataEnumTypes
     {
         /// <summary>
         /// The item

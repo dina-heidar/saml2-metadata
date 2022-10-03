@@ -28,7 +28,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The type of the key.
         /// </value>
-        public KeyTypes KeyType { get; set; }
+        public KeyEnumTypes KeyType { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether [use field specified].

@@ -5,14 +5,14 @@ namespace Saml.MetadataBuilder
     /// <summary>
     ///   <br />
     /// </summary>
-    public class Binding
+    public class BindingExtensions
     {
         /// <summary>The binding</summary>
         private readonly string binding;
 
-        /// <summary>Initializes a new instance of the <see cref="Binding" /> class.</summary>
+        /// <summary>Initializes a new instance of the <see cref="BindingExtensions" /> class.</summary>
         /// <param name="binding">The binding.</param>
-        public Binding(string binding)
+        public BindingExtensions(string binding)
         {
             this.binding = binding;
         }

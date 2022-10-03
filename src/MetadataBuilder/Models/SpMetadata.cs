@@ -17,10 +17,6 @@ namespace Saml.MetadataBuilder
         public AttributeConsumingService[] AttributeConsumingService { get; set; } = new AttributeConsumingService[0];
         public SpMetadata()
         {
-            //RoleDescriptor = new RoleDescriptor
-            //{
-            //    ProtocolSupportEnumeration = ProtocolSupportEnumerationTypes.Default,
-            //};
             MetadataType = MetadataType.SSOSPSSODescriptorType;
         }
 

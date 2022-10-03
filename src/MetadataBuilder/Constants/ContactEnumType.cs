@@ -3,7 +3,7 @@
     /// <summary>
     ///Type of contact
     /// </summary>
-    public enum ContactType
+    public enum ContactEnumType
     {
         /// <summary>
         /// Technical staff

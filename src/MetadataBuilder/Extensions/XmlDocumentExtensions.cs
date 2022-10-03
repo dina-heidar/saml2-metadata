@@ -23,6 +23,7 @@ namespace Saml.MetadataBuilder
         public static XmlDocument AddSignature(this XmlDocument xml, X509Certificate2 x509Certificate2)
         {
             //set key, signtureMethod based on certificate type
+
             var (key, signatureMethod, keyName) = SetSignatureAlgorithm(x509Certificate2);
 
             var signedXml = new SignedXml(xml) { SigningKey = key };
@@ -115,7 +116,7 @@ namespace Saml.MetadataBuilder
             if ((signedXml.SignedInfo.References[0] as Reference)?.Uri != "")
                 throw new InvalidOperationException("Check your references!");
 
-            return signedXml.CheckSignature((AsymmetricAlgorithm)signedCertificate.GetRSAPublicKey() ?? 
+            return signedXml.CheckSignature((AsymmetricAlgorithm)signedCertificate.GetRSAPublicKey() ??
                 signedCertificate.GetECDsaPublicKey());
         }
     }
