@@ -10,7 +10,7 @@ namespace Saml.MetadataBuilder
         public LocalizedName[] ServiceNames { get; set; } = new LocalizedName[0];
         public LocalizedName[] ServiceDescriptions { get; set; } = new LocalizedName[0];
         public RequestedAttribute[] RequestedAttributes { get; set; } = new RequestedAttribute[0];//optional
-        public X509Certificate2 EncryptingCertificate { get; set; }
+        public EncryptingCertificate EncryptingCertificate { get; set; }
         public X509Certificate2 SigningCertificate { get; set; }
 
 

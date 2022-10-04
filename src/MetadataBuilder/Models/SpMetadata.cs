@@ -1,4 +1,5 @@
-﻿using Saml.MetadataBuilder.Constants;
+﻿using Microsoft.IdentityModel.Tokens;
+using Saml.MetadataBuilder.Constants;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
@@ -11,7 +12,7 @@ namespace Saml.MetadataBuilder
         public virtual Endpoint[] SingleLogoutServiceEndpoints { get; set; } = new Endpoint[0];
         public bool AuthnRequestsSigned { get; set; }
         public bool WantAssertionsSigned { get; set; }
-        public X509Certificate2[] EncryptingCertificates { get; set; }
+        public EncryptingCertificate[] EncryptingCertificates { get; set; }
         public X509Certificate2[] SigningCertificates { get; set; }
         internal string ProtocolSupportEnumeration { get; set; } = ProtocolSupportEnumerationTypes.Default;
         public AttributeConsumingService[] AttributeConsumingService { get; set; } = new AttributeConsumingService[0];

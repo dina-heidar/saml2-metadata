@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public enum KeyInfoNameEnumType
+    public enum KeyInfoNameEnumTypes
     {
         /// <summary>
         /// The item

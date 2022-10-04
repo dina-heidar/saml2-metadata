@@ -35,8 +35,8 @@ namespace Saml.MetadataBuilder
                 ProtocolSupportEnumeration = (src.protocolSupportEnumeration != null ? src.protocolSupportEnumeration[0] : string.Empty),
                 ContactPersons = (src.ContactPerson != null ? src.ContactPerson.MapEach() : new ContactPerson[0]),
                 Organization = (src.Organization != null ? src.Organization.Map() : null),
-                EncryptingCertificates = (src.KeyDescriptor != null ? CommonMapper.MapEach(src.KeyDescriptor, KeyTypes.encryption) : new X509Certificate2[0]),
-                SigningCertificates = (src.KeyDescriptor != null ? CommonMapper.MapEach(src.KeyDescriptor, KeyTypes.signing) : new X509Certificate2[0]),
+                EncryptingCertificates = (src.KeyDescriptor != null ? RoleMapper.MapEach(src.KeyDescriptor, KeyTypes.encryption) : new X509Certificate2[0]),
+                SigningCertificates = (src.KeyDescriptor != null ? RoleMapper.MapEach(src.KeyDescriptor, KeyTypes.signing) : new X509Certificate2[0]),
                 Id = src.ID,
                 ValidUntil = src.validUntil,
                 CacheDuration = src.cacheDuration

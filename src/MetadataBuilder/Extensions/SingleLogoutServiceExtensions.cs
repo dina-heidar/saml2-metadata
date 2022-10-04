@@ -9,10 +9,10 @@ namespace Saml.MetadataBuilder
     {
         //// <summary>Gets the binding of type POST.</summary>
         /// <value>The binding of type POST.</value>
-        public static BindingExtensions Post => new Binding(BindingTypes.Post);
+        public static BindingExtensions Post => new BindingExtensions(BindingTypes.Post);
         /// <summary>Gets the binding of type REDIRECT.</summary>
         /// <value>The binding of type REDIRECT.</value>
-        public static BindingExtensions Redirect => new Binding(BindingTypes.Redirect);       
+        public static BindingExtensions Redirect => new BindingExtensions(BindingTypes.Redirect);
     }
 }
 

@@ -14,7 +14,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The type of the key information name.
         /// </value>
-        public KeyInfoNameTypes KeyInfoNameType { get; set; }
+        public KeyInfoNameEnumTypes KeyInfoNameType { get; set; }
         /// <summary>
         /// Gets or sets the key information.
         /// </summary>
@@ -31,12 +31,17 @@ namespace Saml.MetadataBuilder
         public KeyEnumTypes KeyType { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether [use field specified].
+        /// The encryption methods
         /// </summary>
-        /// <value>
-        ///   <c>true</c> if [use field specified]; otherwise, <c>false</c>.
-        /// </value>
-        public bool UseSpecified { get; set; } = true;
+        public EncryptionMethod[] EncryptionMethods { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether [use field specified].
+    /// </summary>
+    /// <value>
+    ///   <c>true</c> if [use field specified]; otherwise, <c>false</c>.
+    /// </value>
+    public bool UseSpecified { get; set; } = true;
     }
 }
 
