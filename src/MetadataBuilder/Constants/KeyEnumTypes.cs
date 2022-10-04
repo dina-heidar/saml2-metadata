@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public enum KeyTypes
+    public enum KeyEnumTypes
     {
 
         /// <summary>

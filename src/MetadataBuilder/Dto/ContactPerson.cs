@@ -50,7 +50,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The type of the contact.
         /// </value>
-        public ContactType ContactType { get; set; }
+        public ContactEnumType ContactType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactPerson"/> class.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Saml.MetadataBuilder
         /// Initializes a new instance of the <see cref="ContactPerson"/> class.
         /// </summary>
         /// <param name="contactType">Type of the contact.</param>
-        public ContactPerson(ContactType contactType)
+        public ContactPerson(ContactEnumType contactType)
         {
             ContactType = contactType;
         }

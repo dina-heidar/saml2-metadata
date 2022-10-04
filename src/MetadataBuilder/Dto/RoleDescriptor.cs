@@ -41,6 +41,12 @@ namespace Saml.MetadataBuilder
         //public Signature Signature { get; set; }
 
         public X509Certificate2[] EncryptingCertificates { get; set; }
+        /// <summary>
+        /// Gets or sets the signing certificates.
+        /// </summary>
+        /// <value>
+        /// The signing certificates.
+        /// </value>
         public X509Certificate2[] SigningCertificates { get; set; }
 
         /// <summary>
