@@ -18,8 +18,8 @@ namespace Saml.MetadataBuilder
             services.AddScoped<IMetadataReader, MetadataReader>();
 
             //mappers
-            services.AddTransient<IMetadataMapper<EntityDescriptor, EntityDescriptorType>, MetadataMapper>();
-            services.AddTransient<IMetadataMapper<EntityDescriptorType, EntityDescriptor>, MetadataMapper>();
+            services.AddTransient<IMetadataMapper<EntityDescriptor, EntityDescriptorType>, EntityDescriptorTypeMapper>();
+            services.AddTransient<IMetadataMapper<EntityDescriptorType, EntityDescriptor>, EntityDescriptorMapper>();
 
         }
     }

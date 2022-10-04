@@ -28,7 +28,7 @@ namespace Saml.MetadataBuilder
 
                 //role
                 protocolSupportEnumeration = new[] { src.ProtocolSupportEnumeration }, //---> required
-                KeyDescriptor = (src.EncryptingCertificates.Count() + src.SigningCertificates.Count() != 0 ? CommonMapper.MapAll(src.EncryptingCertificates, src.SigningCertificates) : null),//optional
+                KeyDescriptor = RoleMapper.MapAll(src.EncryptingCertificates, src.SigningCertificates),//optional
                 cacheDuration = (src.CacheDuration != null ? src.CacheDuration : null), //optional              
                 //errorURL  //optional
                 Extensions = (src.Extensions != null ? src.Extensions.Map() : null),  //optional,              
@@ -41,7 +41,7 @@ namespace Saml.MetadataBuilder
             src.SingleLogoutServiceEndpoints = (src.SingleLogoutServiceEndpoint != null ? new Endpoint[] { src.SingleLogoutServiceEndpoint } : new Endpoint[0]);
             src.AssertionConsumerServices = (src.AssertionConsumerService != null ? new IndexedEndpoint[] { src.AssertionConsumerService } : new IndexedEndpoint[0]);
             src.ArtifactResolutionServices = (src.ArtifactResolutionService != null ? new IndexedEndpoint[] { src.ArtifactResolutionService } : new IndexedEndpoint[0]);
-            src.EncryptingCertificates = (src.EncryptingCertificate != null ? new X509Certificate2[] { src.EncryptingCertificate } : new X509Certificate2[0]);
+            src.EncryptingCertificates = (src.EncryptingCertificate != null ? new EncryptingCertificate[] { src.EncryptingCertificate } : new EncryptingCertificate[0]);
             src.SigningCertificates = (src.SigningCertificate != null ? new X509Certificate2[] { src.SigningCertificate } : new X509Certificate2[0]);
             src.AttributeConsumingService = MapAll(src.ServiceNames, src.ServiceDescriptions, src.RequestedAttributes);
         }
@@ -132,8 +132,8 @@ namespace Saml.MetadataBuilder
                 ProtocolSupportEnumeration = (src.protocolSupportEnumeration != null ? src.protocolSupportEnumeration[0] : string.Empty),
                 ContactPersons = (src.ContactPerson != null ? src.ContactPerson.MapEach() : new ContactPerson[0]),
                 Organization = (src.Organization != null ? src.Organization.Map() : null),
-                EncryptingCertificates = (src.KeyDescriptor != null ? CommonMapper.MapEach(src.KeyDescriptor, KeyTypes.encryption) : new X509Certificate2[0]),
-                SigningCertificates = (src.KeyDescriptor != null ? CommonMapper.MapEach(src.KeyDescriptor, KeyTypes.signing) : new X509Certificate2[0]),
+                EncryptingCertificates = (src.KeyDescriptor != null ? RoleMapper.MapEach(src.KeyDescriptor, KeyTypes.encryption) : new X509Certificate2[0]),
+                SigningCertificates = (src.KeyDescriptor != null ? RoleMapper.MapEach(src.KeyDescriptor, KeyTypes.signing) : new X509Certificate2[0]),
                 Id = src.ID,
                 ValidUntil = src.validUntil,
                 CacheDuration = src.cacheDuration

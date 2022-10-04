@@ -1594,7 +1594,7 @@ namespace MetadataBuilder.Schema.Metadata
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:metadata:algsupport")]
+    [System.Xml.Serialization.XmlTypeAttribute("SigningMethodType", Namespace = "urn:oasis:names:tc:SAML:metadata:algsupport")]
     [System.Xml.Serialization.XmlRootAttribute("SigningMethod", Namespace = "urn:oasis:names:tc:SAML:metadata:algsupport", IsNullable = false)]
     public partial class SigningMethodType
     {
@@ -5783,15 +5783,13 @@ namespace MetadataBuilder.Schema.Metadata
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:metadata")]
     [System.Xml.Serialization.XmlRootAttribute("Extensions", Namespace = "urn:oasis:names:tc:SAML:2.0:metadata", IsNullable = false)]
     public partial class ExtensionsType
-    {
-        //private System.Xml.XmlElement[] anyField;
+    {       
         private object[] anyField;
 
-
-        //[System.Xml.Serialization.XmlAnyElementAttribute()]
-        //public System.Xml.XmlElement[] Any
         [System.Xml.Serialization.XmlElementAttribute("UIInfo", typeof(UIInfoType), Namespace = "urn:oasis:names:tc:SAML:metadata:ui")]
         [System.Xml.Serialization.XmlElementAttribute("DiscoHints", typeof(DiscoHintsType))]
+        [System.Xml.Serialization.XmlElementAttribute("DigestMethod", typeof(DigestMethodType1), Namespace = "urn:oasis:names:tc:SAML:metadata:algsupport")]
+        [System.Xml.Serialization.XmlElementAttribute("SigningMethod", typeof(SigningMethodType), Namespace = "urn:oasis:names:tc:SAML:metadata:algsupport")]
         public object[] Any
         {
             get
