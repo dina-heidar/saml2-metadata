@@ -18,6 +18,12 @@
 	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	</PackageReference>-->
 	</ItemGroup>
+	<ItemGroup>
+	  <EditorConfigFiles Remove="C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\.editorconfig" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\.editorconfig" />
+	</ItemGroup>
 
 
 </Project>
