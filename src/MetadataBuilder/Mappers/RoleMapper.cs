@@ -546,9 +546,9 @@ namespace Saml.MetadataBuilder
         }
         internal static string SerializeToStringXml<T>(T item) where T : class
         {
-            string xmlString = string.Empty;
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
-            using (MemoryStream memStm = new MemoryStream())
+            var xmlString = string.Empty;
+            var xmlSerializer = new XmlSerializer(typeof(T));
+            using (var memStm = new MemoryStream())
             {
                 xmlSerializer.Serialize(memStm, item);
                 memStm.Position = 0;

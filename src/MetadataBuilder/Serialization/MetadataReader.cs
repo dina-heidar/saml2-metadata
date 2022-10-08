@@ -41,7 +41,7 @@ namespace Saml.MetadataBuilder
         internal T DeSerializeToClass<T>
             (string xmlString) where T : class
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+            var xmlSerializer = new XmlSerializer(typeof(T));
             using (var reader = CreateReader(xmlString))
             {
                 return ((T)xmlSerializer.Deserialize(reader));

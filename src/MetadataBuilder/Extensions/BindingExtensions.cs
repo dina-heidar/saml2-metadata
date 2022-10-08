@@ -31,7 +31,7 @@ namespace Saml.MetadataBuilder
             Uri uriResult;
 
             //check if location is a valid http/https url
-            bool isValidLocation = Uri.TryCreate(location, UriKind.Absolute, out uriResult)
+            var isValidLocation = Uri.TryCreate(location, UriKind.Absolute, out uriResult)
                 && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 
             if (!isValidLocation)
@@ -42,7 +42,7 @@ namespace Saml.MetadataBuilder
             if (responseLocation != null)
             {
                 //check if response location is a valid http/https url
-                bool isValidResponseLocation = Uri.TryCreate(responseLocation, UriKind.Absolute, out uriResult)
+                var isValidResponseLocation = Uri.TryCreate(responseLocation, UriKind.Absolute, out uriResult)
                 && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 
                 if (!isValidResponseLocation)
@@ -75,7 +75,7 @@ namespace Saml.MetadataBuilder
             Uri uriResult;
 
             //check if location is a valid http/https url
-            bool isValidLocation = Uri.TryCreate(location, UriKind.Absolute, out uriResult)
+            var isValidLocation = Uri.TryCreate(location, UriKind.Absolute, out uriResult)
                 && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 
             if (!isValidLocation)
