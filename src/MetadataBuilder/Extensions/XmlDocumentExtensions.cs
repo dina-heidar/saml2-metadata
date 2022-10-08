@@ -1,5 +1,4 @@
-﻿// MIT License
-// Copyright (c) 2019 Dina Heidar
+﻿// Copyright (c) 2022 Dina Heidar
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -43,10 +42,9 @@ namespace Saml.MetadataBuilder
         /// <param name="xml">The XML.</param>
         /// <param name="x509Certificate2">The X509 certificate2.</param>
         /// <returns></returns>
-        public static XmlDocument AddSignature(this XmlDocument xml, X509Certificate2 x509Certificate2)
+        public static XmlDocument AddXmlSignature(this XmlDocument xml, X509Certificate2 x509Certificate2)
         {
             //set key, signtureMethod based on certificate type
-
             var (key, signatureMethod, keyName) = SetSignatureAlgorithm(x509Certificate2);
 
             var signedXml = new SignedXml(xml) { SigningKey = key };
@@ -119,7 +117,7 @@ namespace Saml.MetadataBuilder
         /// or
         /// Check your references!
         /// </exception>
-        public static bool ValidateSignature(this XmlDocument xmlDoc)
+        public static bool ValidateXmlSignature(this XmlDocument xmlDoc)
         {
             var signedXml = new SignedXml(xmlDoc);
             var signatureElement = xmlDoc.GetElementsByTagName("Signature", NamespaceTypes.DsNamespace);
@@ -144,11 +142,13 @@ namespace Saml.MetadataBuilder
         }
     }
 
+    #region Internals
+
     /// <summary>
     /// 
     /// </summary>
     /// <seealso cref="System.Security.Cryptography.SignatureDescription" />
-    public class Ecdsa256SignatureDescription : SignatureDescription
+    internal class Ecdsa256SignatureDescription : SignatureDescription
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Ecdsa256SignatureDescription"/> class.
@@ -201,7 +201,7 @@ namespace Saml.MetadataBuilder
     /// 
     /// </summary>
     /// <seealso cref="System.Security.Cryptography.AsymmetricSignatureFormatter" />
-    public class EcdsaSignatureFormatter : AsymmetricSignatureFormatter
+    internal class EcdsaSignatureFormatter : AsymmetricSignatureFormatter
     {
         /// <summary>
         /// The key
@@ -240,7 +240,7 @@ namespace Saml.MetadataBuilder
     /// 
     /// </summary>
     /// <seealso cref="System.Security.Cryptography.AsymmetricSignatureDeformatter" />
-    public class EcdsaSignatureDeformatter : AsymmetricSignatureDeformatter
+    internal class EcdsaSignatureDeformatter : AsymmetricSignatureDeformatter
     {
         /// <summary>
         /// The key
@@ -277,4 +277,6 @@ namespace Saml.MetadataBuilder
         public override bool VerifySignature(byte[] rgbHash, byte[] rgbSignature) =>
             key.VerifyHash(rgbHash, rgbSignature);
     }
+
+    #endregion
 }
