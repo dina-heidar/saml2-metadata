@@ -5,6 +5,6 @@ namespace Saml.MetadataBuilder
 {
     public interface IMetadataReader
     {
-        public Task<EntityDescriptor> Read(string address, CancellationToken cancel); 
+        public Task<EntityDescriptor> Read(string address, CancellationToken cancel);
     }
 }

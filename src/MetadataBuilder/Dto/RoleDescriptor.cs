@@ -1,6 +1,6 @@
-﻿using Microsoft.IdentityModel.Xml;
-using System;
+﻿using System;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.IdentityModel.Xml;
 
 namespace Saml.MetadataBuilder
 {
@@ -9,7 +9,7 @@ namespace Saml.MetadataBuilder
     /// </summary>
     public class RoleDescriptor
     {
-        
+
         /// <summary>
         /// Gets or sets the protocol support enumeration.
         /// </summary>
@@ -72,7 +72,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The identifier.
         /// </value>
-        public string Id { get;set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Gets or sets the valid until.

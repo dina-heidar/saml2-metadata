@@ -1,5 +1,5 @@
-﻿using Saml.MetadataBuilder.Constants;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
 {
@@ -54,7 +54,7 @@ namespace Saml.MetadataBuilder
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactPerson"/> class.
         /// </summary>
-        public ContactPerson() {}
+        public ContactPerson() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactPerson"/> class.
         /// </summary>

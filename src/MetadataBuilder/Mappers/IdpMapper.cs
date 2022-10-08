@@ -1,6 +1,6 @@
-﻿using MetadataBuilder.Schema.Metadata;
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using MetadataBuilder.Schema.Metadata;
 
 namespace Saml.MetadataBuilder
 {

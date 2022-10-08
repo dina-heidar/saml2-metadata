@@ -1,6 +1,6 @@
-﻿using MetadataBuilder.Schema.Metadata;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using MetadataBuilder.Schema.Metadata;
 
 namespace Saml.MetadataBuilder
 {

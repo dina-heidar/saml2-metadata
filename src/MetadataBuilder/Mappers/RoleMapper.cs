@@ -1,13 +1,13 @@
-﻿using MetadataBuilder.Schema.Metadata;
-using Microsoft.IdentityModel.Xml;
-using Saml.MetadataBuilder.Constants;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 using System.Xml.Serialization;
+using MetadataBuilder.Schema.Metadata;
+using Microsoft.IdentityModel.Xml;
+using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
 {

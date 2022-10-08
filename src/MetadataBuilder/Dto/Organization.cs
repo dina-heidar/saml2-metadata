@@ -27,6 +27,6 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The organization URL.
         /// </value>
-        public ICollection<LocalizedUri> OrganizationURL { get; set; }      
+        public ICollection<LocalizedUri> OrganizationURL { get; set; }
     }
 }

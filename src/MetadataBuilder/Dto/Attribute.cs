@@ -11,7 +11,7 @@
         /// <value>
         /// The attribute value.
         /// </value>
-        public object[] AttributeValue { get;set; }
+        public object[] AttributeValue { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
