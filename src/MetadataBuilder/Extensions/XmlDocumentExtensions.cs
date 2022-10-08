@@ -1,11 +1,11 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using Saml.MetadataBuilder.Constants;
-using System;
+﻿using System;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
 using System.Xml;
+using Microsoft.IdentityModel.Tokens;
+using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
 {

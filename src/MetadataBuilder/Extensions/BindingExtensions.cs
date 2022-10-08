@@ -73,7 +73,7 @@ namespace Saml.MetadataBuilder
         public IndexedEndpoint Url(string location, int index, bool isDefault = false)
         {
             Uri uriResult;
-           
+
             //check if location is a valid http/https url
             bool isValidLocation = Uri.TryCreate(location, UriKind.Absolute, out uriResult)
                 && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);

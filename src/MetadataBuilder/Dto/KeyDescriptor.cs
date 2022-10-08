@@ -35,13 +35,13 @@ namespace Saml.MetadataBuilder
         /// </summary>
         public EncryptionMethod[] EncryptionMethods { get; set; }
 
-    /// <summary>
-    /// Gets or sets a value indicating whether [use field specified].
-    /// </summary>
-    /// <value>
-    ///   <c>true</c> if [use field specified]; otherwise, <c>false</c>.
-    /// </value>
-    public bool UseSpecified { get; set; } = true;
+        /// <summary>
+        /// Gets or sets a value indicating whether [use field specified].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [use field specified]; otherwise, <c>false</c>.
+        /// </value>
+        public bool UseSpecified { get; set; } = true;
     }
 }
 

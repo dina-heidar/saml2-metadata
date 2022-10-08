@@ -1,7 +1,4 @@
-﻿using MetadataBuilder.Schema.Metadata;
-using Microsoft.IdentityModel.Protocols;
-using Microsoft.IdentityModel.Xml;
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -9,6 +6,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using MetadataBuilder.Schema.Metadata;
+using Microsoft.IdentityModel.Protocols;
+using Microsoft.IdentityModel.Xml;
 
 namespace Saml.MetadataBuilder
 {
@@ -84,7 +84,7 @@ namespace Saml.MetadataBuilder
 
             //there is always one signature in entityDescriptor
             //this is different than having multiple signatures that can be used
-            var signature = GetSignature(xmlString); 
+            var signature = GetSignature(xmlString);
             var entityDescriptor = _mapper.MapEntity(entityDescriptorType);
 
             if (signature != null)

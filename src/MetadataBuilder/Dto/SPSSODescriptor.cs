@@ -5,7 +5,7 @@
     /// </summary>
     /// <seealso cref="Saml.MetadataBuilder.SSODescriptor" />
     public class SPSSODescriptor : SSODescriptor
-    {       
+    {
 
         /// <summary>
         /// Gets or sets the assertion consumer services.
@@ -54,7 +54,7 @@
         ///   <c>true</c> if [want assertions signed field specified]; otherwise, <c>false</c>.
         /// </value>
         public bool WantAssertionsSignedFieldSpecified { get; set; } = true;
-      
+
     }
 }
 

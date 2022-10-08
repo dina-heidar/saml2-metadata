@@ -1,6 +1,6 @@
-﻿using Saml.MetadataBuilder.Constants;
-using System;
+﻿using System;
 using System.Security.Cryptography.X509Certificates;
+using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
 {
