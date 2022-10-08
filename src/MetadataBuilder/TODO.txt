@@ -1,5 +1,5 @@
 ﻿https://medium.com/the-crazy-coder/visual-studio-copyright-notices-in-source-files-b95d7f427e97
-
+ dotnet format MetadataBuilder.csproj
 
 1- SOAP binding ?
 2- Singlelogout service count for SP

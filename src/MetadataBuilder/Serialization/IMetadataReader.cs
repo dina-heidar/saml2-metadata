@@ -1,5 +1,4 @@
-﻿// MIT License
-// Copyright (c) 2019 Dina Heidar
+﻿// Copyright (c) 2022 Dina Heidar
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -28,6 +27,6 @@ namespace Saml.MetadataBuilder
 {
     public interface IMetadataReader
     {
-        public Task<EntityDescriptor> Read(string address, CancellationToken cancel);
+        Task<EntityDescriptor> Read(string address, CancellationToken cancel);
     }
 }
