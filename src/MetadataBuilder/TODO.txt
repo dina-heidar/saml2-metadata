@@ -1,4 +1,7 @@
-﻿1- SOAP binding ?
+﻿https://medium.com/the-crazy-coder/visual-studio-copyright-notices-in-source-files-b95d7f427e97
+
+
+1- SOAP binding ?
 2- Singlelogout service count for SP
 3- Artifact binding
 4- POAS binding ? 
