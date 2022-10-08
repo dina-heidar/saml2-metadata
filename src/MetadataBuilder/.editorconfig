@@ -143,5 +143,6 @@ dotnet_diagnostic.IDE0008.severity = none
 dotnet_diagnostic.IDE0022.severity = suggestion
 
 # remove unused usings
-dotnet_diagnostic.IDE0005.severity = error
+dotnet_diagnostic.IDE0005.severity = none
+directive dotnet_sort_system_directives_first = true
 

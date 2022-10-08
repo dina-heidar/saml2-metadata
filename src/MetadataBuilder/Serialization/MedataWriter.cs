@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 using System.Xml.Serialization;
 using MetadataBuilder.Schema.Metadata;
@@ -34,16 +33,16 @@ namespace Saml.MetadataBuilder
         /// <returns></returns>
         internal XmlDocument SerializeToXml<T>(T item) where T : class
         {
-            string xmlTemplate = string.Empty;
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
-            using (MemoryStream memStm = new MemoryStream())
+            var xmlTemplate = string.Empty;
+            var xmlSerializer = new XmlSerializer(typeof(T));
+            using (var memStm = new MemoryStream())
             {
                 xmlSerializer.Serialize(memStm, item);
                 memStm.Position = 0;
                 xmlTemplate = new StreamReader(memStm).ReadToEnd();
             }
             //create xml document from string
-            XmlDocument xmlDoc = new XmlDocument();
+            var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xmlTemplate);
 
             xmlDoc.PreserveWhitespace = true;
