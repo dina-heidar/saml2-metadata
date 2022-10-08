@@ -414,71 +414,75 @@ namespace Saml.MetadataBuilder
             }
             return new IndexedEndpoint[0];
         }
-        public static Extension Map(ExtensionsType src)
-        {
-            var extensionsType = new Extension();
-            var objectList = new List<object>();
+        //public static Extension Map(ExtensionsType src)
+        //{
+        //    var extensionsType = new Extension();
+        //    var objectList = new List<object>();
 
-            if (src != null)
-            {
-                foreach (var item in src.Any)
-                {
-                    if (item is UiInfo)
-                    {
-                        var uiInfo = (UiInfo)item;
-                        var uiInfo = new UiInfo();
-                        uiInfo.Items = new object[] {
-                            new LocalizedName {
-                                Language = uiInfo.DisplayName.Language, Value = uiInfo.DisplayName.Value
-                            },
-                            new localizedNameType
-                            {
-                                lang = uiInfo.Description.Language, Value=uiInfo.Description.Value
-                            },
-                            new KeywordsType
-                            {
-                                lang = uiInfo.Keywords.Language, Text = uiInfo.Keywords.Values,
-                            },
-                            new localizedURIType
-                            {
-                                lang = uiInfo.InformationURL?.Language??null, Value = uiInfo.InformationURL?.Uri.ToString()??null
-                            },
-                            new localizedURIType
-                            {
-                                lang = uiInfo.PrivacyStatementURL?.Language??null, Value=uiInfo.PrivacyStatementURL?.Uri.ToString()??null
-                            },
-                            new LogoType
-                            {
-                                lang = uiInfo.Logo?.Language??null, height = uiInfo.Logo?.Height??null, width = uiInfo.Logo?.Width??null, Value=uiInfo.Logo?.Value?.ToString()??null
-                            }
-                        };
-                        uIInfoType.ItemsElementName = new ItemsChoiceType8[] {
-                            ItemsChoiceType8.DisplayName,
-                            ItemsChoiceType8.Description,
-                            ItemsChoiceType8.Keywords,
-                            ItemsChoiceType8.InformationURL,
-                            ItemsChoiceType8.PrivacyStatementURL,
-                            ItemsChoiceType8.Logo
-                        };
-                        objectList.Add(uIInfoType);
-                    }
-                    if (item is DiscoHints)
-                    {
-                        var discoHints = (DiscoHints)item;
-                        var discoHintsType = new DiscoHintsType();
-                        discoHintsType.Items = new object[] { discoHints.DomainHint, discoHints.IPHint, discoHints.GeolocationHint };
-                        discoHintsType.ItemsElementName = new ItemsChoiceType9[] {
-                            ItemsChoiceType9.DomainHint,
-                            ItemsChoiceType9.IPHint,
-                            ItemsChoiceType9.GeolocationHint
-                        };
-                        objectList.Add(discoHintsType);
-                    }
-                }
-                extensionsType.Any = objectList.ToArray<object>();
-            }
-            return extensionsType;
-        }
+        //    if (src != null)
+        //    {
+        //        foreach (var item in src.Any)
+        //        {
+        //            if (item is UIInfoType)
+        //            {
+        //                var uiInfoType = (UIInfoType)item;
+        //                var uiInfo = new UiInfo();
+
+        //                uiInfo.DisplayName = new LocalizedName { Language= uiInfoType.}
+
+
+        //                uiInfo..Items = new object[] {
+        //                    new LocalizedName {
+        //                        Language = uiInfoType.DisplayName.Language, Value = uiInfoType.DisplayName.Value
+        //                    },
+        //                    new localizedNameType
+        //                    {
+        //                        lang = uiInfo.Description.Language, Value=uiInfo.Description.Value
+        //                    },
+        //                    new KeywordsType
+        //                    {
+        //                        lang = uiInfo.Keywords.Language, Text = uiInfo.Keywords.Values,
+        //                    },
+        //                    new localizedURIType
+        //                    {
+        //                        lang = uiInfo.InformationURL?.Language??null, Value = uiInfo.InformationURL?.Uri.ToString()??null
+        //                    },
+        //                    new localizedURIType
+        //                    {
+        //                        lang = uiInfo.PrivacyStatementURL?.Language??null, Value=uiInfo.PrivacyStatementURL?.Uri.ToString()??null
+        //                    },
+        //                    new LogoType
+        //                    {
+        //                        lang = uiInfo.Logo?.Language??null, height = uiInfo.Logo?.Height??null, width = uiInfo.Logo?.Width??null, Value=uiInfo.Logo?.Value?.ToString()??null
+        //                    }
+        //                };
+        //                uIInfoType.ItemsElementName = new ItemsChoiceType8[] {
+        //                    ItemsChoiceType8.DisplayName,
+        //                    ItemsChoiceType8.Description,
+        //                    ItemsChoiceType8.Keywords,
+        //                    ItemsChoiceType8.InformationURL,
+        //                    ItemsChoiceType8.PrivacyStatementURL,
+        //                    ItemsChoiceType8.Logo
+        //                };
+        //                objectList.Add(uIInfoType);
+        //            }
+        //            if (item is DiscoHints)
+        //            {
+        //                var discoHints = (DiscoHints)item;
+        //                var discoHintsType = new DiscoHintsType();
+        //                discoHintsType.Items = new object[] { discoHints.DomainHint, discoHints.IPHint, discoHints.GeolocationHint };
+        //                discoHintsType.ItemsElementName = new ItemsChoiceType9[] {
+        //                    ItemsChoiceType9.DomainHint,
+        //                    ItemsChoiceType9.IPHint,
+        //                    ItemsChoiceType9.GeolocationHint
+        //                };
+        //                objectList.Add(discoHintsType);
+        //            }
+        //        }
+        //        extensionsType.Any = objectList.ToArray<object>();
+        //    }
+        //    return extensionsType;
+        //}
         public static Endpoint[] MapEach(this EndpointType[] src)
         {
             if (src.Count() > 0 || src != null)

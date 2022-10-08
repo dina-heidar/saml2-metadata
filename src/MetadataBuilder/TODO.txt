@@ -34,3 +34,4 @@ use System.Security.Xml to sign the entire the xml. This will create the Signatu
 arrange mappers better
 add the abiltity to add a Idp metadata address file instead of a url
 
+add inhertinace od SamlSoap?
