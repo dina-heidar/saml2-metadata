@@ -28,7 +28,7 @@ namespace Saml.MetadataBuilder
     /// Represents information about the authentication context requirements 
     /// of authentication statements returned in responses
     /// </summary>
-    public class RequestingAuthenticationContext
+    public class RequestedAuthnContext
     {
         /// <summary>
         /// The authn context reference types
@@ -40,42 +40,43 @@ namespace Saml.MetadataBuilder
         private readonly string comparisonType;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RequestingAuthenticationContext"/> class.
+        /// Initializes a new instance of the <see cref="RequestedAuthnContext"/> class.
         /// </summary>
         /// <param name="authnContextRefTypes">The authn context reference types.</param>
-        public RequestingAuthenticationContext(string[] authnContextRefTypes)
+        public RequestedAuthnContext(string[] authnContextRefTypes)
         {
-            this.authnContextRefTypes = authnContextRefTypes;
+            AuthnContextRefTypes = authnContextRefTypes;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RequestingAuthenticationContext"/> class.
+        /// Initializes a new instance of the <see cref="RequestedAuthnContext"/> class.
         /// </summary>
         /// <param name="authnContextRefTypes">The authn context reference types.</param>
-        public RequestingAuthenticationContext(string authnContextRefTypes)
+        public RequestedAuthnContext(string authnContextRefTypes)
         {
-            this.authnContextRefTypes = new[] { authnContextRefTypes };
+            AuthnContextRefTypes = new[] { authnContextRefTypes };
         }
         /// <summary>
         /// Authns the context.
         /// </summary>
         /// <param name="comparisonType">Type of the comparison.</param>
         /// <returns></returns>
-        private AuthenticationContext AuthenticationContext(string comparisonType)
+        private RequestedAuthnContext AuthenticationContext(string comparisonType)
         {
-            return new AuthenticationContext
+            return new RequestedAuthnContext
             {
                 ComparisonType = comparisonType,
-                ComparisonSpecified = true,
                 AuthnContextRefTypes = this.authnContextRefTypes
             };
         }
+
+        public RequestedAuthnContext() { }
 
         /// <summary>
         /// Defaults this instance.
         /// </summary>
         /// <returns></returns>
-        public AuthenticationContext Default()
+        public RequestedAuthnContext Default()
         {
             return Exact();
         }
@@ -85,7 +86,7 @@ namespace Saml.MetadataBuilder
         /// </summary>
         /// <param name="comparisonType">Type of the comparison.</param>
         /// <returns></returns>
-        public AuthenticationContext Custom(string comparisonType)
+        public RequestedAuthnContext Custom(string comparisonType)
         {
             return AuthenticationContext(comparisonType);
         }
@@ -94,7 +95,7 @@ namespace Saml.MetadataBuilder
         /// Exacts this instance.
         /// </summary>
         /// <returns></returns>
-        public AuthenticationContext Exact()
+        public RequestedAuthnContext Exact()
         {
             return AuthenticationContext(ComparisonTypes.Exact);
         }
@@ -103,7 +104,7 @@ namespace Saml.MetadataBuilder
         /// Betters this instance.
         /// </summary>
         /// <returns></returns>
-        public AuthenticationContext Better()
+        public RequestedAuthnContext Better()
         {
             return AuthenticationContext(ComparisonTypes.Better);
         }
@@ -112,7 +113,7 @@ namespace Saml.MetadataBuilder
         /// Minimums this instance.
         /// </summary>
         /// <returns></returns>
-        public AuthenticationContext Minimum()
+        public RequestedAuthnContext Minimum()
         {
             return AuthenticationContext(ComparisonTypes.Minimum);
         }
@@ -121,10 +122,32 @@ namespace Saml.MetadataBuilder
         /// Maximums this instance.
         /// </summary>
         /// <returns></returns>
-        public AuthenticationContext Maximum()
+        public RequestedAuthnContext Maximum()
         {
             return AuthenticationContext(ComparisonTypes.Maximum);
         }
+
+        /// <summary>
+        /// Gets or sets the authn context reference types.
+        /// </summary>
+        /// <value>
+        /// The authn context reference types.
+        /// </value>
+        public string[] AuthnContextRefTypes { get; set; }
+        /// <summary>
+        /// Gets or sets the type of the comparison.
+        /// </summary>
+        /// <value>
+        /// The type of the comparison.
+        /// </value>
+        public string ComparisonType { get; set; } = ComparisonTypes.Exact;
+        /// <summary>
+        /// Gets the authn context class reference.
+        /// </summary>
+        /// <value>
+        /// The authn context class reference.
+        /// </value>
+        public string AuthnContextClassRef { get; private set; } = "AuthnContextClassRef";
     }
 }
 

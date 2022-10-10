@@ -27,7 +27,7 @@ namespace Saml.MetadataBuilder
     /// <summary>
     /// 
     /// </summary>
-    public static class RequestingAuthenticationContextTypes
+    public static class RequestedAuthnContextExtensions
     {
         /// <summary>
         /// Gets the forms authentication.
@@ -35,16 +35,16 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The forms authentication.
         /// </value>
-        public static RequestingAuthenticationContext FormsAuthentication =>
-            new RequestingAuthenticationContext(AuthnContextRefTypes.UserNameAndPassword);
+        public static RequestedAuthnContext FormsAuthentication =>
+            new RequestedAuthnContext(AuthnContextRefTypes.UserNameAndPassword);
         /// <summary>
         /// Gets the windows authentication.
         /// </summary>
         /// <value>
         /// The windows authentication.
         /// </value>
-        public static RequestingAuthenticationContext WindowsAuthentication =>
-           new RequestingAuthenticationContext(AuthnContextRefTypes.IntegratedWindowsAuthentication);
+        public static RequestedAuthnContext WindowsAuthentication =>
+           new RequestedAuthnContext(AuthnContextRefTypes.IntegratedWindowsAuthentication);
 
         /// <summary>
         /// Customs the specified authn context reference types.
@@ -52,9 +52,9 @@ namespace Saml.MetadataBuilder
         /// <param name="authnContextRefTypes">The authn context reference types.</param>
         /// <param name="comparisonTypes">The comparison types.</param>
         /// <returns></returns>
-        public static AuthenticationContext Custom(string[] authnContextRefTypes,
+        public static RequestedAuthnContext Custom(string[] authnContextRefTypes,
             string comparisonTypes) =>
-            new RequestingAuthenticationContext(authnContextRefTypes).Custom(comparisonTypes);
+            new RequestedAuthnContext(authnContextRefTypes).Custom(comparisonTypes);
 
     }
 }

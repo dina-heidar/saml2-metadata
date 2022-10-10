@@ -20,19 +20,10 @@
 // SOFTWARE.
 //
 
-using System.Security.Cryptography.X509Certificates;
-
 namespace Saml.MetadataBuilder
 {
-    public class SimpleSpMetadata : SpMetadata
+    public class Subject
     {
-        public IndexedEndpoint AssertionConsumerService { get; set; }
-        public IndexedEndpoint ArtifactResolutionService { get; set; }
-        public Endpoint SingleLogoutServiceEndpoint { get; set; }
-        public LocalizedName[] ServiceNames { get; set; } = new LocalizedName[0];
-        public LocalizedName[] ServiceDescriptions { get; set; } = new LocalizedName[0];
-        public RequestedAttribute[] RequestedAttributes { get; set; } = new RequestedAttribute[0];//optional
-        public EncryptingCertificate EncryptingCertificate { get; set; }
-        public X509Certificate2 SigningCertificate { get; set; }
+        public object[] Items { get; set; }
     }
 }

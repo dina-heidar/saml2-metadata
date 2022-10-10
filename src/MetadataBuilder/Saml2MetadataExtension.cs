@@ -20,19 +20,29 @@
 // SOFTWARE.
 //
 
-using System.Security.Cryptography.X509Certificates;
+using MetadataBuilder.Schema.Metadata;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Saml.MetadataBuilder
 {
-    public class SimpleSpMetadata : SpMetadata
+    /// <summary>
+    /// 
+    /// </summary>
+    public static class Saml2MetadataExtensions
     {
-        public IndexedEndpoint AssertionConsumerService { get; set; }
-        public IndexedEndpoint ArtifactResolutionService { get; set; }
-        public Endpoint SingleLogoutServiceEndpoint { get; set; }
-        public LocalizedName[] ServiceNames { get; set; } = new LocalizedName[0];
-        public LocalizedName[] ServiceDescriptions { get; set; } = new LocalizedName[0];
-        public RequestedAttribute[] RequestedAttributes { get; set; } = new RequestedAttribute[0];//optional
-        public EncryptingCertificate EncryptingCertificate { get; set; }
-        public X509Certificate2 SigningCertificate { get; set; }
+        /// <summary>
+        /// Adds the saml metadat builder.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        public static void AddSamlMetadatBuilder(this IServiceCollection services)
+        {
+            services.AddScoped<IMetadataWriter, MedataWriter>();
+            services.AddScoped<IMetadataReader, MetadataReader>();
+
+            //mappers
+            services.AddTransient<IMetadataMapper<EntityDescriptor, EntityDescriptorType>, EntityDescriptorTypeMapper>();
+            services.AddTransient<IMetadataMapper<EntityDescriptorType, EntityDescriptor>, EntityDescriptorMapper>();
+
+        }
     }
 }

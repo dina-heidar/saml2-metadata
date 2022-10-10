@@ -54,13 +54,11 @@ namespace Saml.MetadataBuilder
         public Organization Organization { get; set; }
 
         /// <summary>
-        /// Gets or sets the signature.
+        /// Gets or sets the encrypting certificates.
         /// </summary>
         /// <value>
-        /// The signature.
+        /// The encrypting certificates.
         /// </value>
-        //public Signature Signature { get; set; }
-
         public X509Certificate2[] EncryptingCertificates { get; set; }
         /// <summary>
         /// Gets or sets the signing certificates.
@@ -77,15 +75,6 @@ namespace Saml.MetadataBuilder
         /// The extensions.
         /// </value>
         public Extension Extensions { get; set; }
-
-        /// <summary>
-        /// Gets or sets the key descriptor.
-        /// </summary>
-        /// <value>
-        /// The key descriptor.
-        /// </value>
-        //public KeyDescriptor KeyDescriptor { get; set; }
-
 
         /// <summary>
         /// Gets or sets the identifier.
