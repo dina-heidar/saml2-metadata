@@ -1962,7 +1962,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime IssueInstant
         {
             get
@@ -3386,7 +3386,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime IssueInstant
         {
             get
@@ -3566,7 +3566,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime NotBefore
         {
             get
@@ -3594,7 +3594,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime NotOnOrAfter
         {
             get
@@ -4016,7 +4016,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime AuthnInstant
         {
             get
@@ -4044,7 +4044,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime SessionNotOnOrAfter
         {
             get
@@ -4862,7 +4862,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime IssueInstant
         {
             get
@@ -5013,7 +5013,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime NotOnOrAfter
         {
             get
@@ -5705,7 +5705,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime validUntil
         {
             get
@@ -6370,7 +6370,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime validUntil
         {
             get
@@ -7257,7 +7257,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime validUntil
         {
             get
@@ -7396,7 +7396,7 @@ namespace MetadataBuilder.Schema.Metadata
         }
 
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "dateTime")]
         public System.DateTime validUntil
         {
             get
