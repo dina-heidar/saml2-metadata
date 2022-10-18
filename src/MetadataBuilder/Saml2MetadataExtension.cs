@@ -22,6 +22,7 @@
 
 using MetadataBuilder.Schema.Metadata;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Saml.MetadataBuilder
 {
@@ -36,13 +37,12 @@ namespace Saml.MetadataBuilder
         /// <param name="services">The services.</param>
         public static void AddSamlMetadatBuilder(this IServiceCollection services)
         {
-            services.AddScoped<IMetadataWriter, MedataWriter>();
-            services.AddScoped<IMetadataReader, MetadataReader>();
+            services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataWriter, MedataWriter>());
+            services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataReader, MetadataReader>());
 
             //mappers
-            services.AddTransient<IMetadataMapper<EntityDescriptor, EntityDescriptorType>, EntityDescriptorTypeMapper>();
-            services.AddTransient<IMetadataMapper<EntityDescriptorType, EntityDescriptor>, EntityDescriptorMapper>();
-
+            services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataMapper<EntityDescriptor, EntityDescriptorType>, EntityDescriptorTypeMapper>());
+            services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataMapper<EntityDescriptorType, EntityDescriptor>, EntityDescriptorMapper>());            
         }
     }
 }

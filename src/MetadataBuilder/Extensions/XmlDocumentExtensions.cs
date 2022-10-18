@@ -90,7 +90,12 @@ namespace Saml.MetadataBuilder
             return xml;
         }
 
-        private static (AsymmetricAlgorithm key, string signatureMethod, string keyName) SetSignatureAlgorithm(X509Certificate2 x509Certificate2)
+        /// <summary>
+        /// Sets the signature algorithm.
+        /// </summary>
+        /// <param name="x509Certificate2">The X509 certificate2.</param>
+        /// <returns></returns>
+        public static (AsymmetricAlgorithm key, string signatureMethod, string keyName) SetSignatureAlgorithm(X509Certificate2 x509Certificate2)
         {
             var keyName = x509Certificate2.GetPublicKeyString();
             var key = (AsymmetricAlgorithm)x509Certificate2.GetRSAPrivateKey() ?? x509Certificate2.GetECDsaPrivateKey();

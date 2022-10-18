@@ -53,7 +53,7 @@ namespace Saml.MetadataBuilder
         /// <typeparam name="T"></typeparam>
         /// <param name="item">The item.</param>
         /// <returns></returns>
-        internal XmlDocument SerializeToXml<T>(T item) where T : class
+        private XmlDocument SerializeToXml<T>(T item) where T : class
         {
             var xmlTemplate = string.Empty;
             var xmlSerializer = new XmlSerializer(typeof(T));
@@ -66,7 +66,6 @@ namespace Saml.MetadataBuilder
             //create xml document from string
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xmlTemplate);
-
             xmlDoc.PreserveWhitespace = true;
             return xmlDoc;
         }

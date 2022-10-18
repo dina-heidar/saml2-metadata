@@ -5155,6 +5155,18 @@ namespace MetadataBuilder.Schema.Metadata
 
         private string providerNameField;
 
+        public AuthnRequestType()
+        {
+            xmlns.Add("samlp", "urn:oasis:names:tc:SAML:2.0:protocol");
+            xmlns.Add("saml", "urn:oasis:names:tc:SAML:2.0:assertion");
+        }
+
+        /// <summary>
+        /// The XMLNS
+        /// </summary>
+        [XmlNamespaceDeclarations]
+        public XmlSerializerNamespaces xmlns = new XmlSerializerNamespaces();
+
 
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:assertion")]
         public SubjectType Subject
