@@ -77,7 +77,7 @@ namespace Saml.MetadataBuilder
         /// <returns></returns>
         public XmlDocument Output(EntityDescriptor entityDescriptor)
         {
-            var entityDescriptorType = _metadataMapper.MapEntity(entityDescriptor);
+            var entityDescriptorType = _metadataMapper.MapEntity(entityDescriptor);           
 
             var xml = SerializeToXml<EntityDescriptorType>(entityDescriptorType);
 
