@@ -41,8 +41,10 @@ namespace Saml.MetadataBuilder
         /// </summary>
         /// <param name="xml">The XML.</param>
         /// <param name="x509Certificate2">The X509 certificate2.</param>
+        /// <param name="referenceId">The reference identifier.</param>
         /// <returns></returns>
-        public static XmlDocument AddXmlSignature(this XmlDocument xml, X509Certificate2 x509Certificate2)
+        public static XmlDocument AddXmlSignature(this XmlDocument xml, X509Certificate2 x509Certificate2,
+            string referenceId = null)
         {
             //set key, signtureMethod based on certificate type
             var (key, signatureMethod, keyName) = SetSignatureAlgorithm(x509Certificate2);
@@ -61,7 +63,7 @@ namespace Saml.MetadataBuilder
             // which is why you are using an empty string as the reference URI.
             // If you were to have multiple signatures or sign particular parts of the XML,
             // you would need to set this URI to point to the ID of that element
-            var reference = new Reference { Uri = string.Empty };
+            var reference = new Reference { Uri = referenceId ?? string.Empty };
 
             // Transforms, on the other hand, describe how to turn the XML that you signed into bytes.
             // If the verifier doesn’t know how you did this, they will likely not reproduce the same bytes,
@@ -137,10 +139,6 @@ namespace Saml.MetadataBuilder
             // get the correct one and check it
             var x509data = signedXml.Signature.KeyInfo.OfType<KeyInfoX509Data>().First();
             var signedCertificate = (X509Certificate2)x509data.Certificates[0];
-
-            // validate references here!
-            if ((signedXml.SignedInfo.References[0] as Reference)?.Uri != "")
-                throw new InvalidOperationException("Check your references!");
 
             return signedXml.CheckSignature((AsymmetricAlgorithm)signedCertificate.GetRSAPublicKey() ??
                 signedCertificate.GetECDsaPublicKey());
