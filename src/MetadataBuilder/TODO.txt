@@ -38,3 +38,19 @@ arrange mappers better
 add the abiltity to add a Idp metadata address file instead of a url
 
 add inhertinace od SamlSoap?
+
+
+  //{
+        //    get
+        //    {
+        //        var ee = RequestedAuthnContextType.FormsAuthentication;
+        //        var t = RequestedAuthnContextType.Custom(
+        //            new[]
+        //        {
+        //                AuthnContextRefTypes.Kerberose,
+        //                AuthnContextRefTypes.IntegratedWindowsAuthentication
+        //        }, ComparisonTypes.Minimum);
+
+        //        return t;
+        //    }
+        //}

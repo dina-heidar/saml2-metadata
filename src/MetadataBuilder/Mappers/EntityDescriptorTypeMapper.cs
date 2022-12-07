@@ -20,6 +20,7 @@
 // SOFTWARE.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MetadataBuilder.Schema.Metadata;
@@ -33,7 +34,7 @@ namespace Saml.MetadataBuilder
             var entityDescriptorType = new EntityDescriptorType()
             {
                 cacheDuration = src.CacheDuration, //optional
-                validUntilSpecified = (src.ValidUntil != null),//optional
+                validUntilSpecified = (src.ValidUntil == DateTime.MinValue? false: true),//optional
                 validUntil = src.ValidUntil,//optional
                 entityID = src.EntityID, //---> required
                 ID = src.Id, //optional
@@ -43,9 +44,9 @@ namespace Saml.MetadataBuilder
                 AdditionalMetadataLocation = (src.AdditionalMetadataLocations != null ? MapEach(src.AdditionalMetadataLocations)
                 : new AdditionalMetadataLocationType[0])//optional
             };
-            if (src.GetType() == typeof(SpMetadata) || src.GetType() == typeof(SimpleSpMetadata))
+            if (src.GetType() == typeof(RichSpMetadata) || src.GetType() == typeof(BasicSpMetadata))
             {
-                var spMetadata = src as SpMetadata;
+                var spMetadata = src as RichSpMetadata;
                 var sPSSODescriptorType = spMetadata.Map(); //---> required
 
                 entityDescriptorType.Items = new object[] { sPSSODescriptorType };
