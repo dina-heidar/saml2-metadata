@@ -20,25 +20,39 @@
 // SOFTWARE.
 //
 
+using Saml.MetadataBuilder;
 using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
 {
-    public class AuthnRequest : RequestAbstract
+    public static class RequestedAuthnContextTypes
     {
-        public Subject Subject { get; set; }
-        public NameIdPolicy NameIdPolicy { get; set; }
-        public Conditions Conditions { get; set; }
-        public RequestedAuthnContext RequestedAuthnContext { get; set; }
-      
-        //public Scoping Scoping { get; set; }
-        public bool ForceAuthn { get; set; }
-        public bool IsPassive { get; set; }
-        public string ProtocolBinding { get; set; }
-        public ushort AssertionConsumerServiceIndex { get; set; }
-        public string AssertionConsumerServiceURL { get; set; }
-        public ushort AttributeConsumingServiceIndex { get; set; }
-        public string ProviderName { get; set; }
+        public static RequestedAuthnContext FormsAuthentication(string comparisonType = "exact")
+        {
+            return new RequestedAuthnContext
+            {
+                ComparisonType = comparisonType,
+                AuthnContextRefTypes = new[] { AuthnContextRefTypes.UserNameAndPassword }
+            };
+        }
 
+        public static RequestedAuthnContext WindowsAuthentication(string comparisonType = "exact")
+        {
+            return new RequestedAuthnContext
+            {
+                ComparisonType = comparisonType,
+                AuthnContextRefTypes = new[] { AuthnContextRefTypes.IntegratedWindowsAuthentication }
+            };
+        }
+
+        public static RequestedAuthnContext Custom(string authnContextRefTypes,
+            string comparisonTypes = "exact")
+        {
+            return new RequestedAuthnContext
+            {
+                ComparisonType = comparisonTypes,
+                AuthnContextRefTypes = new[] { authnContextRefTypes }
+            };
+        }
     }
 }

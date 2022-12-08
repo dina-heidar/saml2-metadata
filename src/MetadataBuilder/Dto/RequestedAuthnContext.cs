@@ -140,7 +140,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The type of the comparison.
         /// </value>
-        public string ComparisonType { get; set; } = ComparisonTypes.Exact;
+        public string ComparisonType { get; set; } 
         /// <summary>
         /// Gets the authn context class reference.
         /// </summary>

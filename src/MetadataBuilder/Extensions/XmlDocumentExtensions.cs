@@ -41,9 +41,12 @@ namespace Saml.MetadataBuilder
         /// </summary>
         /// <param name="xml">The XML.</param>
         /// <param name="x509Certificate2">The X509 certificate2.</param>
+        /// <param name="element">The element.</param>
+        /// <param name="namespaceUriName">Name of the namespace URI.</param>
         /// <param name="referenceId">The reference identifier.</param>
         /// <returns></returns>
         public static XmlDocument AddXmlSignature(this XmlDocument xml, X509Certificate2 x509Certificate2,
+            string element = null, string namespaceUriName = null,
             string referenceId = null)
         {
             //set key, signtureMethod based on certificate type
@@ -88,7 +91,15 @@ namespace Saml.MetadataBuilder
             // get signature XML element and add it as a child of the root element
             // it must be prepended not appended
             signedXml.GetXml();
-            xml.DocumentElement?.PrependChild(signedXml.GetXml());
+            if (!string.IsNullOrEmpty(element))
+            {
+                xml.DocumentElement?.InsertAfter(signedXml.GetXml(),
+                    xml.DocumentElement.GetElementsByTagName(element, namespaceUriName)[0]);
+            }
+            else
+            {
+                xml.DocumentElement?.PrependChild(signedXml.GetXml());
+            }
             return xml;
         }
 

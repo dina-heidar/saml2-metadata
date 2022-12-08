@@ -21,26 +21,18 @@
 //
 
 using System.Security.Cryptography.X509Certificates;
-using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
 {
-    public class SpMetadata : EntityDescriptor
+    public class BasicSpMetadata : RichSpMetadata
     {
-        public string NameIdFormat { get; set; }
-        public IndexedEndpoint[] AssertionConsumerServices { get; set; } = new IndexedEndpoint[0];
-        public IndexedEndpoint[] ArtifactResolutionServices { get; set; } = new IndexedEndpoint[0];
-        public virtual Endpoint[] SingleLogoutServiceEndpoints { get; set; } = new Endpoint[0];
-        public bool AuthnRequestsSigned { get; set; }
-        public bool WantAssertionsSigned { get; set; }
-        public EncryptingCertificate[] EncryptingCertificates { get; set; }
-        public X509Certificate2[] SigningCertificates { get; set; }
-        internal string ProtocolSupportEnumeration { get; set; } = ProtocolSupportEnumerationTypes.Default;
-        public AttributeConsumingService[] AttributeConsumingService { get; set; } = new AttributeConsumingService[0];
-        public SpMetadata()
-        {
-            MetadataType = MetadataType.SSOSPSSODescriptorType;
-        }
-
+        public IndexedEndpoint AssertionConsumerService { get; set; }
+        public IndexedEndpoint ArtifactResolutionService { get; set; }
+        public Endpoint SingleLogoutServiceEndpoint { get; set; }
+        public LocalizedName[] ServiceNames { get; set; } = new LocalizedName[0];
+        public LocalizedName[] ServiceDescriptions { get; set; } = new LocalizedName[0];
+        public RequestedAttribute[] RequestedAttributes { get; set; } = new RequestedAttribute[0];//optional
+        public EncryptingCertificate EncryptingCertificate { get; set; }
+        public X509Certificate2 SigningCertificate { get; set; }
     }
 }

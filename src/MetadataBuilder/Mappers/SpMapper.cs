@@ -29,11 +29,11 @@ namespace Saml.MetadataBuilder
     internal static class SpMapper
     {
         #region ToXml
-        internal static SPSSODescriptorType Map(this SpMetadata src)
+        internal static SPSSODescriptorType Map(this RichSpMetadata src)
         {
-            if (src.GetType() == typeof(SimpleSpMetadata))
+            if (src.GetType() == typeof(BasicSpMetadata))
             {
-                SetValues(src as SimpleSpMetadata);
+                SetValues(src as BasicSpMetadata);
             }
 
             var spSsoDescriptorType = new SPSSODescriptorType()
@@ -42,9 +42,11 @@ namespace Saml.MetadataBuilder
                 AssertionConsumerService = src.AssertionConsumerServices.MapEach(),//---> required
                 AuthnRequestsSigned = src.AuthnRequestsSigned, //optional
                 WantAssertionsSigned = src.WantAssertionsSigned,//optional
+                AuthnRequestsSignedSpecified = true,
+                WantAssertionsSignedSpecified = true,
 
                 //sso
-                NameIDFormat = (src.NameIdFormat != null ? new[] { src.NameIdFormat } : null),//optional
+                NameIDFormat = (src.NameIdFormat != null ? new[] { src.NameIdFormat } : null),//optional                
                 ArtifactResolutionService = (src.ArtifactResolutionServices != null ? src.ArtifactResolutionServices.MapEach() : null), //optional
                 SingleLogoutService = (src.SingleLogoutServiceEndpoints != null ? src.SingleLogoutServiceEndpoints.MapEach() : null), //optional
 
@@ -58,7 +60,7 @@ namespace Saml.MetadataBuilder
             };
             return spSsoDescriptorType;
         }
-        private static void SetValues(SimpleSpMetadata src)
+        private static void SetValues(BasicSpMetadata src)
         {
             src.SingleLogoutServiceEndpoints = (src.SingleLogoutServiceEndpoint != null ? new Endpoint[] { src.SingleLogoutServiceEndpoint } : new Endpoint[0]);
             src.AssertionConsumerServices = (src.AssertionConsumerService != null ? new IndexedEndpoint[] { src.AssertionConsumerService } : new IndexedEndpoint[0]);
