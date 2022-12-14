@@ -25,22 +25,88 @@ using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="Saml.MetadataBuilder.EntityDescriptor" />
     public class RichSpMetadata : EntityDescriptor
     {
+        /// <summary>
+        /// Gets or sets the name identifier format.
+        /// </summary>
+        /// <value>
+        /// The name identifier format.
+        /// </value>
         public string NameIdFormat { get; set; }
+        /// <summary>
+        /// Gets or sets the assertion consumer services.
+        /// </summary>
+        /// <value>
+        /// The assertion consumer services.
+        /// </value>
         public IndexedEndpoint[] AssertionConsumerServices { get; set; } = new IndexedEndpoint[0];
+        /// <summary>
+        /// Gets or sets the artifact resolution services.
+        /// </summary>
+        /// <value>
+        /// The artifact resolution services.
+        /// </value>
         public IndexedEndpoint[] ArtifactResolutionServices { get; set; } = new IndexedEndpoint[0];
+        /// <summary>
+        /// Gets or sets the single logout service endpoints.
+        /// </summary>
+        /// <value>
+        /// The single logout service endpoints.
+        /// </value>
         public virtual Endpoint[] SingleLogoutServiceEndpoints { get; set; } = new Endpoint[0];
+        /// <summary>
+        /// Gets or sets a value indicating whether [authn requests signed].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [authn requests signed]; otherwise, <c>false</c>.
+        /// </value>
         public bool AuthnRequestsSigned { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether [want assertions signed].
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [want assertions signed]; otherwise, <c>false</c>.
+        /// </value>
         public bool WantAssertionsSigned { get; set; }
+        /// <summary>
+        /// Gets or sets the encrypting certificates.
+        /// </summary>
+        /// <value>
+        /// The encrypting certificates.
+        /// </value>
         public EncryptingCertificate[] EncryptingCertificates { get; set; }
+        /// <summary>
+        /// Gets or sets the signing certificates.
+        /// </summary>
+        /// <value>
+        /// The signing certificates.
+        /// </value>
         public X509Certificate2[] SigningCertificates { get; set; }
+        /// <summary>
+        /// Gets or sets the protocol support enumeration.
+        /// </summary>
+        /// <value>
+        /// The protocol support enumeration.
+        /// </value>
         internal string ProtocolSupportEnumeration { get; set; } = ProtocolSupportEnumerationTypes.Default;
+        /// <summary>
+        /// Gets or sets the attribute consuming service.
+        /// </summary>
+        /// <value>
+        /// The attribute consuming service.
+        /// </value>
         public AttributeConsumingService[] AttributeConsumingService { get; set; } = new AttributeConsumingService[0];
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RichSpMetadata"/> class.
+        /// </summary>
         public RichSpMetadata()
         {
             MetadataType = MetadataType.SSOSPSSODescriptorType;
         }
-
     }
 }

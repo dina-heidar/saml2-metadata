@@ -20,10 +20,35 @@
 // SOFTWARE.
 //
 
+using MetadataBuilder.Schema.Metadata;
+
 namespace Saml.MetadataBuilder
 {
     internal static class SsoMapper
     {
+        public static (string[] nameIdFormats, IndexedEndpointType[] artifactResolutionServices,
+            EndpointType[] singleLogoutServices, EndpointType[] manageNameIDServices)
+            SetValues(string nameIdFormat, IndexedEndpoint[] artifactResolutionEndpoints,
+            Endpoint[] singleLogoutEndpoints, Endpoint[] manageNameIDEndpoints)
+        {
+            var nameIdFormats = (nameIdFormat != null ? new[] { nameIdFormat } : null);//optional                
+            var artifactResolutionServices = (artifactResolutionEndpoints != null ? artifactResolutionEndpoints.MapEach() : null); //optional
+            var singleLogoutServices = (singleLogoutEndpoints != null ? singleLogoutEndpoints.MapEach() : null); //optional
+            var manageNameIDServices = (manageNameIDEndpoints != null ? manageNameIDEndpoints.MapEach() : null); //optional
 
+            return (nameIdFormats, artifactResolutionServices, singleLogoutServices, manageNameIDServices);
+        }
+
+        public static (string[] nameIdFormats, IndexedEndpointType[] artifactResolutionServices,
+            EndpointType[] singleLogoutServices)
+            SetValues(string nameIdFormat, IndexedEndpoint[] artifactResolutionEndpoints,
+            Endpoint[] singleLogoutEndpoints)
+        {
+            var nameIdFormats = (nameIdFormat != null ? new[] { nameIdFormat } : null);//optional                
+            var artifactResolutionServices = (artifactResolutionEndpoints != null ? artifactResolutionEndpoints.MapEach() : null); //optional
+            var singleLogoutServices = (singleLogoutEndpoints != null ? singleLogoutEndpoints.MapEach() : null); //optional           
+
+            return (nameIdFormats, artifactResolutionServices, singleLogoutServices);
+        }
     }
 }

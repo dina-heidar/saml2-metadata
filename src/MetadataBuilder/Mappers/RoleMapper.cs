@@ -35,6 +35,21 @@ namespace Saml.MetadataBuilder
 {
     internal static class RoleMapper
     {
+        public static (string[] protocolSupportEnumerations, KeyDescriptorType[] keyDescriptorTypes,
+          string cachingDuration, ExtensionsType extensions, AttributeConsumingServiceType[] attributeConsumingServices)
+           SetValues(string protocolSupportEnumeration, EncryptingCertificate[] encryptingCertificates,
+            X509Certificate2[] signingCertificates, string cachingDurations, Extension extension,
+            AttributeConsumingService[] attributeConsumingService)
+        {
+            var protocolSupportEnumerations = new[] { protocolSupportEnumeration }; //---> required
+            var keyDescriptorTypes = MapAll(encryptingCertificates, signingCertificates);//optional
+            var cachingDuration = (cachingDurations != null ? cachingDurations : null); //optional 
+            var extensions = (extension != null ? extension.Map() : null);  //optional,              
+            var attributeConsumingServices = (attributeConsumingService != null ? attributeConsumingService.MapEach() : null); //optional
+            //errorURL //optional
+            return (protocolSupportEnumerations, keyDescriptorTypes, cachingDuration, extensions, attributeConsumingServices);
+        }
+
         #region ToXml
         public static ContactType[] MapEach(this ContactPerson[] src)
         {

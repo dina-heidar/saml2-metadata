@@ -33,8 +33,22 @@ namespace Saml.MetadataBuilder
         {
             if (src.GetType() == typeof(BasicSpMetadata))
             {
+                //map basic sp metadata properties to rich sp metadata ones
                 SetValues(src as BasicSpMetadata);
             }
+
+            //get sso mapper values
+            var (nameIdFormats, artifactResolutionServices, singleLogoutServices) = SsoMapper.SetValues(
+                src.NameIdFormat,
+                src.ArtifactResolutionServices,
+                src.SingleLogoutServiceEndpoints);
+
+            //get role mapper values
+            var (protocolSupportEnumerations, keyDescriptorTypes,
+                cachingDuration, extensions, attributeConsumingServices) = RoleMapper.SetValues(
+                    src.ProtocolSupportEnumeration, src.EncryptingCertificates,
+                    src.SigningCertificates, src.CacheDuration, src.Extensions,
+                    src.AttributeConsumingService);
 
             var spSsoDescriptorType = new SPSSODescriptorType()
             {
@@ -46,17 +60,16 @@ namespace Saml.MetadataBuilder
                 WantAssertionsSignedSpecified = true,
 
                 //sso
-                NameIDFormat = (src.NameIdFormat != null ? new[] { src.NameIdFormat } : null),//optional                
-                ArtifactResolutionService = (src.ArtifactResolutionServices != null ? src.ArtifactResolutionServices.MapEach() : null), //optional
-                SingleLogoutService = (src.SingleLogoutServiceEndpoints != null ? src.SingleLogoutServiceEndpoints.MapEach() : null), //optional
+                NameIDFormat = nameIdFormats,//optional                
+                ArtifactResolutionService = artifactResolutionServices, //optional
+                SingleLogoutService = singleLogoutServices, //optional
 
                 //role
-                protocolSupportEnumeration = new[] { src.ProtocolSupportEnumeration }, //---> required
-                KeyDescriptor = RoleMapper.MapAll(src.EncryptingCertificates, src.SigningCertificates),//optional
-                cacheDuration = (src.CacheDuration != null ? src.CacheDuration : null), //optional              
-                //errorURL  //optional
-                Extensions = (src.Extensions != null ? src.Extensions.Map() : null),  //optional,              
-                AttributeConsumingService = (src.AttributeConsumingService != null ? src.AttributeConsumingService.MapEach() : null) //optional
+                protocolSupportEnumeration = protocolSupportEnumerations, //---> required
+                KeyDescriptor = keyDescriptorTypes, //optional
+                cacheDuration = cachingDuration, //optional
+                Extensions = extensions, //optional
+                AttributeConsumingService = attributeConsumingServices //optional                
             };
             return spSsoDescriptorType;
         }

@@ -1,3 +1,6 @@
 /.vs
 /src/MetadataBuilder/bin
 /src/MetadataBuilder/obj
+/samples/MvcWeb/obj
+/samples/MvcWeb/bin
+/samples/MvcWeb/node_modules
