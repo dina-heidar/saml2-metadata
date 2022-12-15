@@ -24,15 +24,72 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="Saml.MetadataBuilder.RichSpMetadata" />
     public class BasicSpMetadata : RichSpMetadata
     {
+        /// <summary>
+        /// Gets or sets the assertion consumer service.
+        /// </summary>
+        /// <value>
+        /// The assertion consumer service.
+        /// </value>
         public IndexedEndpoint AssertionConsumerService { get; set; }
+        /// <summary>
+        /// Gets or sets the artifact resolution service.
+        /// </summary>
+        /// <value>
+        /// The artifact resolution service.
+        /// </value>
         public IndexedEndpoint ArtifactResolutionService { get; set; }
+        /// <summary>
+        /// Gets or sets the single logout service endpoint.
+        /// </summary>
+        /// <value>
+        /// The single logout service endpoint.
+        /// </value>
         public Endpoint SingleLogoutServiceEndpoint { get; set; }
+        /// <summary>
+        /// Gets or sets the service names.
+        /// </summary>
+        /// <value>
+        /// The service names.
+        /// </value>
         public LocalizedName[] ServiceNames { get; set; } = new LocalizedName[0];
+        /// <summary>
+        /// Gets or sets the service descriptions.
+        /// </summary>
+        /// <value>
+        /// The service descriptions.
+        /// </value>
         public LocalizedName[] ServiceDescriptions { get; set; } = new LocalizedName[0];
+        /// <summary>
+        /// Gets or sets the requested attributes.
+        /// </summary>
+        /// <value>
+        /// The requested attributes.
+        /// </value>
         public RequestedAttribute[] RequestedAttributes { get; set; } = new RequestedAttribute[0];//optional
+        /// <summary>
+        /// Gets or sets the encrypting certificate.
+        /// </summary>
+        /// <value>
+        /// The encrypting certificate.
+        /// </value>
         public EncryptingCertificate EncryptingCertificate { get; set; }
+        /// <summary>
+        /// Gets or sets the signing certificate.
+        /// </summary>
+        /// <value>
+        /// The signing certificate.
+        /// </value>
         public X509Certificate2 SigningCertificate { get; set; }
+
+        public BasicSpMetadata()
+        {
+            ContactPersons= new ContactPerson[1];
+        }
     }
 }

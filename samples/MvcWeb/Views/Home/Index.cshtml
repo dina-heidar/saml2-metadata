@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Generate a SAML Metadata file with <a href="https://docs.microsoft.com/aspnet/core">Nuget metatadata builder</a>.</p>
+</div>
+
+
+
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card">
+            <h5 class="card-header">Service Provider - Basic Metadata</h5>
+            <div class="card-body">                
+                <p class="card-text">The metadata generated only includes:
+                    <ul>
+                        <li>Assertion consuming endpoint</li>
+                        <li>Single logout endpoint</li>
+                        <li>Contact values</li>
+                        <li>Organization values</li>
+                    </ul>
+                  </p>
+                <a asp-action="create" asp-controller="basicSpMetadata" class="btn btn-primary">Try it out</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <h5 class="card-header">Service Provider - Rich Metadata</h5>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>  
+</div>

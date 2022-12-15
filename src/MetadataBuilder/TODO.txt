@@ -1,6 +1,12 @@
 ﻿https://medium.com/the-crazy-coder/visual-studio-copyright-notices-in-source-files-b95d7f427e97
  dotnet format MetadataBuilder.csproj
 
+
+ spsso ->sso -->role
+
+ EntityDescriptorType has items which is many roledescriptors
+ EntitiesDescriptorType has items which has many entitydescriptors
+
  https://wiki.geant.org/display/eduGAIN/Rich+SP+metadata+example
 
 1- SOAP binding ?

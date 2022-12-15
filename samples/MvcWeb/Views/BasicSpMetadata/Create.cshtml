@@ -1,0 +1,117 @@
+﻿@model Saml.MetadataBuilder.BasicSpMetadata
+@{
+    ViewData["Title"] = "BasicSpMetadata";
+}
+
+
+<div class="h3 pb-2 mb-4 pt-4 text-danger border-bottom border-danger">
+    Basic Service Provider Metadata
+</div>
+
+<form class="pb-5" asp-action="create" asp-controller="basicspmetadata" method="post">
+    <div class="h4">
+        Identifier
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col form-floating">
+            <input type="text" class="form-control" asp-for="@Model.EntityID" placeholder="EntityID">
+            <label for="EntityID">EntityID</label>
+        </div>
+        <div class="col">
+            <ul class="list-group border-0">
+                <li class="list-group-item">
+                    <input type="checkbox" asp-for="@Model.AuthnRequestsSigned" value="true">
+                    <label for="AuthnRequestsSigned">Authn Requests Signed</label>
+                </li>
+                <li class="list-group-item">
+                    <input type="checkbox" asp-for="@Model.WantAssertionsSigned" value="true">
+                    <label for="WantAssertionsSigned">Want Assertions Signed</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="h4 pb-2">
+        Endpoints
+    </div>
+    <div class="h5 pb-2">
+        AssertionConsumerService
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col form-floating">
+            <input type="number" class="form-control" asp-for="@Model.AssertionConsumerService.Index" placeholder="Index">
+            <label for="AssertionConsumerService.Index">Index</label>
+        </div>
+        <div class="col form-floating">
+            <input type="text" class="form-control" asp-for="@Model.AssertionConsumerService.Binding" placeholder="Binding">
+            <label for="AssertionConsumerService.Binding">Binding</label>
+        </div>
+        <div class="col form-floating">
+            <input type="url" class="form-control" asp-for="@Model.AssertionConsumerService.Location" placeholder="Location">
+            <label for="AssertionConsumerService.Location">Location</label>
+        </div>
+    </div>
+    <div class="h5 pb-2">
+        SingleLogoutService
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col form-floating input-group mb-3">
+            <input type="url" class="form-control" asp-for="@Model.SingleLogoutServiceEndpoint.Location" placeholder="Location">
+            <select class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+           @* <select class="dropdown-menu dropdown-menu-end" id="inputGroupSelect02">*@
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            
+           @* 
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><input type="text" class="form-control" asp-for="@Model.SingleLogoutServiceEndpoint.Binding" placeholder="Binding"></li>
+                <li><input type="text" class="form-control" asp-for="@Model.SingleLogoutServiceEndpoint.Binding" placeholder="Binding"></li>               
+            </ul>*@
+        </div>
+
+
+
+
+
+        <div class="col form-floating">
+            <input type="url" class="form-control" asp-for="@Model.SingleLogoutServiceEndpoint.Location" placeholder="Location">
+            <label for="SingleLogoutServiceEndpoint.Location">Location</label>
+        </div>
+        <div class="col form-floating">
+            <input type="text" class="form-control" asp-for="@Model.SingleLogoutServiceEndpoint.Binding" placeholder="Binding">
+            <label for="SingleLogoutServiceEndpoint.Binding">Binding</label>
+        </div>
+    </div>
+    <div class="h4 pb-2">
+        Contact Person
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col form-floating">
+            <input type="text" class="form-control" asp-for="@Model.ContactPersons[0].GivenName" placeholder="First Name">
+            <label for="ContactPersons[0].GivenName">First Name</label>
+        </div>
+        <div class="col form-floating">
+            <input type="text" class="form-control" asp-for="@Model.ContactPersons[0].Surname" placeholder="Last Name">
+            <label for="ContactPersons[0].Surname">Last Name</label>
+        </div>
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col form-floating">
+            <input type="text" class="form-control" asp-for="@Model.ContactPersons[0].Company" placeholder="Company">
+            <label for="ContactPersons[0].Company">Company</label>
+        </div>
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col form-floating">
+            <input type="email" class="form-control" asp-for="@Model.ContactPersons[0].EmailAddresses.[0]" placeholder="Email">
+            <label for="ContactPersons[0].EmailAddresses.[0]">Email</label>
+        </div>
+        <div class="col form-floating">
+            <input type="tel" class="form-control" asp-for="@Model.ContactPersons[0].TelephoneNumbers.[0]" placeholder="Telephone">
+            <label for="ContactPersons[0].TelephoneNumbers.[0]">Telephone</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg float-end">Create</button>
+</form>
