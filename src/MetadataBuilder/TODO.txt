@@ -1,6 +1,8 @@
 ﻿https://medium.com/the-crazy-coder/visual-studio-copyright-notices-in-source-files-b95d7f427e97
  dotnet format MetadataBuilder.csproj
 
+ https://wiki.geant.org/display/eduGAIN/Rich+SP+metadata+example
+
 1- SOAP binding ?
 2- Singlelogout service count for SP
 3- Artifact binding
