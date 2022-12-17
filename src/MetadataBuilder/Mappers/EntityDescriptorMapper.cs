@@ -20,6 +20,7 @@
 // SOFTWARE.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MetadataBuilder.Schema.Metadata;
@@ -32,7 +33,7 @@ namespace Saml.MetadataBuilder
         {
             var entityDescriptor = new EntityDescriptor()
             {
-                CacheDuration = src.cacheDuration,
+                CacheDuration = $"PT{src.cacheDuration}",
                 ValidUntil = src.validUntil,
                 EntityID = src.entityID,
                 Id = src.ID,

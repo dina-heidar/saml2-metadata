@@ -44,7 +44,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The email addresses.
         /// </value>
-        public ICollection<string> EmailAddresses { get; set; }
+        public IList<string> EmailAddresses { get; set; }
         /// <summary>
         /// Gets or sets the name of the given.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The telephone numbers.
         /// </value>
-        public ICollection<string> TelephoneNumbers { get; set; }
+        public IList<string> TelephoneNumbers { get; set; }
         /// <summary>
         /// Gets or sets the type of the contact.
         /// </summary>

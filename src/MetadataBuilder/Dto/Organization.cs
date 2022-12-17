@@ -35,20 +35,20 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The display name of the organization.
         /// </value>
-        public ICollection<LocalizedName> OrganizationDisplayName { get; set; }
+        public IList<LocalizedName> OrganizationDisplayName { get; set; }
         /// <summary>
         /// Gets or sets the name of the organization. This is optional. 
         /// </summary>
         /// <value>
         /// The name of the organization.
         /// </value>
-        public ICollection<LocalizedName> OrganizationName { get; set; }
+        public IList<LocalizedName> OrganizationName { get; set; }
         /// <summary>
         /// Gets or sets the organization URL. This is optional.
         /// </summary>
         /// <value>
         /// The organization URL.
         /// </value>
-        public ICollection<LocalizedUri> OrganizationURL { get; set; }
+        public IList<LocalizedUri> OrganizationURL { get; set; }
     }
 }
