@@ -1,7 +1,10 @@
+using Saml.MetadataBuilder;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSamlMetadatBuilder();
 
 var app = builder.Build();
 
