@@ -1,4 +1,5 @@
-﻿@model Saml.MetadataBuilder.BasicSpMetadata
+﻿@model MvcWeb.Models.BasicSpMetadataViewModel
+@using System.Security.Cryptography.X509Certificates;
 @{
     ViewData["Title"] = "BasicSpMetadata";
 }
@@ -54,19 +55,19 @@
         </div>
         <div class="col gx-4 form-floating">
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="AssertionConsumerService.Binding" id="AssertionConsumerService.Binding.Post" checked>
+                <input class="form-check-input" type="radio" name="AssertionConsumerService.Binding" id="AssertionConsumerService.Binding.Post" checked value="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST">
                 <label class="form-check-label" for="AssertionConsumerService.Binding.Post">
                     Post Binding
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="AssertionConsumerService.Binding" id="AssertionConsumerService.Binding.Redirect">
+                <input class="form-check-input" type="radio" name="AssertionConsumerService.Binding" id="AssertionConsumerService.Binding.Redirect" value="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">
                 <label class="form-check-label" for="AssertionConsumerService.Binding.Redirect">
                     Redirect Binding
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="AssertionConsumerService.Binding" id="AssertionConsumerService.Binding.Artifact">
+                <input class="form-check-input" type="radio" name="AssertionConsumerService.Binding" id="AssertionConsumerService.Binding.Artifact" value="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact">
                 <label class="form-check-label" for="AssertionConsumerService.Binding.Artifact">
                     Artifact Binding
                 </label>
@@ -83,13 +84,13 @@
         </div>
         <div class="col gx-4 form-floating">
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="SingleLogoutServiceEndpoint.Binding" id="SingleLogoutServiceEndpoint.Binding.Post" checked>
+                <input class="form-check-input" type="radio" name="SingleLogoutServiceEndpoint.Binding" id="SingleLogoutServiceEndpoint.Binding.Post" checked value="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST">
                 <label class="form-check-label" for="SingleLogoutServiceEndpoint.Binding.Post">
                     Post Binding
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="SingleLogoutServiceEndpoint.Binding" id="SingleLogoutServiceEndpoint.Binding.Redirect">
+                <input class="form-check-input" type="radio" name="SingleLogoutServiceEndpoint.Binding" id="SingleLogoutServiceEndpoint.Binding.Redirect" value="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">
                 <label class="form-check-label" for="SingleLogoutServiceEndpoint.Binding.Redirect">
                     Redirect Binding
                 </label>
@@ -206,19 +207,36 @@
         Certificate Information <span class="fs-6">(optional)</span>
     </div>
     <div class="h5 pb-2">
-        Signing Certificate
+        Signing Certificate (*.pfx) 
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8">
-            <input class="form-control form-control-lg" type="file" asp-for="@Model.SigningCertificate" placeholder="Signing Certificate">
+            <input class="form-control form-control-lg" type="file" accept=".pfx" asp-for="@Model.SigningCertificatePfx.File" placeholder="Signing Certificate">
+        </div>
+        <div class="col-4">
+            <input class="form-control form-control-lg" type="password" asp-for="@Model.SigningCertificatePfx.Password" placeholder="Password">
         </div>
     </div>
     <div class="h5 pb-2">
-        Encrypting Certificate
+        Encrypting Certificate (*.pfx)
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8">
-            <input class="form-control form-control-lg" type="file" asp-for="@Model.EncryptingCertificate" placeholder="Encrypting Certificate">
+            <input class="form-control form-control-lg" type="file" accept=".pfx" asp-for="@Model.EncryptingCertificatePfx.File" placeholder="Encrypting Certificate">
+        </div>
+        <div class="col-4">
+            <input class="form-control form-control-lg" type="password" asp-for="@Model.EncryptingCertificatePfx.Password" placeholder="Password">
+        </div>
+    </div>
+    <div class="h5 pb-2">
+        Metadata File Signing Certificate (*.pfx)
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col-8">
+            <input class="form-control form-control-lg" type="file" accept=".pfx" asp-for="@Model.SignatureCertificatePfx.File" placeholder="Metadata file Signing Certificate">
+        </div>
+        <div class="col-4">
+            <input class="form-control form-control-lg" type="password" asp-for="@Model.SignatureCertificatePfx.Password" placeholder="Password">
         </div>
     </div>
 

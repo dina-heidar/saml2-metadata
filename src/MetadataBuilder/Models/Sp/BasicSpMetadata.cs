@@ -20,6 +20,7 @@
 // SOFTWARE.
 //
 
+using System;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
@@ -86,7 +87,9 @@ namespace Saml.MetadataBuilder
         /// The signing certificate.
         /// </value>
         public X509Certificate2 SigningCertificate { get; set; }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasicSpMetadata"/> class.
+        /// </summary>
         public BasicSpMetadata()
         {
             ContactPersons= new ContactPerson[1];

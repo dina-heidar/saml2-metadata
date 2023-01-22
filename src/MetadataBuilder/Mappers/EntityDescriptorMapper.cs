@@ -33,7 +33,7 @@ namespace Saml.MetadataBuilder
         {
             var entityDescriptor = new EntityDescriptor()
             {
-                CacheDuration = $"PT{src.cacheDuration}",
+                CacheDuration = string.IsNullOrEmpty(src.cacheDuration) ? null : src.cacheDuration,
                 ValidUntil = src.validUntil,
                 EntityID = src.entityID,
                 Id = src.ID,
