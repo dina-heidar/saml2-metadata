@@ -51,12 +51,6 @@ namespace Saml.MetadataBuilder
 
                 entityDescriptorType.Items = new object[] { sPSSODescriptorType };
             }
-            //if (src.GetType() == typeof(IdpMetadata))
-            //{
-            //    var idpMetadata = src as IdpMetadata;
-            //    var idPSSODescriptorType = idpMetadata.Map(); //---> required
-            //}
-
             return entityDescriptorType;
         }
 

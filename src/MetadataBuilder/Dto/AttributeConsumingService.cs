@@ -57,7 +57,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The index.
         /// </value>
-        public ushort Index { get; set; } = 0;
+        public ushort Index { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is default.
@@ -65,7 +65,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         ///   <c>true</c> if this instance is default; otherwise, <c>false</c>.
         /// </value>
-        public bool IsDefault { get; set; } = true;
+        public bool IsDefault { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is default field specified.
@@ -73,6 +73,6 @@ namespace Saml.MetadataBuilder
         /// <value>
         ///   <c>true</c> if this instance is default field specified; otherwise, <c>false</c>.
         /// </value>
-        public bool IsDefaultFieldSpecified { get; set; } = true;
+        public bool IsDefaultFieldSpecified { get; set; }
     }
 }

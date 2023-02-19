@@ -20,6 +20,7 @@
 // SOFTWARE.
 //
 
+using System;
 using System.Security.Cryptography.X509Certificates;
 using Saml.MetadataBuilder.Constants;
 
@@ -44,21 +45,21 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The assertion consumer services.
         /// </value>
-        public IndexedEndpoint[] AssertionConsumerServices { get; set; } = new IndexedEndpoint[0];
+        public IndexedEndpoint[] AssertionConsumerServices { get; set; } = null;
         /// <summary>
         /// Gets or sets the artifact resolution services.
         /// </summary>
         /// <value>
         /// The artifact resolution services.
         /// </value>
-        public IndexedEndpoint[] ArtifactResolutionServices { get; set; } = new IndexedEndpoint[0];
+        public IndexedEndpoint[] ArtifactResolutionServices { get; set; } = null;
         /// <summary>
         /// Gets or sets the single logout service endpoints.
         /// </summary>
         /// <value>
         /// The single logout service endpoints.
         /// </value>
-        public virtual Endpoint[] SingleLogoutServiceEndpoints { get; set; } = new Endpoint[0];
+        public virtual Endpoint[] SingleLogoutServiceEndpoints { get; set; } = null;
         /// <summary>
         /// Gets or sets a value indicating whether [authn requests signed].
         /// </summary>
@@ -79,14 +80,14 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The encrypting certificates.
         /// </value>
-        public EncryptingCertificate[] EncryptingCertificates { get; set; }
+        public EncryptingCertificate[] EncryptingCertificates { get; set; } = null;
         /// <summary>
         /// Gets or sets the signing certificates.
         /// </summary>
         /// <value>
         /// The signing certificates.
         /// </value>
-        public X509Certificate2[] SigningCertificates { get; set; }
+        public X509Certificate2[] SigningCertificates { get; set; } = null;
         /// <summary>
         /// Gets or sets the protocol support enumeration.
         /// </summary>
@@ -100,7 +101,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The attribute consuming service.
         /// </value>
-        public AttributeConsumingService[] AttributeConsumingService { get; set; } = new AttributeConsumingService[0];
+        public AttributeConsumingService[] AttributeConsumingService { get; set; } = Array.Empty<AttributeConsumingService>();
         /// <summary>
         /// Initializes a new instance of the <see cref="RichSpMetadata"/> class.
         /// </summary>

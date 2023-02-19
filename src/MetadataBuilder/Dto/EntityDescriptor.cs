@@ -112,7 +112,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The role descriptor.
         /// </value>
-        public object[] Items { get; set; }
+        public object[] Items { get; set; } = null;
         //internal RoleDescriptor RoleDescriptor { get; set; }
         /// <summary>
         /// <para><b>Optional</b><br/> 

@@ -22,10 +22,38 @@
 
 namespace Saml.MetadataBuilder
 {
+
+    /// <summary>
+    /// Tailors the name identifier in the subjects of assertions
+    /// </summary>
     public class NameIdPolicy
     {
+        /// <summary>
+        /// [Optional] Specifies the URI reference corresponding to a name identifier 
+        /// format defined in this or another specification(see Section 8.3 for examples). 
+        /// The additional value of urn:oasis:names:tc:SAML:2.0:nameid-format:encrypted 
+        /// is defined specifically for use within this attribute to indicate a request 
+        /// that the resulting identifier be encrypted.
+        /// </summary>
         public string Format { get; set; }
+        /// <summary>
+        /// [Optional] Specifies that the assertion subject's identifier be returned (or created) 
+        /// in the namespace of a service provider other than the requester, or in the namespace 
+        /// of an affiliation group of service providers.See for example the definition of 
+        /// urn:oasis:names:tc:SAML:2.0:nameidformat:persistent in Section 8.3.7.
+        /// http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf section 3.4.1.1
+        /// </summary>
         public string SpNameQualifier { get; set; }
+        /// <summary>
+        /// [Optional] A Boolean value used to indicate whether the identity provider is allowed, 
+        /// in the course of fulfilling the request, to create a new identifier to represent the
+        /// principal.Defaults to "false". When "false", the requester constrains the identity 
+        /// provider to only issue an assertion to it if an acceptable identifier for the principal 
+        /// has already been established.Note that this does not prevent the identity provider from 
+        /// creating such identifiers outside the context of this specific request (for example, 
+        /// in advance for a large number of principals).
+        /// http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf section 3.4.1.1
+        /// </summary>
         public bool AllowCreate { get; set; }
     }
 }

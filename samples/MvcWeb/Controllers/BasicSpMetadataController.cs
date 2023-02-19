@@ -27,7 +27,7 @@ public class BasicSpMetadataController : Controller
 
     [HttpPost]
     public async Task<XmlDocument> Create(BasicSpMetadataViewModel basicSpMetadataVm)
-    {       
+    {
         if (!basicSpMetadataVm.SigningCertificatePfx.IsNull())
         {
             basicSpMetadataVm.SigningCertificate = await GetX509Certificate2(basicSpMetadataVm.SignatureCertificatePfx);
