@@ -67,6 +67,23 @@ namespace Saml.MetadataBuilder
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xmlTemplate);
             xmlDoc.PreserveWhitespace = true;
+
+            bool hasEmptyElement = true;
+
+            while (hasEmptyElement == true)
+            {
+                var emptyElementList = xmlDoc.SelectNodes(@"//*[not(node()) and count(@*) = 0]");
+                if (emptyElementList.Count == 0)
+                {
+                    hasEmptyElement = false;
+                }
+
+                int listSize = emptyElementList.Count;
+                for (int i = listSize - 1; i >= 0; i--)
+                {
+                    emptyElementList[i].ParentNode.RemoveChild(emptyElementList[i]);
+                }
+            }
             return xmlDoc;
         }
 

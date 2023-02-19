@@ -1,4 +1,4 @@
-cd "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools" 
+location of xsd.exe => cd "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools" 
 
 
 .\xsd.exe /c /outputdir:C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas `

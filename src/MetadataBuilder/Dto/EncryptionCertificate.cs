@@ -39,6 +39,6 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The accepted encryption methods.
         /// </value>
-        public EncryptionMethod[] AcceptedEncryptionMethods { get; set; } = new EncryptionMethod[0];
+        public EncryptionMethod[] AcceptedEncryptionMethods { get; set; } = null;
     }
 }

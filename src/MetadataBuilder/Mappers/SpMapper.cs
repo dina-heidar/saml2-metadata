@@ -20,6 +20,7 @@
 // SOFTWARE.
 //
 
+using System;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using MetadataBuilder.Schema.Metadata;
@@ -97,27 +98,32 @@ namespace Saml.MetadataBuilder
         }
         public static AttributeConsumingServiceType[] MapEach(this AttributeConsumingService[] src)
         {
+            var isEmpty = Array.Empty<AttributeConsumingService>().Equals(src);
+
             if (src.Length > 0 || src != null)
             {
                 var attributeConsumingServiceType = new AttributeConsumingServiceType[src.Length];
 
+                var i = 0;
                 foreach (var attribute in src)
                 {
-                    var i = 0;
-                    attributeConsumingServiceType[i] = new AttributeConsumingServiceType
-                    {
-                        ServiceDescription = attribute.ServiceDescriptions.MapEach(),
-                        ServiceName = attribute.ServiceNames.MapEach(),
-                        isDefault = attribute.IsDefault,
-                        isDefaultSpecified = attribute.IsDefaultFieldSpecified,
-                        index = attribute.Index,
-                        RequestedAttribute = attribute.RequestedAttributes.MapEach()
-                    };
+                    if (attribute != null)
+                    {                        
+                        attributeConsumingServiceType[i] = new AttributeConsumingServiceType
+                        {
+                            ServiceDescription = attribute.ServiceDescriptions?.MapEach(),
+                            ServiceName = attribute.ServiceNames?.MapEach(),
+                            isDefault = attribute.IsDefault,
+                            isDefaultSpecified = attribute.IsDefaultFieldSpecified,
+                            index = attribute.Index,
+                            RequestedAttribute = attribute.RequestedAttributes?.MapEach()
+                        };                                          
+                    }
                     if (i < src.Length) { i++; };
                 }
                 return attributeConsumingServiceType;
             }
-            return new AttributeConsumingServiceType[0];
+            return null;
         }
         public static RequestedAttributeType[] MapEach(this RequestedAttribute[] src)
         {

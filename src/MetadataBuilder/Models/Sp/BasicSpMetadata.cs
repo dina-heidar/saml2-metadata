@@ -58,28 +58,28 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The service names.
         /// </value>
-        public LocalizedName[] ServiceNames { get; set; } = new LocalizedName[0];
+        public LocalizedName[] ServiceNames { get; set; } = null;
         /// <summary>
         /// Gets or sets the service descriptions.
         /// </summary>
         /// <value>
         /// The service descriptions.
         /// </value>
-        public LocalizedName[] ServiceDescriptions { get; set; } = new LocalizedName[0];
+        public LocalizedName[] ServiceDescriptions { get; set; } = null;
         /// <summary>
         /// Gets or sets the requested attributes.
         /// </summary>
         /// <value>
         /// The requested attributes.
         /// </value>
-        public RequestedAttribute[] RequestedAttributes { get; set; } = new RequestedAttribute[0];//optional
+        public RequestedAttribute[] RequestedAttributes { get; set; } = null;//optional
         /// <summary>
         /// Gets or sets the encrypting certificate.
         /// </summary>
         /// <value>
         /// The encrypting certificate.
         /// </value>
-        public EncryptingCertificate EncryptingCertificate { get; set; }
+        public EncryptingCertificate EncryptingCertificate { get; set; } = new EncryptingCertificate();
         /// <summary>
         /// Gets or sets the signing certificate.
         /// </summary>
@@ -87,12 +87,5 @@ namespace Saml.MetadataBuilder
         /// The signing certificate.
         /// </value>
         public X509Certificate2 SigningCertificate { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BasicSpMetadata"/> class.
-        /// </summary>
-        public BasicSpMetadata()
-        {
-            ContactPersons= new ContactPerson[1];
-        }
     }
 }

@@ -59,16 +59,20 @@ namespace Saml.MetadataBuilder
                 var i = 0;
                 foreach (var contactPerson in src)
                 {
-                    contactType[i] = new ContactType()
+                    if (contactPerson.ContactType != null)
                     {
-                        Company = contactPerson.Company,
-                        contactType = contactPerson.ContactType.MapEnum(),
-                        EmailAddress = contactPerson.EmailAddresses.ToArray(),
-                        GivenName = contactPerson.GivenName,
-                        SurName = contactPerson.Surname,
-                        TelephoneNumber = contactPerson.TelephoneNumbers.ToArray(),
-                        //Extensions = contactPerson.ex
-                    };
+                        contactType[i] = new ContactType()
+                        {
+                            Company = contactPerson.Company,
+                            contactType = ((ContactEnumType)contactPerson.ContactType).MapEnum(),
+                            EmailAddress = contactPerson.EmailAddresses.ToArray(),
+                            GivenName = contactPerson.GivenName,
+                            SurName = contactPerson.Surname,
+                            TelephoneNumber = contactPerson.TelephoneNumbers.ToArray(),
+                            //Extensions = contactPerson.ex
+                        };
+                    }
+
                     if (i < src.Length) { i++; };
                 }
                 return contactType;
@@ -104,9 +108,9 @@ namespace Saml.MetadataBuilder
             {
                 var organizationType = new OrganizationType()
                 {
-                    OrganizationDisplayName = src.OrganizationDisplayName.MapEach(),
-                    OrganizationName = src.OrganizationName.MapEach(),
-                    OrganizationURL = src.OrganizationURL.MapEach()
+                    OrganizationDisplayName = src.OrganizationDisplayName?.MapEach(),
+                    OrganizationName = src.OrganizationName?.MapEach(),
+                    OrganizationURL = src.OrganizationURL?.MapEach()
                 };
                 return organizationType;
             }
@@ -120,11 +124,14 @@ namespace Saml.MetadataBuilder
                 var i = 0;
                 foreach (var localizedName in src)
                 {
+                    //if (!localizedName.IsAnyNullOrEmpty())
+                    //{
                     localizedNameType[i] = new localizedNameType
                     {
                         lang = localizedName.Language,
                         Value = localizedName.Value
                     };
+                    //}
                     if (i < src.Count()) { i++; };
                 }
                 return localizedNameType;
@@ -139,11 +146,14 @@ namespace Saml.MetadataBuilder
                 var i = 0;
                 foreach (var localizedUri in src)
                 {
+                    //if (!localizedUri.IsAnyNullOrEmpty())
+                    //{
                     localizedURIType[i] = new localizedURIType
                     {
                         lang = localizedUri.Language,
-                        Value = localizedUri.Uri.ToString()
+                        Value = localizedUri.Uri?.ToString()
                     };
+                    //}
                     if (i < src.Count()) { i++; };
                 }
                 return localizedURIType;
@@ -266,60 +276,65 @@ namespace Saml.MetadataBuilder
             //encryption use
             foreach (var encr in encryptingCertificates)
             {
-                var encryptionMethodType = new List<EncryptionMethodType>();
-
-                foreach (var alg in encr.AcceptedEncryptionMethods)
+                if (encr.EncryptionCertificate != null)
                 {
-                    encryptionMethodType.Add(new EncryptionMethodType
-                    {
-                        Algorithm = alg.Algorithm,
-                        OAEPparams = alg.OAEPparams,
-                        KeySize = alg.KeySize
-                    });
-                }
+                    var encryptionMethodType = new List<EncryptionMethodType>();
 
-                var keyDescriptorEncrypted = new KeyDescriptorType()
-                {
-                    useSpecified = true,
-                    use = KeyTypes.encryption,
-                    KeyInfo = new KeyInfoType()
+                    foreach (var alg in encr.AcceptedEncryptionMethods)
                     {
-                        ItemsElementName = new[] { ItemsChoiceType2.X509Data },
-                        Items = new X509DataType[]
-                                        {
+                        encryptionMethodType.Add(new EncryptionMethodType
+                        {
+                            Algorithm = alg.Algorithm,
+                            OAEPparams = alg.OAEPparams,
+                            KeySize = alg.KeySize
+                        });
+                    }
+                    var keyDescriptorEncrypted = new KeyDescriptorType()
+                    {
+                        useSpecified = true,
+                        use = KeyTypes.encryption,
+                        KeyInfo = new KeyInfoType()
+                        {
+                            ItemsElementName = new[] { ItemsChoiceType2.X509Data },
+                            Items = new X509DataType[]
+                                            {
                                             new X509DataType()
                                             {
                                                 Items = new object[] { encr.EncryptionCertificate.GetRawCertData() },
                                                 ItemsElementName = new[] { ItemsChoiceType.X509Certificate }
                                             }
-                                        }
-                    },
-                    EncryptionMethod = encryptionMethodType.ToArray(),
-                };
-                keyDescriptorTypeList.Add(keyDescriptorEncrypted);
+                                            }
+                        },
+                        EncryptionMethod = encryptionMethodType.ToArray(),
+                    };
+                    keyDescriptorTypeList.Add(keyDescriptorEncrypted);
+                }
             }
 
             //signing use
             foreach (var sign in signingCertificates)
             {
-                var keyDescriptorSigning = new KeyDescriptorType()
+                if (sign != null)
                 {
-                    useSpecified = true,
-                    use = KeyTypes.signing,
-                    KeyInfo = new KeyInfoType()
+                    var keyDescriptorSigning = new KeyDescriptorType()
                     {
-                        ItemsElementName = new[] { ItemsChoiceType2.X509Data },
-                        Items = new X509DataType[]
-                                        {
+                        useSpecified = true,
+                        use = KeyTypes.signing,
+                        KeyInfo = new KeyInfoType()
+                        {
+                            ItemsElementName = new[] { ItemsChoiceType2.X509Data },
+                            Items = new X509DataType[]
+                                            {
                                             new X509DataType()
                                             {
                                                 Items = new object[]{ sign.GetRawCertData() },
                                                 ItemsElementName = new [] { ItemsChoiceType.X509Certificate }
                                             }
-                                        }
-                    }
-                };
-                keyDescriptorTypeList.Add(keyDescriptorSigning);
+                                            }
+                        }
+                    };
+                    keyDescriptorTypeList.Add(keyDescriptorSigning);
+                }
             }
 
             return keyDescriptorTypeList.ToArray<KeyDescriptorType>();

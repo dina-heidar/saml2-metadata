@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.ComponentModel;
 using System.Xml.Serialization;
 
 // 
@@ -5795,7 +5797,7 @@ namespace MetadataBuilder.Schema.Metadata
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:metadata")]
     [System.Xml.Serialization.XmlRootAttribute("Extensions", Namespace = "urn:oasis:names:tc:SAML:2.0:metadata", IsNullable = false)]
     public partial class ExtensionsType
-    {       
+    {
         private object[] anyField;
 
         [System.Xml.Serialization.XmlElementAttribute("UIInfo", typeof(UIInfoType), Namespace = "urn:oasis:names:tc:SAML:metadata:ui")]
@@ -6149,11 +6151,9 @@ namespace MetadataBuilder.Schema.Metadata
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:metadata")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:oasis:names:tc:SAML:2.0:metadata", AnonymousType = true)]
     public enum ContactTypeType
     {
-
-
         technical,
 
 
@@ -7179,7 +7179,7 @@ namespace MetadataBuilder.Schema.Metadata
                 this.signatureField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("Extensions")]
         public ExtensionsType Extensions
         {

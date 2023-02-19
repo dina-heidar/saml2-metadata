@@ -41,6 +41,6 @@ namespace Saml.MetadataBuilder
         /// <value>
         ///   <c>true</c> if this instance is required field specified; otherwise, <c>false</c>.
         /// </value>
-        public bool IsRequiredFieldSpecified { get; set; } = true;
+        public bool IsRequiredFieldSpecified { get; set; }
     }
 }

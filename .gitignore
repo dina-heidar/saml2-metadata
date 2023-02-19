@@ -4,3 +4,6 @@
 /samples/MvcWeb/obj
 /samples/MvcWeb/bin
 /samples/MvcWeb/node_modules
+/samples/BasicSpMetadata/BasicSpMetadata.csproj.user
+/samples/BasicSpMetadata/bin
+/samples/BasicSpMetadata/obj

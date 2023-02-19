@@ -1,5 +1,5 @@
 ﻿https://medium.com/the-crazy-coder/visual-studio-copyright-notices-in-source-files-b95d7f427e97
- dotnet format MetadataBuilder.csproj
+ dotnet format MetadataBuilder.csproj =>run editorConfig
 
 
  spsso ->sso -->role
@@ -34,6 +34,11 @@ Types of SAML2 binding (https://en.wikipedia.org/wiki/SAML_2.0)
 7- sign metadata
 8- include public cert in metadata
 
+https://www.wiktorzychla.com/2017/09/adfs-and-saml2-artifact-binding-woes.html
+
+SP SingleLogoutService can any of these bindings redirect, post, artifact and soap. Soap is to accept backchannel logout from Idp when another Sp logs out.
+
+Idp SingleLogoutService can be any of these bindings redirect, post, artifact and soap....???
 
 
 1. when reading creating xml
