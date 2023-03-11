@@ -43,5 +43,19 @@ namespace Saml.MetadataBuilder
         /// The URI.
         /// </value>
         public Uri Uri { get; set; }
+
+        /// <summary>
+        /// Determines whether this instance is empty.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
+        /// </returns>
+        internal bool IsEmpty()
+        {
+            if (string.IsNullOrEmpty(Language) &&
+                Uri == null)
+            { return true; }
+            return false;
+        }
     }
 }

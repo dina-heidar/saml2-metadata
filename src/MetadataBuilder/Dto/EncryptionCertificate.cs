@@ -20,6 +20,8 @@
 // SOFTWARE.
 //
 
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
@@ -39,6 +41,16 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The accepted encryption methods.
         /// </value>
-        public EncryptionMethod[] AcceptedEncryptionMethods { get; set; } = null;
+        public EncryptionMethod[] EncryptionMethods { get; set; } 
+
+        internal bool IsEmpty()
+        {
+            if (EncryptionCertificate == null &&
+                EncryptionMethods.All(e => e.IsEmpty()))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

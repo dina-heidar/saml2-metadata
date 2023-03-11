@@ -20,7 +20,6 @@
 // SOFTWARE.
 //
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using MetadataBuilder.Schema.Metadata;
@@ -33,11 +32,11 @@ namespace Saml.MetadataBuilder
         {
             var entityDescriptor = new EntityDescriptor()
             {
-                CacheDuration = string.IsNullOrEmpty(src.cacheDuration) ? null : src.cacheDuration,
+                CacheDuration = (!string.IsNullOrEmpty(src.cacheDuration) ? src.cacheDuration.ConvertFromXmlCachedDuration() : null),
                 ValidUntil = src.validUntil,
                 EntityID = src.entityID,
                 Id = src.ID,
-                Items = src.Items,
+                ObjectItems = src.Items,
                 ContactPersons = (src.ContactPerson != null ? src.ContactPerson.MapEach() : null), //optional
                 Organization = (src.Organization != null ? src.Organization.Map() : null),  //optional
                 Extensions = (src.Extensions != null ? Map(src.Extensions) : null),
@@ -54,13 +53,13 @@ namespace Saml.MetadataBuilder
                     if (item.GetType() == typeof(IDPSSODescriptorType))
                     {
                         var idpSSODescriptor = (item as IDPSSODescriptorType).Map();
-                        entityDescriptor.Items[i] = idpSSODescriptor;
+                        entityDescriptor.ObjectItems[i] = idpSSODescriptor;
                         if (i < src.Items.Length) { i++; };
                     }
                     if (item.GetType() == typeof(SPSSODescriptorType))
                     {
                         var spSSODescriptor = (item as SPSSODescriptorType).Map();
-                        entityDescriptor.Items[i] = spSSODescriptor;
+                        entityDescriptor.ObjectItems[i] = spSSODescriptor;
                         if (i < src.Items.Length) { i++; };
                     }
                 }

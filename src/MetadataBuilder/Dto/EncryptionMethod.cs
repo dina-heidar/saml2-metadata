@@ -45,5 +45,23 @@ namespace Saml.MetadataBuilder
         /// The algorithm.
         /// </value>
         public string Algorithm { get; set; }
+
+        /// <summary>
+        /// Determines whether this instance is empty.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
+        /// </returns>
+        internal bool IsEmpty()
+        {
+            if (string.IsNullOrEmpty(KeySize) &&
+                string.IsNullOrEmpty(Algorithm) &&
+                OAEPparams == null
+                )
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

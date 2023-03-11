@@ -36,5 +36,13 @@ namespace Saml.MetadataBuilder
         /// <summary>Gets or sets the response location.</summary>
         /// <value>The response location.</value>
         public string ResponseLocation { get; set; }
+        internal bool IsEmpty()
+        {
+            if (string.IsNullOrEmpty(Binding) &&
+               string.IsNullOrEmpty(Location) &&
+               string.IsNullOrEmpty(ResponseLocation))
+            { return true; }
+            return false;
+        }
     }
 }

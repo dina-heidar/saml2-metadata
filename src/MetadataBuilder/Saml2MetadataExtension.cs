@@ -35,14 +35,18 @@ namespace Saml.MetadataBuilder
         /// Adds the saml metadat builder.
         /// </summary>
         /// <param name="services">The services.</param>
-        public static void AddSamlMetadatBuilder(this IServiceCollection services)
+        public static IServiceCollection AddSamlMetadatBuilder(this IServiceCollection services)
         {
-            services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataWriter, MedataWriter>());
+            services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataWriter, MetadataWriter>());
+
+            //for reading metadata files and urls
             services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataReader, MetadataReader>());
 
             //mappers
             services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataMapper<EntityDescriptor, EntityDescriptorType>, EntityDescriptorTypeMapper>());
-            services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataMapper<EntityDescriptorType, EntityDescriptor>, EntityDescriptorMapper>());            
+            services.TryAddEnumerable(ServiceDescriptor.Transient<IMetadataMapper<EntityDescriptorType, EntityDescriptor>, EntityDescriptorMapper>());
+
+            return services;
         }
     }
 }

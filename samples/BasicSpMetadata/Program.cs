@@ -1,15 +1,14 @@
 using MediatR;
 using Saml.MetadataBuilder;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddMediatR(typeof(Program));
-builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddSamlMetadatBuilder();
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 

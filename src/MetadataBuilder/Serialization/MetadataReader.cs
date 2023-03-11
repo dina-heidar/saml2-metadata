@@ -43,8 +43,9 @@ namespace Saml.MetadataBuilder
         private readonly IMetadataMapper<EntityDescriptorType, EntityDescriptor> _mapper;
         private XmlReaderSettings safeSettings;
 
-        public MetadataReader(IMetadataMapper<EntityDescriptorType,
-            EntityDescriptor> mapper)
+        public MetadataReader(
+            IMetadataMapper<EntityDescriptorType, EntityDescriptor> mapper
+            )
         {
             _mapper = mapper;
 
@@ -120,6 +121,5 @@ namespace Saml.MetadataBuilder
             }
             return entityDescriptor;
         }
-
     }
 }

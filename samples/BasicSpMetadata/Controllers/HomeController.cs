@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Saml.MetadataBuilder;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
-using System.Xml;
 
 namespace MvcWeb.Controllers
 {
@@ -29,11 +28,12 @@ namespace MvcWeb.Controllers
 
         public IActionResult Create()
         {
-            return View(new BasicSpMetadataViewModel());
+            var bsm = new BasicSpMetadataViewModel();
+            return View(bsm);
         }
 
         [HttpPost]
-        public async Task<XmlDocument> Create(BasicSpMetadataViewModel basicSpMetadataVm)
+        public async Task<IActionResult> Create(BasicSpMetadataViewModel basicSpMetadataVm)
         {
             if (!basicSpMetadataVm.SignatureCertificatePfx.IsNull())
             {
@@ -53,7 +53,12 @@ namespace MvcWeb.Controllers
             var bsm = mapper.Map<BasicSpMetadataViewModel, Saml.MetadataBuilder.BasicSpMetadata>(basicSpMetadataVm);
 
             var xml = writer.Output(bsm);
-            return xml;
+            return new ContentResult
+            {
+                Content = xml.OuterXml,
+                ContentType = "application/xml",
+                StatusCode = 200
+            };
         }
 
         private async Task<X509Certificate2> GetX509Certificate2(PfxFile pfxfile)

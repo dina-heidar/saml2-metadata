@@ -14,27 +14,27 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8 form-floating">
-            <input type="text" class="form-control" asp-for="@Model.EntityID" placeholder="EntityId">
+            <input type="text" class="form-control" asp-for="@EntityID" placeholder="EntityId">
             <label for="EntityID">EntityId</label>
         </div>
         <div class="col gx-4 form-floating">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" asp-for="@Model.AuthnRequestsSigned" value="true">
+                <input class="form-check-input" type="checkbox" asp-for="@AuthnRequestsSigned" value="true">
                 <label class="form-check-label" for="AuthnRequestsSigned">Authn Requests Signed</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" asp-for="@Model.WantAssertionsSigned" value="true">
+                <input class="form-check-input" type="checkbox" asp-for="@WantAssertionsSigned" value="true">
                 <label class="form-check-label" for="WantAssertionsSigned">Want Assertions Signed</label>
             </div>
         </div>
     </div>
     <div class="row gx-2 mb-4">
         <div class="col form-floating">
-            <input type="datetime-local" class="form-control" asp-for="@Model.ValidUntil" placeholder="Valid Until (optional)" value="">
+            <input type="datetime-local" class="form-control" asp-for="@ValidUntil" placeholder="Valid Until (optional)" value="">
             <label for="ValidUntil">Valid Until (optional)</label>
         </div>
         <div class="col form-floating">
-            <input type="number" class="form-control" asp-for="@Model.CacheDuration" placeholder="Cache Duration in seconds (optional)" value="">
+            <input type="number" class="form-control" asp-for="@CacheDuration" placeholder="Cache Duration in seconds (optional)" value="">
             <label for="CacheDuration">Cache Duration in seconds (optional)</label>
         </div>
     </div>
@@ -46,11 +46,11 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-2 form-floating">
-            <input type="number" class="form-control" asp-for="@Model.AssertionConsumerService.Index" placeholder="Index" value="0">
+            <input type="number" class="form-control" asp-for="@AssertionConsumerService.Index" placeholder="Index" value="0">
             <label for="AssertionConsumerService.Index">Index</label>
         </div>
         <div class="col-6 form-floating">
-            <input type="url" class="form-control" asp-for="@Model.AssertionConsumerService.Location" placeholder="Location">
+            <input type="url" class="form-control" asp-for="@AssertionConsumerService.Location" placeholder="Location">
             <label for="AssertionConsumerService.Location">Location</label>
         </div>
         <div class="col gx-4 form-floating">
@@ -79,7 +79,7 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8 form-floating">
-            <input type="url" class="form-control" asp-for="@Model.SingleLogoutServiceEndpoint.Location" placeholder="Location">
+            <input type="url" class="form-control" asp-for="@SingleLogoutServiceEndpoint.Location" placeholder="Location">
             <label for="SingleLogoutServiceEndpoint.Location">Location</label>
         </div>
         <div class="col gx-4 form-floating">
@@ -102,7 +102,7 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col form-floating">
-            <select class="form-select" name="@Model.NameIdFormat" id="NameIdFormatfloatingSelect" aria-label="NameId Format">
+            <select class="form-select" name="@NameIdFormat" id="NameIdFormatfloatingSelect" aria-label="NameId Format">
                 <option value="urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress">Email Address</option>
                 <option value="urn:oasis:names:tc:SAML:2.0:nameid-format:encrypted">Encrypted</option>
                 <option value="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">Entity</option>
@@ -122,29 +122,29 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col form-floating">
-            <input type="text" class="form-control" asp-for="@Model.ContactPersons[0].GivenName" placeholder="First Name">
+            <input type="text" class="form-control" asp-for="@ContactPersons[0].GivenName" placeholder="First Name">
             <label for="ContactPersons[0].GivenName">First Name</label>
         </div>
     </div>
     <div class="row gx-2 mb-4">
         <div class="col form-floating">
-            <input type="text" class="form-control" asp-for="@Model.ContactPersons[0].Surname" placeholder="Last Name">
+            <input type="text" class="form-control" asp-for="@ContactPersons[0].Surname" placeholder="Last Name">
             <label for="ContactPersons[0].Surname">Last Name</label>
         </div>
     </div>
     <div class="row gx-2 mb-4">
         <div class="col form-floating">
-            <input type="text" class="form-control" asp-for="@Model.ContactPersons[0].Company" placeholder="Company">
+            <input type="text" class="form-control" asp-for="@ContactPersons[0].Company" placeholder="Company">
             <label for="ContactPersons[0].Company">Company</label>
         </div>
     </div>
     <div class="row gx-2 mb-4">
         <div class="col form-floating">
-            <input type="email" class="form-control" asp-for="@Model.ContactPersons[0].EmailAddresses[0]" placeholder="Email">
+            <input type="email" class="form-control" asp-for="@ContactPersons[0].EmailAddresses[0]" placeholder="Email">
             <label for="ContactPersons[0].EmailAddresses.[0]">Email</label>
         </div>
         <div class="col form-floating">
-            <input type="tel" class="form-control" asp-for="@Model.ContactPersons[0].TelephoneNumbers[0]" placeholder="Telephone">
+            <input type="tel" class="form-control" asp-for="@ContactPersons[0].TelephoneNumbers[0]" placeholder="Telephone">
             <label for="ContactPersons[0].TelephoneNumbers.[0]">Telephone</label>
         </div>
         <div class="col form-floating">
@@ -163,7 +163,7 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8 form-floating">
-            <input type="text" class="form-control" asp-for="@Model.Organization.OrganizationDisplayName[0].Value" placeholder="Display Name">
+            <input type="text" class="form-control" asp-for="@Organization.OrganizationDisplayName[0].Value" placeholder="Display Name">
             <label for="Organization.OrganizationDisplayName[0].Value">Display Name</label>
         </div>
         <div class="col form-floating">
@@ -177,7 +177,7 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8 form-floating">
-            <input type="text" class="form-control" asp-for="@Model.Organization.OrganizationName[0].Value" placeholder="Name">
+            <input type="text" class="form-control" asp-for="@Organization.OrganizationName[0].Value" placeholder="Name">
             <label for="Organization.OrganizationName[0].Value">Name</label>
         </div>
         <div class="col form-floating">
@@ -191,7 +191,7 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8 form-floating">
-            <input type="url" class="form-control" asp-for="@Model.Organization.OrganizationURL[0].Uri" placeholder="Url">
+            <input type="url" class="form-control" asp-for="@Organization.OrganizationURL[0].Uri" placeholder="Url">
             <label for="Organization.OrganizationURL[0].Uri">Url</label>
         </div>
         <div class="col form-floating">
@@ -211,10 +211,10 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8">
-            <input class="form-control form-control-lg" type="file" accept=".pfx" asp-for="@Model.SigningCertificatePfx.File" placeholder="Signing Certificate">
+            <input class="form-control form-control-lg" type="file" accept=".pfx" asp-for="@SigningCertificatePfx.File" placeholder="Signing Certificate">
         </div>
         <div class="col-4">
-            <input class="form-control form-control-lg" type="password" asp-for="@Model.SigningCertificatePfx.Password" placeholder="Password">
+            <input class="form-control form-control-lg" type="password" asp-for="@SigningCertificatePfx.Password" placeholder="Password">
         </div>
     </div>
     <div class="h5 pb-2">
@@ -222,10 +222,10 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8">
-            <input class="form-control form-control-lg" type="file" accept=".pfx" asp-for="@Model.EncryptingCertificatePfx.File" placeholder="Encrypting Certificate">
+            <input class="form-control form-control-lg" type="file" accept=".pfx" asp-for="@EncryptingCertificatePfx.File" placeholder="Encrypting Certificate">
         </div>
         <div class="col-4">
-            <input class="form-control form-control-lg" type="password" asp-for="@Model.EncryptingCertificatePfx.Password" placeholder="Password">
+            <input class="form-control form-control-lg" type="password" asp-for="@EncryptingCertificatePfx.Password" placeholder="Password">
         </div>
     </div>
     <div class="h5 pb-2">
@@ -233,10 +233,10 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8">
-            <input class="form-control form-control-lg" type="file" accept=".pfx" asp-for="@Model.SignatureCertificatePfx.File" placeholder="Metadata file Signing Certificate">
+            <input class="form-control form-control-lg" type="file" accept=".pfx" asp-for="@SignatureCertificatePfx.File" placeholder="Metadata file Signing Certificate">
         </div>
         <div class="col-4">
-            <input class="form-control form-control-lg" type="password" asp-for="@Model.SignatureCertificatePfx.Password" placeholder="Password">
+            <input class="form-control form-control-lg" type="password" asp-for="@SignatureCertificatePfx.Password" placeholder="Password">
         </div>
     </div>
 

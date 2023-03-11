@@ -21,6 +21,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using MetadataBuilder.Schema.Metadata;
@@ -81,55 +82,66 @@ namespace Saml.MetadataBuilder
             src.ArtifactResolutionServices = (src.ArtifactResolutionService != null ? new IndexedEndpoint[] { src.ArtifactResolutionService } : new IndexedEndpoint[0]);
             src.EncryptingCertificates = (src.EncryptingCertificate != null ? new EncryptingCertificate[] { src.EncryptingCertificate } : new EncryptingCertificate[0]);
             src.SigningCertificates = (src.SigningCertificate != null ? new X509Certificate2[] { src.SigningCertificate } : new X509Certificate2[0]);
-            src.AttributeConsumingService = MapAll(src.ServiceNames, src.ServiceDescriptions, src.RequestedAttributes);
+            //src.AttributeConsumingService = (src.AttributeConsumingService.All(a => a.IsEmpty()) ? null : src.AttributeConsumingService.MapEach());  //MapAll(src.ServiceNames, src.ServiceDescriptions, src.RequestedAttributes);
         }
-        public static AttributeConsumingService[] MapAll(LocalizedName[] serviceNames,
-        LocalizedName[] serviceDescription, RequestedAttribute[] requestedAttributes)
-        {
-            return new AttributeConsumingService[]
-            {
-                new AttributeConsumingService
-                {
-                    RequestedAttributes = requestedAttributes,
-                    ServiceNames =  serviceNames,
-                    ServiceDescriptions = serviceDescription
-                }
-            };
-        }
-        public static AttributeConsumingServiceType[] MapEach(this AttributeConsumingService[] src)
+        //public static AttributeConsumingService[] MapAll(LocalizedName[] serviceNames,
+        //LocalizedName[] serviceDescription, RequestedAttribute[] requestedAttributes)
+        //{
+        //    if (
+        //        serviceNames.Equals(Array.Empty<LocalizedName>())
+        //        && serviceDescription.Equals(Array.Empty<LocalizedName>())
+        //        && requestedAttributes.Equals(Array.Empty<RequestedAttribute>())
+        //        )
+        //        return null;
+
+        //    else
+        //    {
+        //        return new AttributeConsumingService[]
+        //        {
+        //        new AttributeConsumingService
+        //        {
+        //            RequestedAttributes = requestedAttributes,
+        //            ServiceNames =  serviceNames,
+        //            ServiceDescriptions = serviceDescription
+        //        }
+        //        };
+        //    }
+        //}
+        public static AttributeConsumingServiceType[] MapEach(this IEnumerable<AttributeConsumingService> src)
         {
             var isEmpty = Array.Empty<AttributeConsumingService>().Equals(src);
+            var isEmptyEn = Enumerable.Empty<AttributeConsumingService>().Equals(src);
 
-            if (src.Length > 0 || src != null)
+            if (src.Count() > 0 || src != null)
             {
-                var attributeConsumingServiceType = new AttributeConsumingServiceType[src.Length];
+                var attributeConsumingServiceType = new AttributeConsumingServiceType[src.Count()];
 
                 var i = 0;
                 foreach (var attribute in src)
                 {
                     if (attribute != null)
-                    {                        
+                    {
                         attributeConsumingServiceType[i] = new AttributeConsumingServiceType
                         {
                             ServiceDescription = attribute.ServiceDescriptions?.MapEach(),
                             ServiceName = attribute.ServiceNames?.MapEach(),
-                            isDefault = attribute.IsDefault,
-                            isDefaultSpecified = attribute.IsDefaultFieldSpecified,
-                            index = attribute.Index,
+                            isDefault = (bool)attribute.IsDefault,
+                            isDefaultSpecified = (bool)attribute.IsDefaultFieldSpecified,
+                            index = (ushort)attribute.Index,
                             RequestedAttribute = attribute.RequestedAttributes?.MapEach()
-                        };                                          
+                        };
                     }
-                    if (i < src.Length) { i++; };
+                    if (i < src.Count()) { i++; };
                 }
                 return attributeConsumingServiceType;
             }
             return null;
         }
-        public static RequestedAttributeType[] MapEach(this RequestedAttribute[] src)
+        public static RequestedAttributeType[] MapEach(this IEnumerable<RequestedAttribute> src)
         {
-            if (src.Length > 0 || src != null)
+            if (src.Count() > 0 || src != null)
             {
-                var requestedAttributeType = new RequestedAttributeType[src.Length];
+                var requestedAttributeType = new RequestedAttributeType[src.Count()];
                 var i = 0;
                 foreach (var attribute in src)
                 {
@@ -142,7 +154,7 @@ namespace Saml.MetadataBuilder
                         Name = attribute.Name,
                         NameFormat = attribute.NameFormat
                     };
-                    if (i < src.Length) { i++; };
+                    if (i < src.Count()) { i++; };
                 }
                 return requestedAttributeType;
             }

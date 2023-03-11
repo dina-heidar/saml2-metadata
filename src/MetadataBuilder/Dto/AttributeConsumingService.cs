@@ -20,6 +20,8 @@
 // SOFTWARE.
 //
 
+using System.Linq;
+
 namespace Saml.MetadataBuilder
 {
     /// <summary>
@@ -57,7 +59,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The index.
         /// </value>
-        public ushort Index { get; set; }
+        public ushort? Index { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is default.
@@ -74,5 +76,25 @@ namespace Saml.MetadataBuilder
         ///   <c>true</c> if this instance is default field specified; otherwise, <c>false</c>.
         /// </value>
         public bool IsDefaultFieldSpecified { get; set; }
+
+        /// <summary>
+        /// Determines whether this instance is empty.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
+        /// </returns>
+        internal bool IsEmpty()
+        {
+            if (!Index.HasValue &&
+                ServiceDescriptions.All(x => x.IsEmpty()) &&
+                ServiceNames.All(x => x.IsEmpty()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

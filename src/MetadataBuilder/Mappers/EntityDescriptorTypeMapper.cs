@@ -33,7 +33,7 @@ namespace Saml.MetadataBuilder
         {
             var entityDescriptorType = new EntityDescriptorType()
             {
-                cacheDuration = string.IsNullOrEmpty(src.CacheDuration) ? null : $"PT{src.CacheDuration}", //optional
+                cacheDuration = (!string.IsNullOrEmpty(src.CacheDuration) ? src.CacheDuration.ConvertToXmlCachedDuration() : null), //optional
                 validUntilSpecified = (src.ValidUntil == DateTime.MinValue ? false : true),//optional
                 validUntil = src.ValidUntil,//optional
                 entityID = src.EntityID, //---> required

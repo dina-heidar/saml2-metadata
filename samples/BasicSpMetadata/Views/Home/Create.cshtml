@@ -34,8 +34,26 @@
             <label for="ValidUntil">Valid Until (optional)</label>
         </div>
         <div class="col form-floating">
-            <input type="number" class="form-control" asp-for="@Model.CacheDuration" placeholder="Cache Duration in seconds (optional)" value="">
+            <input type="text" class="form-control" asp-for="@Model.CacheDuration" placeholder="Cache Duration in seconds (optional)" value="">
             <label for="CacheDuration">Cache Duration in seconds (optional)</label>
+        </div>
+    </div>
+    <div class="h4 pb-2">
+        UI Login Information<span class="fs-6">(optional)</span>
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col-8 form-floating">
+            <input type="text" class="form-control" asp-for="@Model.Extensions.Any[0]." placeholder="Display Name">
+            <label for="">Display Name</label>
+        </div>
+        <div class="col form-floating">
+            <select class="form-select" name="" id="UIInfoDisplayNamefloatingSelect" aria-label="UIInfo Display Name Language">
+                <option selected value="">Please select</option>
+                <option value="en-US">English (USA)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+            <label for="UIInfoDisplayNamefloatingSelect">Language</label>
         </div>
     </div>
     <div class="h4 pb-2">
@@ -45,7 +63,13 @@
         AssertionConsumerService
     </div>
     <div class="row gx-2 mb-4">
-        <div class="col-2 form-floating">
+        <div class="col-1">
+            <label class="form-label" for="AssertionConsumerService.IsDefault">Is Default?</label>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" checked name="AssertionConsumerService.IsDefault" placeholder="Is Default" value="true">
+            </div>
+        </div>
+        <div class="col-1 form-floating">
             <input type="number" class="form-control" asp-for="@Model.AssertionConsumerService.Index" placeholder="Index" value="0">
             <label for="AssertionConsumerService.Index">Index</label>
         </div>
@@ -102,7 +126,7 @@
     </div>
     <div class="row gx-2 mb-4">
         <div class="col form-floating">
-            <select class="form-select" name="@Model.NameIdFormat" id="NameIdFormatfloatingSelect" aria-label="NameId Format">
+            <select class="form-select" name="NameIdFormat" id="NameIdFormatfloatingSelect" aria-label="NameId Format">
                 <option value="urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress">Email Address</option>
                 <option value="urn:oasis:names:tc:SAML:2.0:nameid-format:encrypted">Encrypted</option>
                 <option value="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">Entity</option>
@@ -112,10 +136,12 @@
                 <option selected value=" urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">Unspecified</option>
                 <option value="urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName">X509SubjectName</option>
                 <option value="urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName">WindowsDomainQualifiedName</option>
-
             </select>
-            <label for=".NameIdFormatfloatingSelect">Language</label>
+            <label for="NameIdFormatfloatingSelect">NameId Format</label>
         </div>
+    </div>
+    <div class="h4 pb-2">
+        Attribute Consuming Service<span class="fs-6">(optional)</span>
     </div>
     <div class="h4 pb-2">
         Contact Information <span class="fs-6">(optional)</span>
@@ -150,11 +176,11 @@
         <div class="col form-floating">
             <select class="form-select" name="ContactPersons[0].ContactType" id="ContactPersons[0].ContactTypefloatingSelect" aria-label="Contact Type">
                 <option selected value="">Please select</option>
-                @*<option value="administrative">Administrative</option>
+                <option value="administrative">Administrative</option>
                 <option value="billing">Billing</option>
                 <option value="support">Support</option>
                 <option value="technical">Technical</option>
-                <option value="other">Other</option>*@
+                <option value="other">Other</option>
             </select>
             <label for="ContactPersons[0].ContactTypefloatingSelect">Type</label>
         </div>
@@ -211,7 +237,7 @@
         Certificate Information <span class="fs-6">(optional)</span>
     </div>
     <div class="h5 pb-2">
-        Signing Certificate (*.pfx) 
+        Signing Certificate (*.pfx)
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8">

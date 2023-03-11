@@ -20,7 +20,8 @@
 // SOFTWARE.
 //
 
-using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
 using Saml.MetadataBuilder.Constants;
 
 namespace Saml.MetadataBuilder
@@ -30,6 +31,13 @@ namespace Saml.MetadataBuilder
     /// </summary>
     public class ContactPerson
     {
+        /// <summary>
+        /// Gets or sets the optional extensions.
+        /// </summary>
+        /// <value>
+        /// The extensions.
+        /// </value>
+        public Extension Extensions { get; set; }
         /// <summary>
         /// Gets or sets the company.
         /// </summary>
@@ -44,7 +52,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The email addresses.
         /// </value>
-        public IList<string> EmailAddresses { get; set; }
+        public string[] EmailAddresses { get; set; }
         /// <summary>
         /// Gets or sets the name of the given.
         /// </summary>
@@ -65,7 +73,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The telephone numbers.
         /// </value>
-        public IList<string> TelephoneNumbers { get; set; }
+        public string[] TelephoneNumbers { get; set; }
         /// <summary>
         /// Gets or sets the type of the contact.
         /// </summary>
@@ -73,5 +81,25 @@ namespace Saml.MetadataBuilder
         /// The type of the contact.
         /// </value>
         public ContactEnumType? ContactType { get; set; }
+
+        /// <summary>
+        /// Determines whether this instance is empty.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
+        /// </returns>
+        internal bool IsEmpty()
+        {
+            if (!ContactType.HasValue &&
+              string.IsNullOrEmpty(Company) &&
+              string.IsNullOrEmpty(Surname) &&
+               string.IsNullOrEmpty(GivenName) &&
+               EmailAddresses.All(e => string.IsNullOrEmpty(e)) &&
+               TelephoneNumbers.All(t => string.IsNullOrEmpty(t)))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
