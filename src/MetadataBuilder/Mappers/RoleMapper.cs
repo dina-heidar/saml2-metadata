@@ -43,14 +43,24 @@ namespace Saml.MetadataBuilder
         {
             var protocolSupportEnumerations = new[] { protocolSupportEnumeration }; //---> required
             var keyDescriptorTypes = MapAll(encryptingCertificates, signingCertificates);//optional
-            var cachingDuration = (cachingDurations != null ? cachingDurations : null); //optional 
+            var cachingDuration = (!string.IsNullOrEmpty(cachingDurations) ? cachingDurations.ConvertToXmlCachedDuration() : null); //optional 
             var extensions = (extension != null ? extension.Map() : null);  //optional,              
-            var attributeConsumingServices = (attributeConsumingService != null ? attributeConsumingService.MapEach() : null); //optional
+            var attributeConsumingServices = (attributeConsumingService.All(a => a.IsEmpty()) ? null : attributeConsumingService.MapEach()); //optional
             //errorURL //optional
             return (protocolSupportEnumerations, keyDescriptorTypes, cachingDuration, extensions, attributeConsumingServices);
         }
 
         #region ToXml
+
+        public static string ConvertToXmlCachedDuration(this string src)
+        {
+            var interval = new TimeSpan();
+
+            if (TimeSpan.TryParse(src, out interval))
+                return XmlConvert.ToString(interval);
+            else
+                return null;
+        }
         public static ContactType[] MapEach(this ContactPerson[] src)
         {
             if (src.Length > 0 || src != null)
@@ -231,15 +241,19 @@ namespace Saml.MetadataBuilder
             {
                 var endpointType = new EndpointType[src.Length];
                 var i = 0;
+
                 foreach (var endpoint in src)
                 {
-                    endpointType[i] = new EndpointType
+                    if (!endpoint.IsEmpty())
                     {
-                        Location = endpoint.Location,
-                        ResponseLocation = endpoint.ResponseLocation,
-                        Binding = endpoint.Binding
-                    };
-                    if (i < src.Length) { i++; };
+                        endpointType[i] = new EndpointType
+                        {
+                            Location = endpoint.Location,
+                            ResponseLocation = endpoint.ResponseLocation,
+                            Binding = endpoint.Binding
+                        };
+                        if (i < src.Length) { i++; };
+                    }
                 }
                 return endpointType;
             }
@@ -253,16 +267,19 @@ namespace Saml.MetadataBuilder
                 var i = 0;
                 foreach (var indexedEndpoint in src)
                 {
-                    indexedEndpointType[i] = new IndexedEndpointType
+                    if (!indexedEndpoint.IsEmpty())
                     {
-                        Location = indexedEndpoint.Location,
-                        ResponseLocation = indexedEndpoint.ResponseLocation,
-                        Binding = indexedEndpoint.Binding,
-                        isDefault = indexedEndpoint.IsDefault,
-                        isDefaultSpecified = indexedEndpoint.IsDefaultSpecified,
-                        index = indexedEndpoint.Index
-                    };
-                    if (i < src.Length) { i++; };
+                        indexedEndpointType[i] = new IndexedEndpointType
+                        {
+                            Location = indexedEndpoint.Location,
+                            ResponseLocation = indexedEndpoint.ResponseLocation,
+                            Binding = indexedEndpoint.Binding,
+                            isDefault = indexedEndpoint.IsDefault,
+                            isDefaultSpecified = indexedEndpoint.IsDefaultSpecified,
+                            index = (ushort)indexedEndpoint.Index
+                        };
+                        if (i < src.Length) { i++; };
+                    }
                 }
                 return indexedEndpointType;
             }
@@ -278,16 +295,22 @@ namespace Saml.MetadataBuilder
             {
                 if (encr.EncryptionCertificate != null)
                 {
-                    var encryptionMethodType = new List<EncryptionMethodType>();
+                    var encryptionMethodTypes = new List<EncryptionMethodType>();
 
-                    foreach (var alg in encr.AcceptedEncryptionMethods)
+                    if (encr.EncryptionMethods != null)
                     {
-                        encryptionMethodType.Add(new EncryptionMethodType
+                        foreach (var alg in encr.EncryptionMethods)
                         {
-                            Algorithm = alg.Algorithm,
-                            OAEPparams = alg.OAEPparams,
-                            KeySize = alg.KeySize
-                        });
+                            if (!alg.IsEmpty())
+                            {
+                                encryptionMethodTypes.Add(new EncryptionMethodType
+                                {
+                                    Algorithm = alg.Algorithm,
+                                    OAEPparams = alg.OAEPparams,
+                                    KeySize = alg.KeySize
+                                });
+                            }
+                        }
                     }
                     var keyDescriptorEncrypted = new KeyDescriptorType()
                     {
@@ -298,14 +321,14 @@ namespace Saml.MetadataBuilder
                             ItemsElementName = new[] { ItemsChoiceType2.X509Data },
                             Items = new X509DataType[]
                                             {
-                                            new X509DataType()
-                                            {
-                                                Items = new object[] { encr.EncryptionCertificate.GetRawCertData() },
-                                                ItemsElementName = new[] { ItemsChoiceType.X509Certificate }
-                                            }
+                                                new X509DataType()
+                                                {
+                                                    Items = new object[] { encr.EncryptionCertificate.GetRawCertData() },
+                                                    ItemsElementName = new[] { ItemsChoiceType.X509Certificate }
+                                                }
                                             }
                         },
-                        EncryptionMethod = encryptionMethodType.ToArray(),
+                        EncryptionMethod = encryptionMethodTypes?.ToArray()
                     };
                     keyDescriptorTypeList.Add(keyDescriptorEncrypted);
                 }
@@ -345,6 +368,11 @@ namespace Saml.MetadataBuilder
 
 
         #region FromXml
+
+        public static string ConvertFromXmlCachedDuration(this string src)
+        {
+            return XmlConvert.ToTimeSpan(src).ToString();
+        }
         public static ContactPerson[] MapEach(this ContactType[] src)
         {
             if (src.Count() > 0 || src != null)

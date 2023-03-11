@@ -20,39 +20,9 @@
 // SOFTWARE.
 //
 
-namespace Saml.MetadataBuilder
+namespace MetadataBuilder.Mappers
 {
-    /// <summary>
-    /// Localization based values
-    /// </summary>
-    public class LocalizedName
+    internal class BaseMapper
     {
-        /// <summary>
-        /// Gets or sets the language.
-        /// </summary>
-        /// <value>
-        /// The language.
-        /// </value>
-        public string Language { get; set; }
-        /// <summary>
-        /// Gets or sets the value.
-        /// </summary>
-        /// <value>
-        /// The value.
-        /// </value>
-        public string Value { get; set; }
-
-        /// <summary>
-        /// Determines whether this instance is empty.
-        /// </summary>
-        /// <returns>
-        ///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
-        /// </returns>
-        internal bool IsEmpty()
-        {
-            return (string.IsNullOrEmpty(Language) && 
-                string.IsNullOrEmpty(Value));
-        }
-
     }
 }

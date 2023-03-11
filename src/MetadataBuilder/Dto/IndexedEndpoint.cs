@@ -29,7 +29,7 @@ namespace Saml.MetadataBuilder
     {
         /// <summary>Gets or sets the index.</summary>
         /// <value>The index.</value>
-        public ushort Index { get; set; }
+        public ushort? Index { get; set; }
         /// <summary>Gets or sets a value indicating whether this index value is the default value.</summary>
         /// <value>
         ///   <c>true</c> if this index value is default; otherwise, <c>false</c>.</value>
@@ -38,5 +38,19 @@ namespace Saml.MetadataBuilder
         /// <value>
         ///   <c>true</c> if default value specified; otherwise, <c>false</c>.</value>
         public bool IsDefaultSpecified { get; set; } = true;
+        /// <summary>
+        /// Determines whether this instance is empty.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
+        /// </returns>
+        internal bool IsEmpty()
+        {
+            if (!Index.HasValue && base.IsEmpty())
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -101,7 +101,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The attribute consuming service.
         /// </value>
-        public AttributeConsumingService[] AttributeConsumingService { get; set; } = Array.Empty<AttributeConsumingService>();
+        public AttributeConsumingService[] AttributeConsumingService { get; set; } 
         /// <summary>
         /// Initializes a new instance of the <see cref="RichSpMetadata"/> class.
         /// </summary>

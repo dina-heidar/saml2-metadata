@@ -21,6 +21,7 @@
 //
 
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Saml.MetadataBuilder
 {
@@ -29,6 +30,13 @@ namespace Saml.MetadataBuilder
     /// </summary>
     public class Organization
     {
+        /// <summary>
+        /// Gets or sets the optional extensions.
+        /// </summary>
+        /// <value>
+        /// The extensions.
+        /// </value>
+        public Extension Extensions { get; set; }
         /// <summary>
         /// Gets or sets the display name of the organization. This is optional. 
         /// </summary>
@@ -50,5 +58,16 @@ namespace Saml.MetadataBuilder
         /// The organization URL.
         /// </value>
         public IList<LocalizedUri> OrganizationURL { get; set; } = null;
+
+        internal bool IsEmpty()
+        {
+            if (OrganizationDisplayName.All(o => o.IsEmpty()) &&
+                OrganizationName.All(o => o.IsEmpty()) &&
+                OrganizationURL.All(o => o.IsEmpty()))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

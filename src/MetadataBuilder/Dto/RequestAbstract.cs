@@ -27,7 +27,7 @@ namespace Saml.MetadataBuilder
     public class RequestAbstract
     {
         public NameId Issuer { get; set; }
-        public Extension Extension { get; set; }
+        public Extension Extensions { get; set; }
         public string ID { get; set; }
         public string Version { get; set; }
         public DateTime IssueInstant { get; set; }

@@ -20,7 +20,6 @@
 // SOFTWARE.
 //
 
-using System;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Saml.MetadataBuilder
@@ -52,27 +51,6 @@ namespace Saml.MetadataBuilder
         /// The single logout service endpoint.
         /// </value>
         public Endpoint SingleLogoutServiceEndpoint { get; set; }
-        /// <summary>
-        /// Gets or sets the service names.
-        /// </summary>
-        /// <value>
-        /// The service names.
-        /// </value>
-        public LocalizedName[] ServiceNames { get; set; } = null;
-        /// <summary>
-        /// Gets or sets the service descriptions.
-        /// </summary>
-        /// <value>
-        /// The service descriptions.
-        /// </value>
-        public LocalizedName[] ServiceDescriptions { get; set; } = null;
-        /// <summary>
-        /// Gets or sets the requested attributes.
-        /// </summary>
-        /// <value>
-        /// The requested attributes.
-        /// </value>
-        public RequestedAttribute[] RequestedAttributes { get; set; } = null;//optional
         /// <summary>
         /// Gets or sets the encrypting certificate.
         /// </summary>

@@ -43,7 +43,6 @@ namespace Saml.MetadataBuilder
         /// </value>
         /// <example>dev.constoso.com</example>
         public string EntityID { get; set; }
-
         /// <summary>
         /// <para><b>Optional</b><br/>
         /// The expiration time of the metadata.<br/>
@@ -55,11 +54,18 @@ namespace Saml.MetadataBuilder
         /// </value>        
         /// <example>2028-01-21T18:12:29.287Z</example>
         public DateTime ValidUntil { get; set; }
-
         /// <summary>
         /// <para><b>Optional</b><br/>
         /// The maximum length of time a consumer should cache the metadata.<br/>
-        /// Example: PT604800S
+        /// The time interval is specified in the following form "PnYnMnDTnHnMnS" where:<br/>
+        /// - P indicates the period(required)<br/>
+        /// - nY indicates the number of years<br/>
+        /// - nM indicates the number of months<br/>
+        /// - nD indicates the number of days<br/>
+        /// - T indicates the start of a time section(required if you are going to specify hours, minutes, or seconds)<br/>
+        /// - nH indicates the number of hours<br/>
+        /// - nM indicates the number of minutes<br/>
+        /// - nS indicates the number of seconds<br/>
         /// </para>
         /// </summary>
         /// <value>
@@ -67,7 +73,6 @@ namespace Saml.MetadataBuilder
         /// </value>
         /// <example>PT604800S</example>
         public string CacheDuration { get; set; }
-
         /// <summary>
         /// <para><b>Optional</b><br/> 
         /// A document-unique identifier 
@@ -80,7 +85,6 @@ namespace Saml.MetadataBuilder
         /// </value>
         /// <example>35D0C44A-52CE-4D2F-BE06-AE5F00C30AA7</example>
         public string Id { get; set; }
-
         /// <summary>
         /// <para>
         /// <b>Optional for Service Providers</b><br/> 
@@ -93,7 +97,6 @@ namespace Saml.MetadataBuilder
         /// The certificate used for signature.
         /// </value>
         public X509Certificate2 Signature { get; set; }
-
         /// <summary>
         /// <para><b>Optional</b><br/> 
         /// Used to include metadata extensions that are agreed upon 
@@ -112,8 +115,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The role descriptor.
         /// </value>
-        public object[] Items { get; set; } = null;
-        //internal RoleDescriptor RoleDescriptor { get; set; }
+        public object[] ObjectItems { get; set; } = null;       
         /// <summary>
         /// <para><b>Optional</b><br/> 
         /// Used to identifying the organization 
@@ -136,8 +138,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The contact persons.
         /// </value>
-        public ContactPerson[] ContactPersons { get; set; } = null;
-
+        public ContactPerson[] ContactPersons { get; set; }
         /// <summary>
         /// <para><b>Optional</b><br/> 
         /// Used to provide a set of locations where additional 
@@ -147,7 +148,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The additional metadata location field.
         /// </value>
-        public AdditionalMetadataLocation[] AdditionalMetadataLocations { get; set; } = null;
+        public AdditionalMetadataLocation[] AdditionalMetadataLocations { get; set; }
         internal MetadataType MetadataType { get; set; }
     }
 }

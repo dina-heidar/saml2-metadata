@@ -31,7 +31,7 @@ namespace Saml.MetadataBuilder
     /// 
     /// </summary>
     /// <seealso cref="Saml.MetadataBuilder.IMetadataWriter" />
-    public class MedataWriter : IMetadataWriter
+    public class MetadataWriter : IMetadataWriter
     {
         /// <summary>
         /// The metadata mapper
@@ -42,7 +42,7 @@ namespace Saml.MetadataBuilder
         /// Initializes a new instance of the <see cref="MedataWriter" /> class.
         /// </summary>
         /// <param name="metadataMapper">The metadata mapper.</param>
-        public MedataWriter(IMetadataMapper<EntityDescriptor, EntityDescriptorType> metadataMapper)
+        public MetadataWriter(IMetadataMapper<EntityDescriptor, EntityDescriptorType> metadataMapper)
         {
             _metadataMapper = metadataMapper;
         }
@@ -94,7 +94,7 @@ namespace Saml.MetadataBuilder
         /// <returns></returns>
         public XmlDocument Output(EntityDescriptor entityDescriptor)
         {
-            var entityDescriptorType = _metadataMapper.MapEntity(entityDescriptor);           
+            var entityDescriptorType = _metadataMapper.MapEntity(entityDescriptor);
 
             var xml = SerializeToXml<EntityDescriptorType>(entityDescriptorType);
 

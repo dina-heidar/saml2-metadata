@@ -83,7 +83,6 @@ namespace Saml.MetadataBuilder
         /// The identifier.
         /// </value>
         public string Id { get; set; }
-
         /// <summary>
         /// Gets or sets the valid until.
         /// </summary>
@@ -101,11 +100,30 @@ namespace Saml.MetadataBuilder
         public bool ValidUntilFieldSpecified { get; set; } = true;
 
         /// <summary>
-        /// Gets or sets the duration of the cache.
+        /// <para><b>Optional</b><br/>
+        /// The maximum length of time a consumer should cache the metadata.<br/>
+        /// The time interval is specified in the following form "PnYnMnDTnHnMnS" where:<br/>
+        /// - P indicates the period(required)<br/>
+        /// - nY indicates the number of years<br/>
+        /// - nM indicates the number of months<br/>
+        /// - nD indicates the number of days<br/>
+        /// - T indicates the start of a time section(required if you are going to specify hours, minutes, or seconds)<br/>
+        /// - nH indicates the number of hours<br/>
+        /// - nM indicates the number of minutes<br/>
+        /// - nS indicates the number of seconds<br/>
+        /// </para>
         /// </summary>
         /// <value>
         /// The duration of the cache.
         /// </value>
+        /// <example>PT604800S</example>
         public string CacheDuration { get; set; }
+        /// <summary>
+        /// Gets or sets the error URL field.
+        /// </summary>
+        /// <value>
+        /// The error URL field.
+        /// </value>
+        public string ErrorUrlField { get; set; }
     }
 }

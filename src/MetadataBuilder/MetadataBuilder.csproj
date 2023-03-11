@@ -6,11 +6,16 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <!--<DocumentationFile>$(MSBuildProjectDirectory)/docs/metadatabuilder.xml</DocumentationFile>-->
     <VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
-
   </PropertyGroup>
+
+  <ItemDefinitionGroup>
+    <PackageReference>
+      <PrivateAssets>compile</PrivateAssets>
+    </PackageReference>
+  </ItemDefinitionGroup>
+
   <ItemGroup>
-    <!--<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />-->
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="6.23.1" />
     <PackageReference Include="Microsoft.IdentityModel.Xml" Version="6.23.1" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="6.0.1" />
@@ -25,6 +30,32 @@
   <ItemGroup>
     <None Include="C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\.editorconfig" />
   </ItemGroup>
-
-
+  <!--<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection">
+       <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>all</IncludeAssets>
+      <Version>12.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>all</IncludeAssets>
+      <Version>12.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>all</IncludeAssets>
+      <Version>12.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>all</IncludeAssets>
+      <Version>8.1.1</Version>
+    </PackageReference>
+  </ItemGroup>-->
 </Project>
