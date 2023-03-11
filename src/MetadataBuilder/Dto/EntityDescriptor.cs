@@ -106,7 +106,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The extensions.
         /// </value>
-        public Extension Extensions { get; set; }
+        public Extension Extensions { get; set; } = null;
         /// <summary>
         /// <para><b>*Required*</b><br/> 
         /// Used to describe the role or capabilities of the SAML entity.

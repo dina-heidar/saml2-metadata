@@ -101,7 +101,21 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The attribute consuming service.
         /// </value>
-        public AttributeConsumingService[] AttributeConsumingService { get; set; } 
+        public AttributeConsumingService[] AttributeConsumingService { get; set; }
+        /// <summary>
+        /// Gets or sets the UI infos.
+        /// </summary>
+        /// <value>
+        /// The UI infos.
+        /// </value>
+        public UiInfo[] UiInfos { get; set; } 
+        /// <summary>
+        /// Gets or sets the digest methods.
+        /// </summary>
+        /// <value>
+        /// The digest methods.
+        /// </value>
+        public DigestMethod[] DigestMethods { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="RichSpMetadata"/> class.
         /// </summary>

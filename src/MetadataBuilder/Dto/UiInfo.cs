@@ -73,6 +73,5 @@ namespace Saml.MetadataBuilder
         /// The keywords.
         /// </value>
         public Keyword Keywords { get; set; }
-
     }
 }

@@ -36,7 +36,7 @@ namespace Saml.MetadataBuilder
         /// Gets or sets the height.
         /// </summary>
         /// <value>
-        /// The height.
+        /// The rendered height of the logo measured in pixels.
         /// </value>
         public string Height { get; set; }
 
@@ -44,7 +44,7 @@ namespace Saml.MetadataBuilder
         /// Gets or sets the width.
         /// </summary>
         /// <value>
-        /// The width.
+        /// The rendered width of the logo measured in pixels.
         /// </value>
         public string Width { get; set; }
 

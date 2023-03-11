@@ -1,5 +1,6 @@
 ﻿@model BasicSpMetadata.Models.BasicSpMetadataViewModel
 @using System.Security.Cryptography.X509Certificates;
+
 @{
     ViewData["Title"] = "BasicSpMetadata";
 }
@@ -36,24 +37,6 @@
         <div class="col form-floating">
             <input type="text" class="form-control" asp-for="@Model.CacheDuration" placeholder="Cache Duration in seconds (optional)" value="">
             <label for="CacheDuration">Cache Duration in seconds (optional)</label>
-        </div>
-    </div>
-    <div class="h4 pb-2">
-        UI Login Information<span class="fs-6">(optional)</span>
-    </div>
-    <div class="row gx-2 mb-4">
-        <div class="col-8 form-floating">
-            <input type="text" class="form-control" asp-for="@Model.Extensions.Any[0]." placeholder="Display Name">
-            <label for="">Display Name</label>
-        </div>
-        <div class="col form-floating">
-            <select class="form-select" name="" id="UIInfoDisplayNamefloatingSelect" aria-label="UIInfo Display Name Language">
-                <option selected value="">Please select</option>
-                <option value="en-US">English (USA)</option>
-                <option value="es-ES">Spanish (Spain)</option>
-                <option value="fr-FR">French (France)</option>
-            </select>
-            <label for="UIInfoDisplayNamefloatingSelect">Language</label>
         </div>
     </div>
     <div class="h4 pb-2">
@@ -142,6 +125,113 @@
     </div>
     <div class="h4 pb-2">
         Attribute Consuming Service<span class="fs-6">(optional)</span>
+    </div>
+    <div class="h4 pb-2">
+        UI Login Information<span class="fs-6">(optional)</span>
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col-8 form-floating">
+            <input type="text" class="form-control" name="UiInfos[0].DisplayName.Value" id="UiInfos[0].DisplayName.Value" placeholder="Display Name">
+            <label for="UiInfos[0].DisplayName.Value">Display Name</label>
+        </div>
+        <div class="col form-floating">
+            <select class="form-select" name="UiInfos[0].DisplayName.Language" id="UIInfoDisplayNamefloatingSelect" aria-label="UIInfo Display Name Language">
+                <option selected value="">Please select</option>
+                <option value="en-US">English (USA)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+            <label for="UIInfoDisplayNamefloatingSelect">Language</label>
+        </div>
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col-8 form-floating">
+            <input type="text" class="form-control" name="UiInfos[0].Description.Value" id="UiInfos[0].Description.Value" placeholder="Description">
+            <label for="UiInfos[0].Description.Value">Description</label>
+        </div>
+        <div class="col form-floating">
+            <select class="form-select" name="UiInfos[0].Description.Language" id="UIInfoDescriptionfloatingSelect" aria-label="UIInfo Description Language">
+                <option selected value="">Please select</option>
+                <option value="en-US">English (USA)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+            <label for="UIInfoDescriptionfloatingSelect">Language</label>
+        </div>
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col-8 form-floating">
+            <input type="url" class="form-control" name="UiInfos[0].InformationURL.Value" id="UiInfos[0].InformationURL.Value" placeholder="Information URL">
+            <label for="UiInfos[0].InformationURL.Value">Information URL</label>
+        </div>
+        <div class="col form-floating">
+            <select class="form-select" name="UiInfos[0].InformationURL.Language" id="UIInfoInformationURLfloatingSelect" aria-label="UIInfo Information URL Language">
+                <option selected value="">Please select</option>
+                <option value="en-US">English (USA)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+            <label for="UIInfoInformationURLfloatingSelect">Language</label>
+        </div>
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col-8 form-floating">
+            <input type="url" class="form-control" name="UiInfos[0].PrivacyStatementURL.Value" id="UiInfos[0].PrivacyStatementURL.Value" placeholder="Privacy Statement URL">
+            <label for="UiInfos[0].PrivacyStatementURL.Value">Privacy Statement URL</label>
+        </div>
+        <div class="col form-floating">
+            <select class="form-select" name="UiInfos[0].PrivacyStatementURL.Language" id="UIInfoPrivacyStatementURLfloatingSelect" aria-label="UIInfo PrivacyStatement URL Language">
+                <option selected value="">Please select</option>
+                <option value="en-US">English (USA)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+            <label for="UIInfoPrivacyStatementURLfloatingSelect">Language</label>
+        </div>
+    </div>
+    <div class="h5 pb-2">
+        Logo
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col-3 form-floating">
+            <input type="text" class="form-control" name="UiInfos[0].Logo.Height" id="UiInfos[0].Logo.Height" placeholder="Height (pixels)">
+            <label for="UiInfos[0].Logo.Height">Height (pixels)</label>
+        </div>
+        <div class="col-3 form-floating">
+            <input type="text" class="form-control" name="UiInfos[0].Logo.Width" id="UiInfos[0].Logo.Width" placeholder="Width (pixels)">
+            <label for="UiInfos[0].Logo.Width">Width (pixels)</label>
+        </div>
+        <div class="col-3 form-floating">
+            <input type="text" class="form-control" name="UiInfos[0].Logo.Value" id="UiInfos[0].Logo.Value" placeholder="PNG/GIF Url location">
+            <label for="UiInfos[0].Logo.Value">PNG/GIF Url location</label>
+        </div>
+        <div class="col form-floating">
+            <select class="form-select" name="UiInfos[0].Logo.Language" id="UIInfoLogofloatingSelect" aria-label="UIInfo Logo Language">
+                <option selected value="">Please select</option>
+                <option value="en-US">English (USA)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+            <label for="UIInfoLogofloatingSelect">Language</label>
+        </div>
+    </div>
+    <div class="h5 pb-2">
+        Keywords
+    </div>
+    <div class="row gx-2 mb-4">
+        <div class="col-8 form-floating">
+            <input type="text" class="form-control" name="UiInfos[0].Keywords.Values" id="UiInfos[0].Keywords.Values" placeholder="Keywords (spaces)">
+            <label for="UiInfos[0].Keywords.Values">Keywords</label>
+        </div>
+         <div class="col form-floating">
+            <select class="form-select" name="UiInfos[0].Keywords.Language" id="UIInfoKeywordsfloatingSelect" aria-label="UIInfo Keywords Language">
+                <option selected value="">Please select</option>
+                <option value="en-US">English (USA)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+            <label for="UIInfoLKeywordsfloatingSelect">Language</label>
+        </div>
     </div>
     <div class="h4 pb-2">
         Contact Information <span class="fs-6">(optional)</span>
