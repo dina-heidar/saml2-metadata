@@ -123,11 +123,58 @@
             <label for="NameIdFormatfloatingSelect">NameId Format</label>
         </div>
     </div>
+
     <div class="h4 pb-2">
-        Attribute Consuming Service<span class="fs-6">(optional)</span>
+        Attribute Consuming Service<span class="fs-6"> (optional)</span>
     </div>
+    <div class="row gx-2 mb-4">
+        <div class="col-1">
+            <label class="form-label" for="AttributeConsumingService[0].IsDefault">Is Default?</label>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" checked name="AttributeConsumingService[0].IsDefault" placeholder="Is Default" value="true">
+            </div>
+        </div>
+        <div class="col-1 form-floating">
+            <input type="number" class="form-control" asp-for="@Model.AttributeConsumingService[0].Index" placeholder="Index" value="0">
+            <label for="AttributeConsumingService[0].Index">Index</label>
+        </div>
+    </div>
+    <div class="row gx-2 mb-4">
+         <div class="col-6 form-floating">
+            <input type="text" class="form-control" asp-for="@Model.AttributeConsumingService[0].ServiceNames[0].Value" placeholder="Service Name">
+            <label for="AttributeConsumingService[0].ServiceNames[0].Value">Service Name</label>
+        </div>
+        <div class="col form-floating">
+            <select class="form-select" name="AttributeConsumingService[0].ServiceNames[0].Language" id="AttributeConsumingServiceServiceNamesfloatingSelect" aria-label="Attribute Consuming Service Name Language">
+                <option selected value="">Please select</option>
+                <option value="en-US">English (USA)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+            <label for="AttributeConsumingServiceServiceNamesfloatingSelect">Language</label>
+        </div>
+    </div>
+    <div class="row gx-2 mb-4">
+         <div class="col-6 form-floating">
+            <input type="text" class="form-control" asp-for="@Model.AttributeConsumingService[0].ServiceDescriptions[0].Value" placeholder="Service Description">
+            <label for="AttributeConsumingService[0].ServiceDescriptions0].Value">Service Description</label>
+        </div>
+        <div class="col form-floating">
+            <select class="form-select" name="AttributeConsumingService[0].ServiceDescriptions[0].Language" id="AttributeConsumingServiceServiceDescriptionsfloatingSelect" aria-label="Attribute Consuming Service Description Language">
+                <option selected value="">Please select</option>
+                <option value="en-US">English (USA)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+            <label for="AttributeConsumingServiceServiceDescriptionsfloatingSelect">Language</label>
+        </div>
+    </div>
+     <div class="h5 pb-2">
+        Requested Attributes
+    </div>
+
     <div class="h4 pb-2">
-        UI Login Information<span class="fs-6">(optional)</span>
+        UI Login Information<span class="fs-6"> (optional)</span>
     </div>
     <div class="row gx-2 mb-4">
         <div class="col-8 form-floating">
@@ -223,7 +270,7 @@
             <input type="text" class="form-control" name="UiInfos[0].Keywords.Values" id="UiInfos[0].Keywords.Values" placeholder="Keywords (spaces)">
             <label for="UiInfos[0].Keywords.Values">Keywords</label>
         </div>
-         <div class="col form-floating">
+        <div class="col form-floating">
             <select class="form-select" name="UiInfos[0].Keywords.Language" id="UIInfoKeywordsfloatingSelect" aria-label="UIInfo Keywords Language">
                 <option selected value="">Please select</option>
                 <option value="en-US">English (USA)</option>

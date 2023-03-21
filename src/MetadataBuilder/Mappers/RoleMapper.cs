@@ -45,7 +45,7 @@ namespace Saml.MetadataBuilder
             var keyDescriptorTypes = MapAll(encryptingCertificates, signingCertificates);//optional
             var cachingDuration = (!string.IsNullOrEmpty(cachingDurations) ? cachingDurations.ConvertToXmlCachedDuration() : null); //optional 
             var extensions = (extension != null ? extension.Map() : null);  //optional,              
-            var attributeConsumingServices = (attributeConsumingService.All(a => a.IsEmpty()) ? null : attributeConsumingService.MapEach()); //optional
+            var attributeConsumingServices = (attributeConsumingService == null || attributeConsumingService.All(a => a.IsEmpty()) ? null : attributeConsumingService.MapEach()); //optional
             //errorURL //optional
             return (protocolSupportEnumerations, keyDescriptorTypes, cachingDuration, extensions, attributeConsumingServices);
         }
