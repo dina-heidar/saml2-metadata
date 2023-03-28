@@ -83,7 +83,7 @@ namespace Saml.MetadataBuilder
         /// <value>
         /// The a document-unique identifier.
         /// </value>
-        /// <example>35D0C44A-52CE-4D2F-BE06-AE5F00C30AA7</example>
+        /// <example>_35D0C44A-52CE-4D2F-BE06-AE5F00C30AA7</example>
         public string Id { get; set; }
         /// <summary>
         /// <para>

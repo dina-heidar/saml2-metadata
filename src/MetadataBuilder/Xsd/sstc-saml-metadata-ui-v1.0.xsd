@@ -3,7 +3,7 @@
 <documentation> Document title: Metadata Extension Schema for SAML V2.0 Metadata Extensions for Login and Discovery User Interface Version 1.0 Document identifier: sstc-saml-metadata-ui-v1.0.xsd Location: http://docs.oasis-open.org/security/saml/Post2.0/ Revision history: 01 November 2010 Changed filename. September 2010: Initial version. </documentation>
 </annotation>
 <import namespace="urn:oasis:names:tc:SAML:2.0:metadata" schemaLocation="saml-schema-metadata-2.0.xsd"/>
-<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 <element name="UIInfo" type="mdui:UIInfoType"/>
 <complexType name="UIInfoType">
 <choice minOccurs="0" maxOccurs="unbounded">

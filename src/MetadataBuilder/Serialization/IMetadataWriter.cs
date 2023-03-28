@@ -37,5 +37,7 @@ namespace Saml.MetadataBuilder
         /// <param name="entityDescriptor">The entity descriptor.</param>
         /// <returns></returns>
         XmlDocument Output(EntityDescriptor entityDescriptor);
+
+        bool Validate(XmlDocument xmlDoc);
     }
 }

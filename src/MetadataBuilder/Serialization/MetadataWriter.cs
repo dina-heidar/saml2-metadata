@@ -20,8 +20,10 @@
 // SOFTWARE.
 //
 
+using System;
 using System.IO;
 using System.Xml;
+using System.Xml.Schema;
 using System.Xml.Serialization;
 using MetadataBuilder.Schema.Metadata;
 
@@ -103,6 +105,65 @@ namespace Saml.MetadataBuilder
                 xml.AddXmlSignature(entityDescriptor.Signature);
             }
             return xml;
+        }
+
+        /// <summary>
+        /// Validates the specified XML document.
+        /// </summary>
+        /// <param name="xmlDoc">The XML document.</param>
+        /// <returns></returns>
+        public bool Validate(XmlDocument xmlDoc)
+        {
+
+            const XmlSchemaValidationFlags validationFlags =
+          XmlSchemaValidationFlags.ProcessInlineSchema |
+          XmlSchemaValidationFlags.ProcessSchemaLocation |
+          XmlSchemaValidationFlags.ReportValidationWarnings |
+          XmlSchemaValidationFlags.AllowXmlAttributes;
+
+            var path = new Uri(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)).LocalPath;
+            var settings = new XmlReaderSettings();
+
+
+            XmlSchemaSet schemaSet = new XmlSchemaSet();
+            schemaSet.ValidationEventHandler += new ValidationEventHandler(ValidationCallback);
+            //schemaSet.Add("urn:oasis:names:tc:SAML:2.0:metadata", path + "\\Xsd\\metadata4.xsd");
+            schemaSet.Add("urn:oasis:names:tc:SAML:2.0:metadata", path + "\\Xsd\\saml-schema-metadata-2.0.xsd");
+            schemaSet.Add("http://www.w3.org/XML/1998/namespace", path + "\\Xsd\\xml.xsd");
+            schemaSet.Add("http://www.w3.org/2001/04/xmlenc#", path + "\\Xsd\\xenc-schema.xsd");
+            schemaSet.Add("urn:oasis:names:tc:SAML:2.0:assertion", path + "\\Xsd\\saml-schema-assertion-2.0.xsd");
+            schemaSet.Add("http://www.w3.org/2000/09/xmldsig#", path + "\\Xsd\\xmldsig-core-schema.xsd");
+            schemaSet.Add("urn:oasis:names:tc:SAML:metadata:ui", path + "\\Xsd\\sstc-saml-metadata-ui-v1.0.xsd");
+          
+            schemaSet.Compile();
+
+            // Set the validation settings.
+            settings.Schemas.Add(schemaSet);
+            settings.ValidationType = ValidationType.Schema;
+            settings.ValidationEventHandler += ValidationCallback;
+            settings.DtdProcessing = DtdProcessing.Parse;
+            settings.ValidationFlags = validationFlags;
+
+            using (TextReader tr = new StringReader(xmlDoc.OuterXml))
+            {
+                var xmlRreader = XmlReader.Create(tr, settings);
+
+                while (xmlRreader.Read()) { }
+                return true;
+            }
+        }
+      
+        private static void ValidationCallback(object sender, ValidationEventArgs args)
+        {
+            if (args.Severity == XmlSeverityType.Warning)
+            {
+                Console.Write("WARNING: ");
+            }
+            else if (args.Severity == XmlSeverityType.Error)
+            {
+                Console.Write("ERROR: ");
+            }
+            Console.WriteLine(args.Message);
         }
     }
 }

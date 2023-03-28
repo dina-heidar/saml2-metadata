@@ -1,20 +1,20 @@
 location of xsd.exe => cd "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools" 
 
 
-.\xsd.exe /c /outputdir:C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\saml-schema-assertion-2.0.xsd  `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\saml-schema-authn-context-2.0.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\saml-schema-authn-context-types-2.0.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\saml-schema-metadata-2.0.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\saml-schema-protocol-2.0.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\sstc-saml-idp-discovery.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\sstc-metadata-attr.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\sstc-saml-attribute-ext.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\sstc-saml-metadata-algsupport-v1.0.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\sstc-saml-metadata-ui-v1.0.xsd  `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\xenc-schema.xsd  `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\xml.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\xmldsig-core-schema.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\saml-schema-ecp-2.0.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\schemas.xmlsoap.org-soap-envelope.xsd `
- C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Schemas\metadata.xsd 
+.\xsd.exe /c /outputdir:C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\saml-schema-assertion-2.0.xsd  `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\saml-schema-authn-context-2.0.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\saml-schema-authn-context-types-2.0.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\saml-schema-metadata-2.0.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\saml-schema-protocol-2.0.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\sstc-saml-idp-discovery.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\sstc-metadata-attr.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\sstc-saml-attribute-ext.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\sstc-saml-metadata-algsupport-v1.0.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\sstc-saml-metadata-ui-v1.0.xsd  `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\xenc-schema.xsd  `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\xml.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\xmldsig-core-schema.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\saml-schema-ecp-2.0.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\schemas.xmlsoap.org-soap-envelope.xsd `
+ C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\Xsd\metadata.xsd 

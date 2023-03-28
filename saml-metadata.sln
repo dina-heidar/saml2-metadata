@@ -20,7 +20,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClient", "samples\MvcCli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicSpMetadata", "samples\BasicSpMetadata\BasicSpMetadata.csproj", "{2E39C3E1-D6D1-4698-A8DC-8A7415FE1F1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RichSpMetadata", "samples\RichSpMetadata\RichSpMetadata.csproj", "{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RichSpMetadata", "samples\RichSpMetadata\RichSpMetadata.csproj", "{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xsd.flattening", "src\xsd.flattening\xsd.flattening.csproj", "{224167F2-F140-4D5F-9AA6-2FEA2272900C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xsd.IncludeImport", "src\Xsd.IncludeImport\Xsd.IncludeImport.csproj", "{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +52,14 @@ Global
 		{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +70,8 @@ Global
 		{FDF575C6-7BD2-4B24-8130-6DE2C93B7088} = {F63E02E6-9167-48F1-95BC-FC255C9AAF08}
 		{2E39C3E1-D6D1-4698-A8DC-8A7415FE1F1D} = {F63E02E6-9167-48F1-95BC-FC255C9AAF08}
 		{7039E7CF-DDB6-4354-AF55-E98B96FF19B7} = {F63E02E6-9167-48F1-95BC-FC255C9AAF08}
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C} = {30C21D69-DBB4-466E-BEF7-86925E145F2B}
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB} = {30C21D69-DBB4-466E-BEF7-86925E145F2B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DCCB83A2-01CA-48A1-846A-9F5702A94AF7}

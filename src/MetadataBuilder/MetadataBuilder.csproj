@@ -30,6 +30,62 @@
   <ItemGroup>
     <None Include="C:\Users\dinah\source\repos\saml-metadata\src\MetadataBuilder\.editorconfig" />
   </ItemGroup>
+  <ItemGroup>   
+    <None Update="Xsd\metadata4.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>   
+    <None Update="Xsd\metadata88.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>   
+    <None Update="Xsd\saml-schema-assertion-2.0.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\saml-schema-authn-context-2.0.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\saml-schema-authn-context-types-2.0.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\saml-schema-ecp-2.0.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\saml-schema-metadata-2.0.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\saml-schema-protocol-2.0.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\schemas.xmlsoap.org-soap-envelope.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\sstc-metadata-attr.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\sstc-saml-attribute-ext.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\sstc-saml-idp-discovery.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\sstc-saml-metadata-algsupport-v1.0.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\sstc-saml-metadata-ui-v1.0.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\xenc-schema.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\xml.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\xmldsig-core-schema.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xsd\xmlsoap.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <!--<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection">
        <PrivateAssets>all</PrivateAssets>
