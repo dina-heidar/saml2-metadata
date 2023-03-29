@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{040E6B5F-740B-4425-BB79-0F623B286731}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{30C21D69-DBB4-466E-BEF7-86925E145F2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F63E02E6-9167-48F1-95BC-FC255C9AAF08}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicSpMetadata", "samples\BasicSpMetadata\BasicSpMetadata.csproj", "{2E39C3E1-D6D1-4698-A8DC-8A7415FE1F1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RichSpMetadata", "samples\RichSpMetadata\RichSpMetadata.csproj", "{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xsd.flattening", "src\xsd.flattening\xsd.flattening.csproj", "{224167F2-F140-4D5F-9AA6-2FEA2272900C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xsd.IncludeImport", "src\Xsd.IncludeImport\Xsd.IncludeImport.csproj", "{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "saml2.metadata", "src\saml2.metadata\saml2.metadata.csproj", "{B7E4A224-8D3A-439F-B5B2-6D36D7915741}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E39C3E1-D6D1-4698-A8DC-8A7415FE1F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E39C3E1-D6D1-4698-A8DC-8A7415FE1F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E39C3E1-D6D1-4698-A8DC-8A7415FE1F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E39C3E1-D6D1-4698-A8DC-8A7415FE1F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7039E7CF-DDB6-4354-AF55-E98B96FF19B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7E4A224-8D3A-439F-B5B2-6D36D7915741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E4A224-8D3A-439F-B5B2-6D36D7915741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E4A224-8D3A-439F-B5B2-6D36D7915741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E4A224-8D3A-439F-B5B2-6D36D7915741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2E39C3E1-D6D1-4698-A8DC-8A7415FE1F1D} = {F63E02E6-9167-48F1-95BC-FC255C9AAF08}
+		{7039E7CF-DDB6-4354-AF55-E98B96FF19B7} = {F63E02E6-9167-48F1-95BC-FC255C9AAF08}
+		{224167F2-F140-4D5F-9AA6-2FEA2272900C} = {30C21D69-DBB4-466E-BEF7-86925E145F2B}
+		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB} = {30C21D69-DBB4-466E-BEF7-86925E145F2B}
+		{B7E4A224-8D3A-439F-B5B2-6D36D7915741} = {30C21D69-DBB4-466E-BEF7-86925E145F2B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCCB83A2-01CA-48A1-846A-9F5702A94AF7}
+	EndGlobalSection
+EndGlobal

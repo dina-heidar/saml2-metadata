@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MetadataBuilder\MetadataBuilder.csproj" />
+    <ProjectReference Include="..\..\src\MetadataBuilder\saml2.metadata.csproj" />
   </ItemGroup>
 
 </Project>

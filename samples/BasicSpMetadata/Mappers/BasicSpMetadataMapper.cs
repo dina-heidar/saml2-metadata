@@ -7,7 +7,7 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<BasicSpMetadataViewModel, Saml.MetadataBuilder.BasicSpMetadata>();
+        CreateMap<BasicSpMetadataViewModel, Saml2Metadata.BasicSpMetadata>();
     }
 }
 
