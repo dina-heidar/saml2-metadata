@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using BasicSpMetadata.Models;
 using Microsoft.AspNetCore.Mvc;
-using Saml.MetadataBuilder;
+using Saml2Metadata;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 
@@ -50,7 +50,7 @@ namespace MvcWeb.Controllers
                     await GetX509Certificate2(basicSpMetadataVm.SigningCertificatePfx);
             }
 
-            var bsm = mapper.Map<BasicSpMetadataViewModel, Saml.MetadataBuilder.BasicSpMetadata>(basicSpMetadataVm);
+            var bsm = mapper.Map<BasicSpMetadataViewModel, Saml2Metadata.BasicSpMetadata>(basicSpMetadataVm);
 
             var xml = writer.Output(bsm);
             return new ContentResult

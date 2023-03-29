@@ -1,5 +1,5 @@
 using MediatR;
-using Saml.MetadataBuilder;
+using Saml2Metadata;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddMediatR(typeof(Program));
 
-builder.Services.AddSamlMetadatBuilder();
+builder.Services.AddSaml2Metadata();
 builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();

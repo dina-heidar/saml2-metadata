@@ -1,6 +1,6 @@
 ﻿namespace BasicSpMetadata.Models;
 
-public class BasicSpMetadataViewModel : Saml.MetadataBuilder.BasicSpMetadata
+public class BasicSpMetadataViewModel : Saml2Metadata.BasicSpMetadata
 {
     /// <summary>
     /// Gets or sets the signing certificate PFX.
