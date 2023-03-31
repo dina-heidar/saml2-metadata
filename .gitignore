@@ -13,3 +13,6 @@
 /src/xsd.flattening/bin
 /src/Xsd.IncludeImport/obj
 /src/Xsd.IncludeImport/bin
+/samples/RichSpMetadata/RichSpMetadata.csproj.user
+/samples/RichSpMetadata/bin
+/samples/RichSpMetadata/obj
