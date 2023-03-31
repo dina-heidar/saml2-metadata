@@ -7,3 +7,9 @@
 /samples/BasicSpMetadata/BasicSpMetadata.csproj.user
 /samples/BasicSpMetadata/bin
 /samples/BasicSpMetadata/obj
+/src/saml2.metadata/obj
+/src/saml2.metadata/bin
+/src/xsd.flattening/obj
+/src/xsd.flattening/bin
+/src/Xsd.IncludeImport/obj
+/src/Xsd.IncludeImport/bin

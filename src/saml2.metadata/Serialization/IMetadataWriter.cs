@@ -38,6 +38,11 @@ namespace Saml2Metadata
         /// <returns></returns>
         XmlDocument Output(EntityDescriptor entityDescriptor);
 
+        /// <summary>
+        /// Validates the specified XML document against xsd.
+        /// </summary>
+        /// <param name="xmlDoc">The XML document.</param>
+        /// <returns></returns>
         bool Validate(XmlDocument xmlDoc);
     }
 }
