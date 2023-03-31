@@ -34,10 +34,6 @@ namespace Saml2Metadata
         /// The authn context reference types
         /// </summary>
         private readonly string[] authnContextRefTypes;
-        /// <summary>
-        /// The comparison type
-        /// </summary>
-        private readonly string comparisonType;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestedAuthnContext"/> class.

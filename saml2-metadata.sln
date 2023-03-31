@@ -22,6 +22,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xsd.IncludeImport", "src\Xs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "saml2.metadata", "src\saml2.metadata\saml2.metadata.csproj", "{B7E4A224-8D3A-439F-B5B2-6D36D7915741}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{BE6683E0-9354-45EE-967D-AB6A9DD4DB0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{0E7453E2-A4BB-43E5-A271-317B812CE2B7}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+		.github\workflows\release.yml = .github\workflows\release.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +67,8 @@ Global
 		{224167F2-F140-4D5F-9AA6-2FEA2272900C} = {30C21D69-DBB4-466E-BEF7-86925E145F2B}
 		{382F68F5-AD9D-493F-9DBD-BEB9FF1170EB} = {30C21D69-DBB4-466E-BEF7-86925E145F2B}
 		{B7E4A224-8D3A-439F-B5B2-6D36D7915741} = {30C21D69-DBB4-466E-BEF7-86925E145F2B}
+		{BE6683E0-9354-45EE-967D-AB6A9DD4DB0D} = {040E6B5F-740B-4425-BB79-0F623B286731}
+		{0E7453E2-A4BB-43E5-A271-317B812CE2B7} = {BE6683E0-9354-45EE-967D-AB6A9DD4DB0D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DCCB83A2-01CA-48A1-846A-9F5702A94AF7}

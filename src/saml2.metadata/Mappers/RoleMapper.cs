@@ -583,6 +583,8 @@ namespace Saml2Metadata
             }
             return new Endpoint[0];
         }
+
+        //[RequiresUnreferencedCode("Calls Saml2Metadata.RoleMapper.ReadKeyInfo(KeyInfoType)")]
         public static X509Certificate2[] MapEach(KeyDescriptorType[] src, KeyTypes keyTypes)
         {
             var newSrc = src.Where(x => x.use == keyTypes).ToArray();
@@ -608,6 +610,7 @@ namespace Saml2Metadata
         }
 
         #region internals
+        //[RequiresUnreferencedCode("Calls Saml2Metadata.RoleMapper.SerializeToStringXml<T>(T)")]
         internal static KeyInfo ReadKeyInfo(KeyInfoType keyInfoType)
         {
             var safeSettings = new XmlReaderSettings
@@ -624,6 +627,8 @@ namespace Saml2Metadata
                 return keyInfo;
             }
         }
+
+        //[RequiresUnreferencedCode("Calls System.Xml.Serialization.XmlSerializer.XmlSerializer(Type)")]
         internal static string SerializeToStringXml<T>(T item) where T : class
         {
             var xmlString = string.Empty;
