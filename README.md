@@ -1,4 +1,3 @@
-SAML2 Metadata Builder
--------------------------
+## SAML2.Metadata
 
-This is a tool to create or read saml2 metadata
+This is a tool to create or read SAML2 metadata. Documentation coming soon.

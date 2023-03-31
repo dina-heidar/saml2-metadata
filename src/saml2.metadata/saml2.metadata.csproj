@@ -1,38 +1,94 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>This library can be used to build and generate SAML2 metadata files.</Description>
+    <Description>This library can be used to read, build and generate SAML2 metadata files.</Description>
     <TargetFrameworks>net6.0;net7.0;netstandard2.0;netstandard2.1</TargetFrameworks>
     <LangVersion>Latest</LangVersion>
     <PackageId>Saml2.Metadata</PackageId>
     <RootNamespace>Saml2Metadata</RootNamespace>
     <Nullable>disable</Nullable>
     <IsTrimmable>false</IsTrimmable>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageTags>authentication;dotnet;security;saml2;metadata;.NETCore;.NET;identity;aspnetcore</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.0-alpha</Version>
+    <Version>1.0.3-preview</Version>
     <Authors>Dina Heidar</Authors>
     <Company></Company>
     <Product>Saml2.Metadata</Product>
-    <!--<PackageReadmeFile>readme.txt</PackageReadmeFile>-->
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/dina-heidar/saml2-metadata</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dina-heidar/saml2-metadata</RepositoryUrl>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageReleaseNotes>initial</PackageReleaseNotes>
     <RepositoryType>Git</RepositoryType>
-  </PropertyGroup>
+    <Title>Saml2.Metadata</Title>
+    <Copyright>2023</Copyright>
 
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <!-- Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- Embed source files that are not tracked by the source control manager in the PDB -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+    <Deterministic>true</Deterministic>
+    <!-- Recommended: Embed symbols containing Source Link in the main file (exe/dll) -->
+    <!--<DebugType>embedded</DebugType>-->
+
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="6.23.1" />
     <PackageReference Include="Microsoft.IdentityModel.Xml" Version="6.23.1" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="6.0.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!--test locally-->
+  <!--<PropertyGroup>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>-->
+
+
+  <!--There is a well known issue with the EmbedUntrackedSources 
+  attribute that could be fix with the below workaround needed for many 
+  SDK’s prior to 3.1.300 (At the moment I write this post 3.1.201)-->
+  <PropertyGroup>
+    <TargetFrameworkMonikerAssemblyAttributesPath>$([System.IO.Path]::Combine('$(IntermediateOutputPath)','$(TargetFrameworkMoniker).AssemblyAttributes$(DefaultLanguageSourceExtension)'))</TargetFrameworkMonikerAssemblyAttributesPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- https://github.com/dotnet/sourcelink/issues/572 -->
+    <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+  
+
+  <!--source link-->
+  <ItemGroup>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+  
+  
 
   <ItemGroup>
     <None Update="Xsd\metadata4.xsd">
