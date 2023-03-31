@@ -32,7 +32,7 @@ namespace Saml2Metadata
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Saml.MetadataBuilder.IMetadataWriter" />
+    /// <seealso cref="Saml2Metadata.IMetadataWriter" />
     public class MetadataWriter : IMetadataWriter
     {
         /// <summary>
@@ -41,7 +41,7 @@ namespace Saml2Metadata
         private readonly IMetadataMapper<EntityDescriptor, EntityDescriptorType> _metadataMapper;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MedataWriter" /> class.
+        /// Initializes a new instance of the <see cref="MetadataWriter"/> class.
         /// </summary>
         /// <param name="metadataMapper">The metadata mapper.</param>
         public MetadataWriter(IMetadataMapper<EntityDescriptor, EntityDescriptorType> metadataMapper)

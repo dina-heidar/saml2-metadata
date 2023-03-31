@@ -34,12 +34,6 @@ using Saml2Metadata.Schema;
 
 namespace Saml2Metadata
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <seealso cref="Microsoft.IdentityModel.Protocols.IConfigurationRetriever&lt;Saml2Metadata.EntityDescriptor&gt;" />
-    /// <seealso cref="Saml2Metadata.IMetadataReader" />
-    /// <seealso cref="Saml.MetadataBuilder.IMetadataReader" />
     public class MetadataReader : IConfigurationRetriever<EntityDescriptor>, IMetadataReader
     {
         private readonly IMetadataMapper<EntityDescriptorType, EntityDescriptor> _mapper;
