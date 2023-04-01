@@ -35,16 +35,16 @@ namespace MvcWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(BasicSpMetadataViewModel basicSpMetadataVm)
         {
-            if (!basicSpMetadataVm.SignatureCertificatePfx.IsNull())
+            if (basicSpMetadataVm.SignatureCertificatePfx != null)
             {
                 basicSpMetadataVm.Signature = await GetX509Certificate2(basicSpMetadataVm.SignatureCertificatePfx);
             }
-            if (!basicSpMetadataVm.EncryptingCertificatePfx.IsNull())
+            if (basicSpMetadataVm.EncryptingCertificatePfx != null)
             {
                 basicSpMetadataVm.EncryptingCertificate.EncryptionCertificate =
                     await GetX509Certificate2(basicSpMetadataVm.EncryptingCertificatePfx);
             }
-            if (!basicSpMetadataVm.SigningCertificatePfx.IsNull())
+            if (basicSpMetadataVm.SigningCertificatePfx!= null)
             {
                 basicSpMetadataVm.SigningCertificate =
                     await GetX509Certificate2(basicSpMetadataVm.SigningCertificatePfx);
@@ -61,9 +61,9 @@ namespace MvcWeb.Controllers
             };
         }
 
-        private async Task<X509Certificate2> GetX509Certificate2(PfxFile pfxfile)
+        private async Task<X509Certificate2?> GetX509Certificate2(PfxFile pfxfile)
         {
-            if (pfxfile.File.Length > 0)
+            if (pfxfile.File?.Length > 0)
             {
                 // Uses Path.GetTempFileName to return a full path for a file, including the file name.
                 var filePath = Path.GetTempFileName();

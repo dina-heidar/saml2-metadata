@@ -44,7 +44,7 @@ namespace Saml2Metadata
         /// <returns>
         ///   <c>true</c> if this instance is empty; otherwise, <c>false</c>.
         /// </returns>
-        internal bool IsEmpty()
+        internal new bool IsEmpty()
         {
             if (!Index.HasValue && base.IsEmpty())
             {

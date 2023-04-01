@@ -43,7 +43,7 @@ namespace Saml2Metadata
             var entityDescriptorType = new EntityDescriptorType()
             {
                 cacheDuration = (!string.IsNullOrEmpty(src.CacheDuration) ? src.CacheDuration.ConvertToXmlCachedDuration() : null), //optional
-                validUntilSpecified = (src.ValidUntil != null),//optional
+                validUntilSpecified = (src.ValidUntil == DateTime.MinValue ? false : true),//optional
                 validUntil = src.ValidUntil,//optional
                 entityID = src.EntityID, //---> required
                 ID = src.Id, //optional

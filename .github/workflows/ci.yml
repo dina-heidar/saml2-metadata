@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: dotnet build ./src/saml2.metadata/saml2.metadata.csproj -c $BUILD_CONFIG
 
-      - name: Pack X509StoreFinder
+      - name: Pack 
         run: dotnet pack ./src/saml2.metadata/saml2.metadata.csproj -c $BUILD_CONFIG --no-build --include-source --include-symbols -o ./artifacts
       
       - name: Setup nuget

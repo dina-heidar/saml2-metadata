@@ -12,13 +12,13 @@
     <PackageTags>authentication;dotnet;security;saml2;metadata;.NETCore;.NET;identity;aspnetcore</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.3-preview</Version>
+    <Version>1.0.4</Version>
     <Authors>Dina Heidar</Authors>
     <Company></Company>
     <Product>Saml2.Metadata</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/dina-heidar/saml2-metadata</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dina-heidar/saml2-metadata</RepositoryUrl>
@@ -27,8 +27,6 @@
     <RepositoryType>Git</RepositoryType>
     <Title>Saml2.Metadata</Title>
     <Copyright>2023</Copyright>
-
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
 
     <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>

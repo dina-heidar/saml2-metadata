@@ -25,7 +25,7 @@ namespace Saml2Metadata
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Saml.MetadataBuilder.RoleDescriptor" />
+    /// <seealso cref="Saml2Metadata.RoleDescriptor" />
     public class SSODescriptor : RoleDescriptor
     {
         /// <summary>
