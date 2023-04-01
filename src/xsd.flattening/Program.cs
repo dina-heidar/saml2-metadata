@@ -49,6 +49,7 @@ namespace Xsd.Flattening
                 }
                 catch (Exception e)
                 {
+                    var message = e.Message;
                     return null;
                 }
             }
@@ -86,6 +87,7 @@ namespace Xsd.Flattening
                     }
                     catch (Exception e)
                     {
+                        var message = e.Message;
                         return false;
                     }
                     sIncludeReader.Close();

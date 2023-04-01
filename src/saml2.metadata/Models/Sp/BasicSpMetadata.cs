@@ -24,10 +24,11 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Saml2Metadata
 {
+
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Saml.MetadataBuilder.RichSpMetadata" />
+    /// <seealso cref="Saml2Metadata.RichSpMetadata" />
     public class BasicSpMetadata : RichSpMetadata
     {
         /// <summary>

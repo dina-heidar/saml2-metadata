@@ -10103,7 +10103,7 @@ namespace Saml2Metadata.Schema
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
-    public partial class detail
+    public partial class @detail
     {
 
         private System.Xml.XmlElement[] anyField;

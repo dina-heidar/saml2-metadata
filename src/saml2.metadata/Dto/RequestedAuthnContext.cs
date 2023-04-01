@@ -31,11 +31,6 @@ namespace Saml2Metadata
     public class RequestedAuthnContext
     {
         /// <summary>
-        /// The authn context reference types
-        /// </summary>
-        private readonly string[] authnContextRefTypes;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="RequestedAuthnContext"/> class.
         /// </summary>
         /// <param name="authnContextRefTypes">The authn context reference types.</param>
@@ -61,8 +56,7 @@ namespace Saml2Metadata
         {
             return new RequestedAuthnContext
             {
-                ComparisonType = comparisonType,
-                AuthnContextRefTypes = this.authnContextRefTypes
+                ComparisonType = comparisonType
             };
         }
 

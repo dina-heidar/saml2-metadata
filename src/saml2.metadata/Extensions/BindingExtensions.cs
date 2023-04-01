@@ -45,9 +45,11 @@ namespace Saml2Metadata
         /// <param name="location">The location.</param>
         /// <param name="responseLocation">The response location.</param>
         /// <returns></returns>
-        /// <exception cref="MetadataBuilder.Saml2MetadataSerializationException">Endpoint location is not a valid Url
+        /// <exception cref="Saml2Metadata.Saml2MetadataSerializationException">
+        /// Endpoint location is not a valid Url
         /// or
-        /// Endpoint response location is not a valid Url</exception>
+        /// Endpoint response location is not a valid Url
+        /// </exception>
         public Endpoint Url(string location, string responseLocation = null)
         {
             Uri uriResult;
@@ -81,17 +83,14 @@ namespace Saml2Metadata
             };
             return endpoint;
         }
-
         /// <summary>
         /// URLs the specified location.
         /// </summary>
         /// <param name="location">The location.</param>
-        /// <param name="index">The index (will default to 0 if not provided).</param>
+        /// <param name="index">The index.</param>
         /// <param name="isDefault">if set to <c>true</c> [is default].</param>
-        /// <returns>
-        /// IndexedEndpoint
-        /// </returns>
-        /// <exception cref="MetadataBuilder.Saml2MetadataSerializationException">Endpoint location is not a valid Url</exception>
+        /// <returns></returns>
+        /// <exception cref="Saml2Metadata.Saml2MetadataSerializationException">Endpoint location is not a valid Url</exception>
         public IndexedEndpoint Url(string location, int index, bool isDefault = false)
         {
             Uri uriResult;

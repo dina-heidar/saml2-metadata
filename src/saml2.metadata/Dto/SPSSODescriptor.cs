@@ -22,10 +22,11 @@
 
 namespace Saml2Metadata
 {
+
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Saml.MetadataBuilder.SSODescriptor" />
+    /// <seealso cref="Saml2Metadata.SSODescriptor" />
     public class SPSSODescriptor : SSODescriptor
     {
 

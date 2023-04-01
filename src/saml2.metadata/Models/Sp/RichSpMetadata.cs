@@ -28,7 +28,7 @@ namespace Saml2Metadata
     /// <summary>
     /// 
     /// </summary>
-    /// <seealso cref="Saml.MetadataBuilder.EntityDescriptor" />
+    /// <seealso cref="Saml2Metadata.EntityDescriptor" />
     public class RichSpMetadata : EntityDescriptor
     {
         /// <summary>

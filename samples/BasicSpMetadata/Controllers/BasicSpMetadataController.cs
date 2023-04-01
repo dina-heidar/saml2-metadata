@@ -27,18 +27,18 @@ public class BasicSpMetadataController : Controller
     [HttpPost]
     public async Task<XmlDocument> Create(BasicSpMetadataViewModel basicSpMetadataVm)
     {
-        if (!basicSpMetadataVm.SigningCertificatePfx.IsNull())
+        if (basicSpMetadataVm.SigningCertificatePfx != null)
         {
-            basicSpMetadataVm.SigningCertificate = await GetX509Certificate2(basicSpMetadataVm.SignatureCertificatePfx);
+            basicSpMetadataVm.SigningCertificate = await GetX509Certificate2(basicSpMetadataVm.SigningCertificatePfx);
         }
 
         var xml = writer.Output(basicSpMetadataVm);
         return xml;
     }
 
-    private async Task<X509Certificate2> GetX509Certificate2(PfxFile pfxfile)
+    private async Task<X509Certificate2?> GetX509Certificate2(PfxFile pfxfile)
     {
-        if (pfxfile.File.Length > 0)
+        if (pfxfile.File?.Length > 0)
         {
             // Uses Path.GetTempFileName to return a full path for a file, including the file name.
             var filePath = Path.GetTempFileName();
