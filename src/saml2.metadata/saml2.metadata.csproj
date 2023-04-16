@@ -11,19 +11,21 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageTags>authentication;dotnet;security;saml2;metadata;.NETCore;.NET;identity;aspnetcore</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <!--<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>-->
     <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
+    <PackageIcon>images\icon_128x128.png</PackageIcon>
+    <InformationalVersion>This is a release package</InformationalVersion>
     <Authors>Dina Heidar</Authors>
     <Company></Company>
     <Product>Saml2.Metadata</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <AssemblyVersion>1.0.4.0</AssemblyVersion>
-    <FileVersion>1.0.4.0</FileVersion>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <!--<PackageLicenseFile>LICENSE</PackageLicenseFile>-->
     <PackageProjectUrl>https://github.com/dina-heidar/saml2-metadata</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dina-heidar/saml2-metadata</RepositoryUrl>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageReleaseNotes>initial</PackageReleaseNotes>
+    <PackageReleaseNotes>new logo</PackageReleaseNotes>
     <RepositoryType>Git</RepositoryType>
     <Title>Saml2.Metadata</Title>
     <Copyright>2023</Copyright>
@@ -37,11 +39,6 @@
 
     <!-- Embed source files that are not tracked by the source control manager in the PDB -->
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-
-    <Deterministic>true</Deterministic>
-    <!-- Recommended: Embed symbols containing Source Link in the main file (exe/dll) -->
-    <!--<DebugType>embedded</DebugType>-->
-
   </PropertyGroup>
   
   <ItemGroup>
@@ -52,7 +49,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="README.md" Pack="true" PackagePath="\" />
+    <!--<None Include="..\..\LICENSE" Pack="true" PackagePath="" />-->
+    <None Include="..\..\assets\logo\icon_128x128.png" Pack="true" PackagePath="images" />
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <!--source link-->
+  <ItemGroup>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <!--test locally-->
@@ -60,6 +68,10 @@
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>-->
 
+  <!--test on server-->
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
 
   <!--There is a well known issue with the EmbedUntrackedSources 
   attribute that could be fix with the below workaround needed for many 
@@ -71,22 +83,6 @@
     <!-- https://github.com/dotnet/sourcelink/issues/572 -->
     <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)" />
   </ItemGroup>
-  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-  </PropertyGroup>
-  
-
-  <!--source link-->
-  <ItemGroup>
-    <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  
-  
-  
 
   <ItemGroup>
     <None Update="Xsd\metadata4.xsd">

@@ -40,7 +40,7 @@ namespace Xsd.IncludeImport
             Directory.SetCurrentDirectory(file.Directory.FullName);
 
             // Read the base schema
-            XmlSchema xsBase =null;
+            XmlSchema xsBase = null;
             using (StreamReader srSchema = new StreamReader(strSchemaPath))
             {
                 try

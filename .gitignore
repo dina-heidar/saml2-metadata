@@ -16,3 +16,4 @@
 /samples/RichSpMetadata/RichSpMetadata.csproj.user
 /samples/RichSpMetadata/bin
 /samples/RichSpMetadata/obj
+/src/saml2.metadata/.AssemblyAttributes

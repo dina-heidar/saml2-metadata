@@ -1,3 +1,3 @@
-## SAML2.Metadata
+## Saml2.Metadata
 
 This is a tool to create or read SAML2 metadata. Documentation coming soon.
