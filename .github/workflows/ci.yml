@@ -52,3 +52,4 @@ jobs:
         run: dotnet nuget push ./artifacts/saml2.metadata.*.nupkg -k $GITHUB_NUGET_API_KEY -s $GITHUB_NUGET_URL --skip-duplicate
           
     
+

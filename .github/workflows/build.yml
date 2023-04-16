@@ -30,3 +30,5 @@ jobs:
 
     - name: Build
       run: dotnet build -c $BUILD_CONFIG --no-restore
+
+

@@ -44,7 +44,7 @@ namespace MvcWeb.Controllers
                 basicSpMetadataVm.EncryptingCertificate.EncryptionCertificate =
                     await GetX509Certificate2(basicSpMetadataVm.EncryptingCertificatePfx);
             }
-            if (basicSpMetadataVm.SigningCertificatePfx!= null)
+            if (basicSpMetadataVm.SigningCertificatePfx != null)
             {
                 basicSpMetadataVm.SigningCertificate =
                     await GetX509Certificate2(basicSpMetadataVm.SigningCertificatePfx);

@@ -53,3 +53,4 @@ jobs:
          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: dotnet nuget push ./artifacts/saml2.metadata.*.nupkg -k $NUGET_API_KEY -s $NUGET_URL --skip-duplicate
      
+
