@@ -1,11 +1,10 @@
-using MediatR;
 using Saml2Metadata;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddMediatR(typeof(Program));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 builder.Services.AddSaml2Metadata();
 builder.Services.AddAutoMapper(typeof(Program));
