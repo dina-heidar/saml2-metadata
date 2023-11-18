@@ -33,6 +33,18 @@ jobs:
 
       - name: Build
         run: dotnet build ./src/saml2.metadata/saml2.metadata.csproj -c $BUILD_CONFIG
+    
+        # Store the version, stripping any v-prefix
+      - name: Write release version
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo Version: $VERSION
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+         # Use version in other step
+      - name: Read version
+        run: |
+          echo Version now: ${VERSION}
 
       - name: Pack 
         run: dotnet pack ./src/saml2.metadata/saml2.metadata.csproj -c $BUILD_CONFIG --no-build --include-source --include-symbols -o ./artifacts
