@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>This library can be used to read, build and generate SAML2 metadata files.</Description>
-    <TargetFrameworks>net6.0;net7.0;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0;net8.0;netstandard2.0;netstandard2.1</TargetFrameworks>
     <LangVersion>Latest</LangVersion>
     <PackageId>Saml2.Metadata</PackageId>
     <RootNamespace>Saml2Metadata</RootNamespace>
@@ -11,10 +11,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageTags>authentication;dotnet;security;saml2;metadata;.NETCore;.NET;identity;aspnetcore</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.6</Version>
-    <AssemblyVersion>1.0.6.0</AssemblyVersion>
-    <FileVersion>1.0.6.0</FileVersion>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>   
     <PackageIcon>images\icon_128x128.png</PackageIcon>
     <InformationalVersion>This is a release package</InformationalVersion>
     <Authors>Dina Heidar</Authors>
@@ -25,10 +22,10 @@
     <PackageProjectUrl>https://saml2-metadata.readthedocs.io/en/latest/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dina-heidar/saml2-metadata</RepositoryUrl>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageReleaseNotes>updated libraries</PackageReleaseNotes>
+    <PackageReleaseNotes>Saml2.Metadata</PackageReleaseNotes>
     <RepositoryType>Git</RepositoryType>
     <Title>Saml2.Metadata</Title>
-    <Copyright>2023</Copyright>
+    <Copyright>Copyright Dina Heidar</Copyright>
 
     <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -42,10 +39,10 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="6.30.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Xml" Version="6.30.0" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="7.0.3" />
+    <PackageReference Include="Microsoft.IdentityModel.Xml" Version="7.0.3" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,7 +54,7 @@
   <!--source link-->
   <ItemGroup>
     <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
